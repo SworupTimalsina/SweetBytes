@@ -2,18 +2,14 @@ package controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.*;
 
 import view.*;
 import model.*;
-import java.sql.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import Regulations.RegistrationPageRegulation;
 
-
-/**
- *
- * @author Allan
- */
 
 public class RegistrationController {
     RegistrationModel model;
@@ -21,9 +17,10 @@ public class RegistrationController {
     ResultSet rs;
     Statement stmt;
     Connection conn=MyConnector.dbConnect();
+    RegistrationPageRegulation checkCreds;
     
     public RegistrationController(RegistrationView view){
-        System.out.println("Registration class created");
+        System.out.println("RegistrationController class created");
         this.view=view;
         view.addRegistrationListner(new RegistrationListener());
     }
@@ -34,37 +31,22 @@ public class RegistrationController {
             try{
                 System.out.println("Try statement of actionPerformed");
                 model=view.setNewUser();
-                if(false){
-                    view.displayMessage("Username already exists");
+                
+                checkCreds=new RegistrationPageRegulation(model);
+                String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
+                if(checkCredsResult.equals("ok")){
+                    System.out.println("else statement of actionPerformed");
+                    InsertRegistrationData();
                 }
                 else{
-                    System.out.println("else statement of actionPerformed");
-                    if (InsertRegistrationData()){
-                        view.displayMessage("Registered successfully");
-                        
-                    }
-                    else{}
+                    view.displayMessage(checkCredsResult);
                 }
             }
-            catch(Exception e1){}
-        }
-        private boolean UsernameExists() throws Exception{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String sql="select * from creds where u_name='"+model.getUsername()+"'";
-            try{
-                stmt=conn.createStatement();
-                rs=stmt.executeQuery(sql);
-                if(rs.next()){
-                    return false;
-                }
-            conn.close();
+            catch(Exception e1){
+                System.out.println("Exception message of RegistrationListener"+e1);
             }
-            catch(Exception e2){
-                view.displayMessage(e2.getMessage());
-                
-            }
-            return true;
         }
+        
         private boolean InsertRegistrationData() {
             try{
                 System.out.println("Try statement of InsertRegistration");
@@ -79,10 +61,7 @@ public class RegistrationController {
                 System.out.println("Error message in InsertRegistrationData: "+e);
                 return false;
             }
-        
+        } 
     }
-        
-    }
-    
 }
 

@@ -8,6 +8,8 @@ import model.*;
 import java.sql.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 /**
  *
  * @author Allan
@@ -18,39 +20,37 @@ public class RegistrationController {
     RegistrationView view;
     ResultSet rs;
     Statement stmt;
-    public RegistrationController(RegistrationView view)
-    {
+    Connection conn=MyConnector.dbConnect();
+    
+    public RegistrationController(RegistrationView view){
+        System.out.println("Registration class created");
         this.view=view;
         view.addRegistrationListner(new RegistrationListener());
     }
-    class RegistrationListener implements ActionListener
-    {
-
+    class RegistrationListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            try
-            {
+            System.out.println("Function Controller's actionPerformed");
+            try{
+                System.out.println("Try statement of actionPerformed");
                 model=view.setNewUser();
-                if(checkUser(model))
-                {
+                if(false){
                     view.displayMessage("Username already exists");
                 }
-                else
-                {
-                    view.displayMessage("Registered successfully");
+                else{
+                    System.out.println("else statement of actionPerformed");
+                    if (InsertRegistrationData()){
+                        view.displayMessage("Registered successfully");
+                        
+                    }
+                    else{}
                 }
             }
-            catch(Exception e1)
-            {
-                
-            }
-
+            catch(Exception e1){}
         }
-        public boolean checkUser(RegistrationModel user) throws Exception
-        {
+        private boolean UsernameExists() throws Exception{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Sweetbytes","root","43a4a53290");
-            String sql="select * from creds where pname='"+user.getUsername()+"'";
+            String sql="select * from creds where u_name='"+model.getUsername()+"'";
             try{
                 stmt=conn.createStatement();
                 rs=stmt.executeQuery(sql);
@@ -61,9 +61,26 @@ public class RegistrationController {
             }
             catch(Exception e2){
                 view.displayMessage(e2.getMessage());
+                
             }
             return true;
         }
+        private boolean InsertRegistrationData() {
+            try{
+                System.out.println("Try statement of InsertRegistration");
+                Statement stmt=conn.createStatement();
+                //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
+                String sql = "insert into Creds(f_name, l_name, email, DOB, u_name, pass) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"')";
+            stmt.executeUpdate(sql);
+            return true;
+            }
+            catch(Exception e){
+                System.out.println("Else statement of InsertRegistration");
+                System.out.println("Error message in InsertRegistrationData: "+e);
+                return false;
+            }
+        
+    }
         
     }
     

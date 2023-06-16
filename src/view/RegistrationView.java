@@ -362,7 +362,10 @@ public class RegistrationView extends javax.swing.JFrame {
     }//GEN-LAST:event_dayFieldActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
+        LoginView LV = new LoginView();
+        LV.show();
+        dispose();
+        
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     /**

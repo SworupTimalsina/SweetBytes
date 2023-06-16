@@ -17,29 +17,57 @@ public class RegistrationPageRegulation {
     }
     
     public String CheckRegistrationPageRegulation(RegistrationModel model){
-        if (BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
-            if (UsernameNotTaken(model.getUsername())){
-                return "ok";
-            }
+        /*
+        * main function that checks every regulation.
+        * @return "ok" if everything is valid.
+        * @return corresponding error message.
+        */
+        String firstCheck=FieldEmptyCheck(model);
+        if (firstCheck.equals("ok")){
+            
+        
+            if (!BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
+                return "Passwords does not match";
+                }
+
             else{
-                return "Username is taken";
+                if (!UsernameTaken(model.getUsername())){
+                    return "ok";
+                }
+                else{
+                    return "Username is taken";
+                }
             }
         }
         else{
-            return "Passwords does not match";
+            return firstCheck;
         }
     }
     public String CheckRegistrationPageRegulation(){
-        if (BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
-            if (UsernameNotTaken(model.getUsername())){
-                return "ok";
-            }
+        /*
+        * main function that checks every regulation.
+        * @return "ok" if everything is valid.
+        * @return corresponding error message.
+        */
+        String firstCheck=FieldEmptyCheck();
+        if (firstCheck.equals("ok")){
+            
+        
+            if (!BothPasswordsMatch()){
+                return "Passwords does not match";
+                }
+
             else{
-                return "Username is taken";
+                if (!UsernameTaken()){
+                    return "ok";
+                }
+                else{
+                    return "Username is taken";
+                }
             }
         }
         else{
-            return "Passwords does not match";
+            return firstCheck;
         }
     }
     
@@ -70,10 +98,10 @@ public class RegistrationPageRegulation {
     }
     
     
-    public boolean UsernameNotTaken(String username1){
+    public boolean UsernameTaken(String username1){
         /*
         * Checks if username is taken or not.
-        * @return true if not taken and false if username is taken.
+        * @return true if taken and false if username is not taken.
         */
         Connection conn = MyConnector.dbConnect();
         String sqlCommand="select * from creds where u_name='"+username1+"'";
@@ -82,18 +110,18 @@ public class RegistrationPageRegulation {
         try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sqlCommand);
-            return !rs.next();
+            return rs.next();
             
         }
         catch(Exception e){
-            System.out.println("Error in UsernameNotTaken: "+e);
+            System.out.println("Error in UsernameTaken: "+e);
         }
-        return false;
+        return true;
     }
-    public boolean UsernameNotTaken(){
+    public boolean UsernameTaken(){
         /*
         * Checks if username is taken or not.
-        * @return true if not taken and false if username is taken.
+        * @return true if taken and false if username is not taken.
         */
         Connection conn = MyConnector.dbConnect();
         String sqlCommand="selesct * from creds where u_name='"+model.getUsername()+"'";
@@ -102,15 +130,15 @@ public class RegistrationPageRegulation {
         try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sqlCommand);
-            return !rs.next();
+            return rs.next();
         }
         catch(Exception e){
-            System.out.println("Error in UsernameNotTaken: "+e);
+            System.out.println("Error in UsernameTaken: "+e);
         }
-        return false;
+        return true;
     }
     
-    public String FeildEmptyCheck(RegistrationModel model){
+    public String FieldEmptyCheck(RegistrationModel model){
         /*
         * Checks if the field are not left empty.
         * @return "ok" if all fields are not left empty.
@@ -144,7 +172,7 @@ public class RegistrationPageRegulation {
             }
         }
     
-        public String FeildEmptyCheck(){
+        public String FieldEmptyCheck(){
         /*
         * Checks if the field are not left empty.
         * @return "ok" if all fields are not left empty.
@@ -181,7 +209,7 @@ public class RegistrationPageRegulation {
                 }
             }
         }
-     }
+    }
         
         
     public static void main(String[] args){}

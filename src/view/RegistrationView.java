@@ -3,13 +3,13 @@ package view;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import java.awt.event.ActionListener;
+
 import model.*;
 import controller.*;
-import java.awt.event.ActionListener;
-/**
- *
- * @author Allan
- */
+
+
+
 public class RegistrationView extends javax.swing.JFrame {
     RegistrationModel model;
     Connection conn;
@@ -303,7 +303,6 @@ public class RegistrationView extends javax.swing.JFrame {
     public RegistrationModel setNewUser(){
         
         String DOB=yearField.getSelectedItem().toString()+"-"+ConvertDateToNum(monthField.getSelectedItem().toString())+"-"+dayField.getSelectedItem().toString();
-        
         model = new RegistrationModel(fnameField.getText(), lnameField.getText(), emailField.getText(), DOB, unameField.getText(), passwordField.getText(), repeatPasswordField.getText());
         return model;
     }

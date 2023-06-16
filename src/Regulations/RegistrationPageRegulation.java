@@ -8,7 +8,7 @@ import controller.MyConnector;
 
 public class RegistrationPageRegulation {
     /*
-    A class that validates the user given information.
+    * A class that validates the user given information.
     */
     RegistrationModel model;
     public RegistrationPageRegulation(){}
@@ -96,14 +96,13 @@ public class RegistrationPageRegulation {
         * @return true if not taken and false if username is taken.
         */
         Connection conn = MyConnector.dbConnect();
-        String sqlCommand="select * from creds where u_name='"+model.getUsername()+"'";
+        String sqlCommand="selesct * from creds where u_name='"+model.getUsername()+"'";
         Statement stmt;
         ResultSet rs;
         try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sqlCommand);
             return !rs.next();
-            
         }
         catch(Exception e){
             System.out.println("Error in UsernameNotTaken: "+e);
@@ -111,7 +110,82 @@ public class RegistrationPageRegulation {
         return false;
     }
     
+    public String FeildEmptyCheck(RegistrationModel model){
+        /*
+        * Checks if the field are not left empty.
+        * @return "ok" if all fields are not left empty.
+        * @return corresponding error message.
+        */
+        if (model.getFirstName().isBlank()){
+            return "First name should not be empty";
+        }
+        else{
+            if (model.getLastName().isBlank()){
+                return "Last name should not be empty";
+            }
+            else{
+                if (model.getPassword().isBlank()){
+                    return "Passworld should not be empty";
+                }
+                else{
+                    if (model.getConfirmPassword().isBlank()){
+                        return "Repeat password should not be empty";
+                    }
+                    else{
+                        if (model.getEmail().isBlank()){
+                            return "Email should not be empty";
+                        }
+                        else{
+                            return "ok";
+                            }
+                        }
+                    }
+                }
+            }
+        }
     
-    
+        public String FeildEmptyCheck(){
+        /*
+        * Checks if the field are not left empty.
+        * @return "ok" if all fields are not left empty.
+        * @return corresponding error message.
+        */
+        if (model.getFirstName().isBlank()){
+            return "First name should not be empty";
+        }
+        else{
+            if (model.getLastName().isBlank()){
+                return "Last name should not be empty";
+            }
+            else{
+                if (model.getPassword().isBlank()){
+                    return "Passworld should not be empty";
+                }
+                else{
+                    if (model.getConfirmPassword().isBlank()){
+                        return "Repeat password should not be empty";
+                    }
+                    else{
+                        if (model.getEmail().isBlank()){
+                            return "Email should not be empty";
+                        }
+                        else{
+                            if (model.getUsername().isBlank()){
+                                return "Username should not be empty";
+                            }
+                            else{
+                                return "ok";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+     }
+        
+        
     public static void main(String[] args){}
+
 }
+    
+   

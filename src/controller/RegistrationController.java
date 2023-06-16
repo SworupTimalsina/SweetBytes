@@ -35,10 +35,11 @@ public class RegistrationController {
                 checkCreds=new RegistrationPageRegulation(model);
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
                 if(checkCredsResult.equals("ok")){
-                    System.out.println("else statement of actionPerformed");
+                    view.displayMessage("User Registered");
                     InsertRegistrationData();
                 }
                 else{
+                    System.out.println("else statement of actionPerformed");
                     view.displayMessage(checkCredsResult);
                 }
             }

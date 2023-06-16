@@ -62,7 +62,7 @@ public class RegistrationPageRegulation {
                     return "ok";
                 }
                 else{
-                    return "Username is taken";
+                    return "Username taken";
                 }
             }
         }
@@ -124,7 +124,7 @@ public class RegistrationPageRegulation {
         * @return true if taken and false if username is not taken.
         */
         Connection conn = MyConnector.dbConnect();
-        String sqlCommand="selesct * from creds where u_name='"+model.getUsername()+"'";
+        String sqlCommand="select * from creds where u_name='"+model.getUsername()+"'";
         Statement stmt;
         ResultSet rs;
         try{

@@ -185,6 +185,11 @@ public class DashboardView extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jButton2.setText("Browse Now");
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -304,6 +309,12 @@ public class DashboardView extends javax.swing.JFrame {
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CustomizeCakeView CakeCustom = new CustomizeCakeView();
+        CakeCustom.show();
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -201,7 +201,7 @@ public class DashboardView extends javax.swing.JFrame {
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCartActionPerformed(evt);
             }
         });
 

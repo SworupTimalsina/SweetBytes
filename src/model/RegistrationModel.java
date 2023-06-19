@@ -9,9 +9,9 @@ package model;
  * @author Allan
  */
 public class RegistrationModel {
-    private String firstName, lastName, email, dateOfBirth, username, password, confirmPassword;
+    private String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
     
-    public RegistrationModel(String firstName, String lastName, String email, String dateOfBirth, String username, String password, String confirmPassword){
+    public RegistrationModel(String firstName, String lastName, String email, String dateOfBirth, String username, String password, String confirmPassword, String security, String answer){
         this.firstName=firstName;
         this.lastName=lastName;
         this.email=email;
@@ -19,6 +19,8 @@ public class RegistrationModel {
         this.username=username;
         this.password=password;
         this.confirmPassword=confirmPassword;
+        this.security=security;
+        this.answer=answer;
     }
     public RegistrationModel(){
         this.firstName=null;
@@ -28,6 +30,8 @@ public class RegistrationModel {
         this.username=null;
         this.password=null;
         this.confirmPassword=null;
+        this.security=null;
+        this.answer=null;
     }
     
     public void setFirstName(String firstName){
@@ -51,6 +55,12 @@ public class RegistrationModel {
     public void setConfirmPassword(String confirmPassword){
         this.confirmPassword=confirmPassword;
     }
+    public void setSecurityQ(String security){
+        this.security=security;
+    }
+    public void setAnswer(String answer){
+        this.answer=answer;
+    }
     
     public String getFirstName(){
         return firstName;
@@ -72,5 +82,11 @@ public class RegistrationModel {
     }
     public String getConfirmPassword(){
         return confirmPassword;
+    }
+    public String getSecurity(){
+        return security;
+    }
+    public String getAnswer(){
+        return answer;
     }
 }

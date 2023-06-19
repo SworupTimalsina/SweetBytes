@@ -36,6 +36,7 @@ public class RegistrationController {
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
                 if(checkCredsResult.equals("ok")){
                     System.out.println("else statement of actionPerformed");
+                    view.displayMessage("user registered");
                     InsertRegistrationData();
                 }
                 else{
@@ -52,7 +53,7 @@ public class RegistrationController {
                 System.out.println("Try statement of InsertRegistration");
                 Statement stmt=conn.createStatement();
                 //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-                String sql = "insert into Creds(f_name, l_name, email, DOB, u_name, pass) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"')";
+                String sql = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
             stmt.executeUpdate(sql);
             return true;
             }

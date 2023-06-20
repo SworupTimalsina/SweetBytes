@@ -10,6 +10,7 @@ import view.*;
 import model.*;
 import Regulations.RegistrationPageRegulation;
 import Database.MyConnector;
+import dao.CustomerDAO;
 
 
 public class RegistrationController {
@@ -36,7 +37,7 @@ public class RegistrationController {
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
                 if(checkCredsResult.equals("ok")){
                     view.displayMessage("User Registered");
-                    InsertRegistrationData();
+                    CustomerDAO.InsertRegistrationData(model);
                 }
                 else{
                     System.out.println("else statement of actionPerformed");
@@ -48,22 +49,7 @@ public class RegistrationController {
             }
         }
         
-        private boolean InsertRegistrationData() {
-            try{
-                System.out.println("Try statement of InsertRegistration");
-                conn=MyConnector.dbConnect();
-                Statement stmt=conn.createStatement();
-                //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-                String sql = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
-                stmt.executeUpdate(sql);
-                return true;
-            }
-            catch(Exception e){
-                System.out.println("Else statement of InsertRegistration");
-                System.out.println("Error message in InsertRegistrationData: "+e);
-                return false;
-            }
-        } 
+        
     }
 }
 

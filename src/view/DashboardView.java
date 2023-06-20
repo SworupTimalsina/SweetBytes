@@ -156,7 +156,7 @@ public class DashboardView extends javax.swing.JFrame {
                 .addComponent(lblWCakes)
                 .addGap(60, 60, 60)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));

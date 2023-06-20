@@ -9,6 +9,7 @@ import java.sql.*;
 import view.*;
 import model.*;
 import Regulations.RegistrationPageRegulation;
+import Database.MyConnector;
 
 
 public class RegistrationController {
@@ -16,7 +17,7 @@ public class RegistrationController {
     RegistrationView view;
     ResultSet rs;
     Statement stmt;
-    Connection conn=MyConnector.dbConnect();
+    Connection conn;
     RegistrationPageRegulation checkCreds;
     
     public RegistrationController(RegistrationView view){
@@ -51,11 +52,12 @@ public class RegistrationController {
         private boolean InsertRegistrationData() {
             try{
                 System.out.println("Try statement of InsertRegistration");
+                conn=MyConnector.dbConnect();
                 Statement stmt=conn.createStatement();
                 //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
                 String sql = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
-            stmt.executeUpdate(sql);
-            return true;
+                stmt.executeUpdate(sql);
+                return true;
             }
             catch(Exception e){
                 System.out.println("Else statement of InsertRegistration");

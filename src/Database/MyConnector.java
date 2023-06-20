@@ -7,13 +7,13 @@ package Database;
 import java.sql.*;
 import java.sql.DriverManager;
 
-public class MyConnection{
-    public static Connection dbconnect() {
+public class MyConnector{
+    public static Connection dbConnect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+            Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/SweetBytes","root","root@2003");
                     
-            System.out.println("connected");
+            System.out.println("Database connected");
             return(conn);
         }
     

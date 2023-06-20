@@ -3,7 +3,7 @@ package Regulations;
 import java.sql.*;
 
 import model.*;
-import controller.MyConnector;
+import Database.MyConnector;
 
 
 public class RegistrationPageRegulation {

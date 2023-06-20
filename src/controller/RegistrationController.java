@@ -23,11 +23,10 @@ public class RegistrationController {
     public RegistrationController(RegistrationView view){
         System.out.println("RegistrationController class created");
         this.view=view;
-        view.addRegistrationListner(new RegistrationListener());
+        new RegistrationListener().actionPerformed();
     }
-    class RegistrationListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
+    class RegistrationListener {
+        public void actionPerformed() {
             System.out.println("Function Controller's actionPerformed");
             try{
                 System.out.println("Try statement of actionPerformed");

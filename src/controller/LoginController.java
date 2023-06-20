@@ -21,15 +21,14 @@ public class LoginController {
     {
         this.view=view;
         
-        view.addLoginListner(new LoginListener());
+        new LoginListener().actionPerformed();
         
         
     }
-    class LoginListener implements ActionListener
+    class LoginListener
     {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed() {
             try
             {
                 model=view.getUser();

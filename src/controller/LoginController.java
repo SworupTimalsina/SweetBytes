@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import model.*;
 import view.*;
 import java.sql.*;
+import view.DashboardView;
 public class LoginController {
     LoginModel model;
     LoginView view;
@@ -35,6 +36,11 @@ public class LoginController {
                 if(checkUser(model))
                 {
                     view.setMessage("Login Successfully");
+                    
+                    DashboardView DBV = new DashboardView();
+                    DBV.show();
+                    
+
                 }
                 else
                 {
@@ -50,8 +56,8 @@ public class LoginController {
         }
         public boolean checkUser(LoginModel user) throws Exception
         {
-             Class.forName("com.mysql.cj.jdbc.Driver");
-               Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
           String sql="select * from creds where u_name='"+user.getUsername()+"' AND pass='"+user.getPassword()+"'";
           try
           {
@@ -74,6 +80,8 @@ public class LoginController {
         }
         
     }
+  
+    
     
 }
 

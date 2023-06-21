@@ -7,12 +7,11 @@ import model.*;
 import Database.MyConnector;
 
 public class CustomerDAO {
-    public boolean InsertRegistrationData(RegistrationModel model) {
+    public static boolean InsertRegistrationData(RegistrationModel model) {
         /*
         * Inserts the data from registration page to database.
         */
             try{
-                
                 System.out.println("Try statement of InsertRegistration");
                 Connection conn=MyConnector.dbConnect();
                 Statement stmt=conn.createStatement();

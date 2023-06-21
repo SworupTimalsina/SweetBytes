@@ -46,7 +46,7 @@ public class Forgotpwd extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(410, 150));
 
-        bgpanel.setBackground(new java.awt.Color(253, 200, 227));
+        bgpanel.setBackground(new java.awt.Color(252, 230, 209));
         bgpanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5), "Reset Password", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 24))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -188,8 +188,9 @@ public class Forgotpwd extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-//        setVisible(false);
-//        new Login().setVisible(true);
+        LoginView LV = new LoginView();
+        LV.show();
+        dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

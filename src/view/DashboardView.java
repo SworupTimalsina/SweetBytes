@@ -120,6 +120,11 @@ public class DashboardView extends javax.swing.JFrame {
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
+        btnAboutUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAboutUsActionPerformed(evt);
+            }
+        });
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
@@ -127,6 +132,11 @@ public class DashboardView extends javax.swing.JFrame {
         btnContactUs.setText("CONTACT US");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
+        btnContactUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContactUsActionPerformed(evt);
+            }
+        });
 
         lblWCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         lblWCakes.setText("Wedding Cakes");
@@ -168,6 +178,11 @@ public class DashboardView extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jButton3.setText("Browse Now");
         jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -201,7 +216,7 @@ public class DashboardView extends javax.swing.JFrame {
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCartActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -211,20 +226,19 @@ public class DashboardView extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(76, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(lblCCakes)
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(164, 164, 164))))
+                .addComponent(lblCCakes)
+                .addGap(70, 70, 70))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(224, 224, 224)
                 .addComponent(lblCCakes)
-                .addGap(43, 43, 43)
+                .addGap(47, 47, 47)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -310,7 +324,7 @@ public class DashboardView extends javax.swing.JFrame {
         btnProfile.setBackground(Color.pink);
         Profile JFI = new Profile();
         JFI.show();
-//        dispose();
+//       dispose();
         
     }//GEN-LAST:event_btnProfileActionPerformed
 
@@ -334,6 +348,30 @@ public class DashboardView extends javax.swing.JFrame {
         CV.show();
 //        dispose();
     }//GEN-LAST:event_btnCartActionPerformed
+
+    private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
+        // TODO add your handling code here:
+        ContactUs CoV = new ContactUs();
+        CoV.show();
+        
+    }//GEN-LAST:event_btnContactUsActionPerformed
+
+    private void btnAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutUsActionPerformed
+        // TODO add your handling code here:
+        AboutUs AV = new AboutUs();
+        AV.show();
+//      
+    }//GEN-LAST:event_btnAboutUsActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        CustomizeCakeView CaV = new CustomizeCakeView();
+        CaV.show();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

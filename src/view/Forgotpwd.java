@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 import java.sql.*;
 import javax.swing.JOptionPane;
 //import Database.MyConnection; 
 import java.sql.DriverManager;
-/**
- *
- * @author DELL
- */
+
+
 public class Forgotpwd extends javax.swing.JFrame {
 
     /**

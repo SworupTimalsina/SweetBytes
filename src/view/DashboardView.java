@@ -6,15 +6,7 @@ import javax.swing.JFrame;
 import view.JFrameItems;
 import view.Profile;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author pemagurung
- */
 public class DashboardView extends javax.swing.JFrame {
 
     /**

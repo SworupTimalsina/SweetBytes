@@ -3,24 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/RegistrationView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/AboutUs.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/RegistrationModel.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/LoginModel.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/mvcRegistration/mvcRegistration.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/RegistrationController.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/LoginController.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/dao/CustomerDAO.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ContactUs.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/Profile.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/Forgotpwd.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/CartView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/RegisterView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/LoginView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/sweetbytes/SweetBytes.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/DashboardView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/Regulations/RegistrationPageRegulation.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/CustomizeCakeView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/ContactUs.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/dao/CustomerDAO.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/RegistrationView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/RegistrationController.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/LoginView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/Database/MyConnector.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/Regulations/RegistrationPageRegulation.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

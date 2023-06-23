@@ -3,12 +3,12 @@ package Regulations;
 import java.sql.*;
 
 import model.*;
-import controller.MyConnector;
+import Database.MyConnector;
 
 
 public class RegistrationPageRegulation {
     /*
-    A class that validates the user given information.
+    * A class that validates the user given information.
     */
     RegistrationModel model;
     public RegistrationPageRegulation(){}
@@ -17,29 +17,57 @@ public class RegistrationPageRegulation {
     }
     
     public String CheckRegistrationPageRegulation(RegistrationModel model){
-        if (BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
-            if (UsernameNotTaken(model.getUsername())){
-                return "ok";
-            }
+        /*
+        * main function that checks every regulation.
+        * @return "ok" if everything is valid.
+        * @return corresponding error message.
+        */
+        String firstCheck=FieldEmptyCheck(model);
+        if (firstCheck.equals("ok")){
+            
+        
+            if (!BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
+                return "Passwords does not match";
+                }
+
             else{
-                return "Username is taken";
+                if (!UsernameTaken(model.getUsername())){
+                    return "ok";
+                }
+                else{
+                    return "Username is taken";
+                }
             }
         }
         else{
-            return "Passwords does not match";
+            return firstCheck;
         }
     }
     public String CheckRegistrationPageRegulation(){
-        if (BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
-            if (UsernameNotTaken(model.getUsername())){
-                return "ok";
-            }
+        /*
+        * main function that checks every regulation.
+        * @return "ok" if everything is valid.
+        * @return corresponding error message.
+        */
+        String firstCheck=FieldEmptyCheck();
+        if (firstCheck.equals("ok")){
+            
+        
+            if (!BothPasswordsMatch()){
+                return "Passwords does not match";
+                }
+
             else{
-                return "Username is taken";
+                if (!UsernameTaken()){
+                    return "ok";
+                }
+                else{
+                    return "Username taken";
+                }
             }
         }
         else{
-            return "Passwords does not match";
+            return firstCheck;
         }
     }
     
@@ -70,10 +98,10 @@ public class RegistrationPageRegulation {
     }
     
     
-    public boolean UsernameNotTaken(String username1){
+    public boolean UsernameTaken(String username1){
         /*
         * Checks if username is taken or not.
-        * @return true if not taken and false if username is taken.
+        * @return true if taken and false if username is not taken.
         */
         Connection conn = MyConnector.dbConnect();
         String sqlCommand="select * from creds where u_name='"+username1+"'";
@@ -82,18 +110,18 @@ public class RegistrationPageRegulation {
         try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sqlCommand);
-            return !rs.next();
+            return rs.next();
             
         }
         catch(Exception e){
-            System.out.println("Error in UsernameNotTaken: "+e);
+            System.out.println("Error in UsernameTaken: "+e);
         }
-        return false;
+        return true;
     }
-    public boolean UsernameNotTaken(){
+    public boolean UsernameTaken(){
         /*
         * Checks if username is taken or not.
-        * @return true if not taken and false if username is taken.
+        * @return true if taken and false if username is not taken.
         */
         Connection conn = MyConnector.dbConnect();
         String sqlCommand="select * from creds where u_name='"+model.getUsername()+"'";
@@ -102,16 +130,90 @@ public class RegistrationPageRegulation {
         try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sqlCommand);
-            return !rs.next();
-            
+            return rs.next();
         }
         catch(Exception e){
-            System.out.println("Error in UsernameNotTaken: "+e);
+            System.out.println("Error in UsernameTaken: "+e);
         }
-        return false;
+        return true;
     }
     
+    public String FieldEmptyCheck(RegistrationModel model){
+        /*
+        * Checks if the field are not left empty.
+        * @return "ok" if all fields are not left empty.
+        * @return corresponding error message.
+        */
+        if (model.getFirstName().isBlank()){
+            return "First name should not be empty";
+        }
+        else{
+            if (model.getLastName().isBlank()){
+                return "Last name should not be empty";
+            }
+            else{
+                if (model.getPassword().isBlank()){
+                    return "Passworld should not be empty";
+                }
+                else{
+                    if (model.getConfirmPassword().isBlank()){
+                        return "Repeat password should not be empty";
+                    }
+                    else{
+                        if (model.getEmail().isBlank()){
+                            return "Email should not be empty";
+                        }
+                        else{
+                            return "ok";
+                            }
+                        }
+                    }
+                }
+            }
+        }
     
-    
+        public String FieldEmptyCheck(){
+        /*
+        * Checks if the field are not left empty.
+        * @return "ok" if all fields are not left empty.
+        * @return corresponding error message.
+        */
+        if (model.getFirstName().isBlank()){
+            return "First name should not be empty";
+        }
+        else{
+            if (model.getLastName().isBlank()){
+                return "Last name should not be empty";
+            }
+            else{
+                if (model.getPassword().isBlank()){
+                    return "Passworld should not be empty";
+                }
+                else{
+                    if (model.getConfirmPassword().isBlank()){
+                        return "Repeat password should not be empty";
+                    }
+                    else{
+                        if (model.getEmail().isBlank()){
+                            return "Email should not be empty";
+                        }
+                        else{
+                            if (model.getUsername().isBlank()){
+                                return "Username should not be empty";
+                            }
+                            else{
+                                return "ok";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
+        
     public static void main(String[] args){}
+
 }
+    
+   

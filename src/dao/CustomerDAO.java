@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.*;
 import java.sql.PreparedStatement;
 
+
 import model.*;
 import Database.MyConnector;
 
@@ -156,5 +157,23 @@ public class CustomerDAO {
          
         }
         return false;
+    }
+
+    public static void main(String[] args){
+        String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
+        
+        firstName="testFname";
+        lastName="testLname";
+        email="test@email.com";
+        dateOfBirth="12-12-2003";
+        username="allan";
+        password="test";
+        confirmPassword="test";
+        security="What is the name of the test?";
+        answer="The name is test";
+                
+        RegistrationModel mod = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
+        
+        System.out.println(CustomerDAO.updateRegistrationData(mod));
     }
 }

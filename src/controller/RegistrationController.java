@@ -22,17 +22,13 @@ public class RegistrationController {
     RegistrationPageRegulation checkCreds;
     
     public RegistrationController(RegistrationView view){
-        System.out.println("RegistrationController class created");
         this.view=view;
         new RegistrationListener().actionPerformed();
     }
     class RegistrationListener {
         public void actionPerformed() {
-            System.out.println("Function Controller's actionPerformed");
             try{
-                System.out.println("Try statement of actionPerformed");
                 model=view.setNewUser();
-                
                 checkCreds=new RegistrationPageRegulation(model);
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
                 if(checkCredsResult.equals("ok")){
@@ -40,7 +36,6 @@ public class RegistrationController {
                     CustomerDAO.InsertRegistrationData(model);
                 }
                 else{
-                    System.out.println("else statement of actionPerformed");
                     view.displayMessage(checkCredsResult);
                 }
             }

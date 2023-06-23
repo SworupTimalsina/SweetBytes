@@ -124,7 +124,7 @@ LoginModel model;
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         LoginController l=new LoginController(this);
-        
+           
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed

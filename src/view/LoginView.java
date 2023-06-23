@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import java.awt.event.ActionListener;
@@ -10,6 +6,8 @@ import model.*;
 import controller.*;
 import view.Forgotpwd;
 import view.RegistrationView;
+
+
 public class LoginView extends javax.swing.JFrame {
 LoginModel model;
     public LoginView() {
@@ -111,7 +109,7 @@ LoginModel model;
         btnLogin.setBounds(440, 470, 130, 30);
 
         jLabel3.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\class\\LED projject 2\\desgin\\Loginpagee.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Loginpagee.png"))); // NOI18N
         jLabel3.setText("WELCOME");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, 0, 1010, 590);
@@ -126,11 +124,7 @@ LoginModel model;
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         LoginController l=new LoginController(this);
-     
-
-
-        
-        
+           
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed

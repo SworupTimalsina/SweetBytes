@@ -10,6 +10,7 @@ import view.*;
 import model.*;
 import Regulations.RegistrationPageRegulation;
 import Database.MyConnector;
+import dao.CustomerDAO;
 
 
 public class RegistrationController {
@@ -21,26 +22,20 @@ public class RegistrationController {
     RegistrationPageRegulation checkCreds;
     
     public RegistrationController(RegistrationView view){
-        System.out.println("RegistrationController class created");
         this.view=view;
-        view.addRegistrationListner(new RegistrationListener());
+        new RegistrationListener().actionPerformed();
     }
-    class RegistrationListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("Function Controller's actionPerformed");
+    class RegistrationListener {
+        public void actionPerformed() {
             try{
-                System.out.println("Try statement of actionPerformed");
                 model=view.setNewUser();
-                
                 checkCreds=new RegistrationPageRegulation(model);
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
                 if(checkCredsResult.equals("ok")){
                     view.displayMessage("User Registered");
-                    InsertRegistrationData();
+                    CustomerDAO.InsertRegistrationData(model);
                 }
                 else{
-                    System.out.println("else statement of actionPerformed");
                     view.displayMessage(checkCredsResult);
                 }
             }
@@ -49,22 +44,7 @@ public class RegistrationController {
             }
         }
         
-        private boolean InsertRegistrationData() {
-            try{
-                System.out.println("Try statement of InsertRegistration");
-                conn=MyConnector.dbConnect();
-                Statement stmt=conn.createStatement();
-                //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-                String sql = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
-                stmt.executeUpdate(sql);
-                return true;
-            }
-            catch(Exception e){
-                System.out.println("Else statement of InsertRegistration");
-                System.out.println("Error message in InsertRegistrationData: "+e);
-                return false;
-            }
-        } 
+        
     }
 }
 

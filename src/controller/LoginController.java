@@ -1,21 +1,22 @@
-
 package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.*;
+
 import model.*;
 import view.*;
-import java.sql.*;
 import view.DashboardView;
-
+import Database.MyConnector;
 
 public class LoginController {
     LoginModel model;
     LoginView view;
     ResultSet rs;
     Statement stmt;
+    Connection conn;
     public LoginController(LoginView view)
     {
         this.view=view;
@@ -36,9 +37,7 @@ public class LoginController {
                     view.setMessage("Login Successfully");
                     
                     DashboardView DBV = new DashboardView();
-                    DBV.show();
-                    
-                                                          
+                    DBV.show();                                
                 }
                 else
                 {
@@ -54,8 +53,8 @@ public class LoginController {
         }
         public boolean checkUser(LoginModel user) throws Exception
         {
-          Class.forName("com.mysql.cj.jdbc.Driver");
-          Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
+          conn=MyConnector.dbConnect();
+          
           String sql="select * from creds where u_name='"+user.getUsername()+"' AND pass='"+user.getPassword()+"'";
           try
           {

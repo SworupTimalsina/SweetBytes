@@ -197,7 +197,6 @@ public class RegistrationView extends javax.swing.JFrame {
     }//GEN-LAST:event_secActionPerformed
     
     public RegistrationModel setNewUser(){
-        
         String DOB=yearField.getSelectedItem().toString()+"-"+ConvertDateToNum(monthField.getSelectedItem().toString())+"-"+dayField.getSelectedItem().toString();
         model = new RegistrationModel(fnameField.getText(), lnameField.getText(), emailField.getText(), DOB, unameField1.getText(), passwordField.getText(), repeatPasswordField.getText(),sec.getText(), aans.getText());
         return model;
@@ -205,7 +204,8 @@ public class RegistrationView extends javax.swing.JFrame {
     
     private String ConvertDateToNum(String date){
         /*
-        * Takes month names and returns the corresponding numeric value.
+        * Takes month names in String
+        * @return the corresponding numeric value.
         */
         switch (date){
             case "Jan":
@@ -242,30 +242,24 @@ public class RegistrationView extends javax.swing.JFrame {
     }
     
     public void addRegistrationListner(ActionListener log){
-        System.out.println("Function addRegistrationListener called");
         RegisterButton.addActionListener(log);
     }
     
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        System.out.println("Register Button clicked");
         RegistrationController c1= new RegistrationController(this);
-        
     }//GEN-LAST:event_RegisterButtonActionPerformed
 
     private void dayFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayFieldActionPerformed
-        // TODO add your handling code here:
-        
     }//GEN-LAST:event_dayFieldActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
         LoginView LV = new LoginView();
         LV.show();
         dispose();
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void unameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_unameField1ActionPerformed
 
     private void aansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aansActionPerformed

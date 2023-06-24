@@ -1,24 +1,14 @@
 package controller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.*;
-
 import view.*;
 import model.*;
 import Regulations.RegistrationPageRegulation;
-import Database.MyConnector;
 import dao.CustomerDAO;
 
 
 public class RegistrationController {
     RegistrationModel model;
     RegistrationView view;
-    ResultSet rs;
-    Statement stmt;
-    Connection conn;
     RegistrationPageRegulation checkCreds;
     
     public RegistrationController(RegistrationView view){
@@ -28,14 +18,14 @@ public class RegistrationController {
     class RegistrationListener {
         public void actionPerformed() {
             try{
-                model=view.setNewUser();
-                checkCreds=new RegistrationPageRegulation(model);
-                String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();
-                if(checkCredsResult.equals("ok")){
+                model=view.setNewUser();// sets all the new given value from registration page to the model
+                checkCreds=new RegistrationPageRegulation(model);// creates a new instance of regulations
+                String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
+                if(checkCredsResult.equals("ok")){// if every information provided is valid.
                     view.displayMessage("User Registered");
                     CustomerDAO.InsertRegistrationData(model);
                 }
-                else{
+                else{// displays a suitable error message pop up.
                     view.displayMessage(checkCredsResult);
                 }
             }

@@ -25,55 +25,45 @@ public class LoginController {
         
         
     }
-    class LoginListener
-    {
+    class LoginListener{
 
         public void actionPerformed() {
-            try
-            {
+            try{
                 model=view.getUser();
-                if(checkUser(model))
-                {
+                if(checkUser(model)){
                     view.setMessage("Login Successfully");
                     
                     DashboardView DBV = new DashboardView();
                     DBV.show();                                
                 }
-                else
-                {
+                else{
                     view.setMessage("Invalid username or password");
-                    
                 }
             }
-            catch(Exception e1)
-            {
-                
-            }
-
+            catch(Exception e1){}
         }
-        public boolean checkUser(LoginModel user) throws Exception
-        {
+        
+        public boolean checkUser(LoginModel user) throws Exception{
+            /*
+            * Checks if username and password matches with database.
+            * @return true if username and password matches with database.
+            * @return false if it does not match.
+            */
           conn=MyConnector.dbConnect();
           
           String sql="select * from creds where u_name='"+user.getUsername()+"' AND pass='"+user.getPassword()+"'";
-          try
-          {
+          try{
             stmt=conn.createStatement();
             rs=stmt.executeQuery(sql);
-             if(rs.next())
-             {
+             if(rs.next()){
                  return true;
              }
              conn.close();
-            
-          
-          }
-          catch(Exception e2)
-          {
+         }
+          catch(Exception e2){
               System.out.println(e2.getMessage());
           }         
-            
-            return false;
+           return false;
         }
         
     }

@@ -23,15 +23,12 @@ public class RegistrationPageRegulation {
         * @return corresponding error message.
         */
         String firstCheck=FieldEmptyCheck(model);
-        if (firstCheck.equals("ok")){
-            
-        
-            if (!BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
+        if (firstCheck.equals("ok")){// Checks if any fields are left empty.
+            if (!BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){// Checks if both passwords match
                 return "Passwords does not match";
                 }
-
             else{
-                if (!UsernameTaken(model.getUsername())){
+                if (!UsernameTaken(model.getUsername())){// Checks if username is taken.
                     return "ok";
                 }
                 else{
@@ -164,15 +161,25 @@ public class RegistrationPageRegulation {
                             return "Email should not be empty";
                         }
                         else{
-                            return "ok";
+                            if (model.getSecurity().isBlank()){
+                                return "Security Question should not be empty";
+                            }
+                            else{
+                                if (model.getAnswer().isBlank()){
+                                   return "Security answer should not be empty";
+                                }
+                                else{
+                                    return "ok";
+                                }
                             }
                         }
                     }
                 }
             }
         }
+    }
     
-        public String FieldEmptyCheck(){
+    public String FieldEmptyCheck(){
         /*
         * Checks if the field are not left empty.
         * @return "ok" if all fields are not left empty.
@@ -202,7 +209,17 @@ public class RegistrationPageRegulation {
                                 return "Username should not be empty";
                             }
                             else{
-                                return "ok";
+                               if (model.getSecurity().isBlank()){
+                                   return "Security Question should not be empty";
+                               }
+                               else{
+                                   if (model.getAnswer().isBlank()){
+                                       return "Security answer should not be empty";
+                                   }
+                                   else{
+                                       return DateSelected();
+                                   }
+                               }
                             }
                         }
                     }
@@ -210,10 +227,37 @@ public class RegistrationPageRegulation {
             }
         }
     }
+     
+    public String DateSelected(){
+        /*
+        * Checks if dates are selected or not.
+        * @return "ok" if the dates are selected.
+        */
         
+        String[] date=model.getDateOfBirth().split("-");// year-month-day
+        if (!date[0].equals("year")){
+            if (!date[1].equals("invalid")){
+                if (!date[2].equals("day")){
+                    return "ok";
+                }
+                else{
+                    return "day not selected";
+                }
+            }
+            else{
+                return "month not selected";
+            }
+        }
+        else{
+            return "year not selected";
+        }
+        
+    }
+    
+    
         
     public static void main(String[] args){}
-
+        
 }
     
    

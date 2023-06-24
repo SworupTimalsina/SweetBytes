@@ -86,7 +86,7 @@ LoginModel model;
         btnLogin1.setBackground(new java.awt.Color(239, 215, 154));
         btnLogin1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
         btnLogin1.setForeground(new java.awt.Color(0, 0, 0));
-        btnLogin1.setText("REgister");
+        btnLogin1.setText("Register");
         btnLogin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogin1ActionPerformed(evt);

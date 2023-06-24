@@ -12,6 +12,35 @@ import Database.MyConnector;
 
 public class CustomerDAO {
     
+    public static boolean CreateRegistrationTable(){
+        /*
+        * Create a new database creds
+        * @return true if created successfully.
+        * @return false if unsuccessful with corresponding error message printed
+        */
+        Connection conn = MyConnector.dbConnect();
+        String sqlCommand="create table Creds(e_id int primary key auto_increment, f_name varchar(50), l_name varchar(50), email varchar(70), DOB date, u_name varchar(50), pass varchar(50), securityQ varchar(255), answer varchar(255));";
+        
+        try{
+            Statement stmt=conn.createStatement();
+            stmt.execute(sqlCommand);
+            return true;
+        }
+        catch(Exception e){
+            System.out.println("Error message in CustomerDAO.CreateRegistrationTable: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error in CustomerDAO.CreateRegistrationTable.finally: "+ e);
+            }
+        }
+        
+        return false;
+    }
+    
     public static boolean InsertRegistrationData(RegistrationModel model) {
         /*
         * Inserts the data from registration page to database.
@@ -23,8 +52,9 @@ public class CustomerDAO {
         try{
             Statement stmt=conn.createStatement();
             //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-            String sql = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
-            stmt.executeUpdate(sql);
+            String sqlCommand = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
+            stmt.executeUpdate(sqlCommand);
+            searchRegistrationData(model);// to assign e_id.
             return true;
         }
         catch(Exception e){
@@ -51,18 +81,21 @@ public class CustomerDAO {
         PreparedStatement preStmt = null;
         Connection conn = MyConnector.dbConnect();
         
-        String sqlCommand="UPDATE creds SET f_name=?, l_name=?, email=?, DOB=?, u_name=?, pass=?, securityQ=?, answer=? WHERE u_name=?";
+        String sqlCommand="UPDATE creds SET e_id=?, f_name=?, l_name=?, email=?, DOB=?, u_name=?, pass=?, securityQ=?, answer=? WHERE u_name=?";
     
         try{
             preStmt=conn.prepareStatement(sqlCommand);
-            preStmt.setString(1,model.getFirstName());
-            preStmt.setString(2,model.getLastName());
-            preStmt.setString(3,model.getEmail());
-            preStmt.setString(4,model.getDateOfBirth());
-            preStmt.setString(5,model.getUsername());
-            preStmt.setString(6,model.getPassword());
-            preStmt.setString(7,model.getSecurity());
-            preStmt.setString(8,model.getAnswer());
+            preStmt.setInt(1,model.getId());
+            preStmt.setString(2,model.getFirstName());
+            preStmt.setString(3,model.getLastName());
+            preStmt.setString(4,model.getEmail());
+            preStmt.setString(5,model.getDateOfBirth());
+            preStmt.setString(6,model.getUsername());
+            preStmt.setString(7,model.getPassword());
+            preStmt.setString(8,model.getSecurity());
+            preStmt.setString(9,model.getAnswer());
+            preStmt.setString(10, model.getUsername());
+            
             preStmt.execute();
             
             return true;
@@ -128,6 +161,7 @@ public class CustomerDAO {
             preStmt.setString(1, model.getUsername());
             rs=preStmt.executeQuery();
             if (rs.next()){
+                model.setId(Integer.parseInt(rs.getString("e_id")));
                 model.setFirstName(rs.getString("f_name"));
                 model.setLastName(rs.getString("l_name"));
                 model.setEmail(rs.getString("email"));
@@ -160,20 +194,19 @@ public class CustomerDAO {
     }
 
     public static void main(String[] args){
+        // Testing methods.
         String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
         
         firstName="testFname";
         lastName="testLname";
         email="test@email.com";
-        dateOfBirth="12-12-2003";
-        username="allan";
+        dateOfBirth="2003-12-12";
+        username="godf";
         password="test";
         confirmPassword="test";
         security="What is the name of the test?";
         answer="The name is test";
                 
         RegistrationModel mod = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
-        
-        System.out.println(CustomerDAO.updateRegistrationData(mod));
     }
 }

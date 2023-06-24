@@ -10,6 +10,7 @@ import model.*;
 import view.*;
 import view.DashboardView;
 import Database.MyConnector;
+import dao.CustomerDAO;
 
 public class LoginController {
     LoginModel model;
@@ -43,29 +44,28 @@ public class LoginController {
             catch(Exception e1){}
         }
         
+        
+        
         public boolean checkUser(LoginModel user) throws Exception{
             /*
             * Checks if username and password matches with database.
             * @return true if username and password matches with database.
             * @return false if it does not match.
             */
-          conn=MyConnector.dbConnect();
-          
-          String sql="select * from creds where u_name='"+user.getUsername()+"' AND pass='"+user.getPassword()+"'";
-          try{
-            stmt=conn.createStatement();
-            rs=stmt.executeQuery(sql);
-             if(rs.next()){
-                 return true;
-             }
-             conn.close();
-         }
-          catch(Exception e2){
-              System.out.println(e2.getMessage());
-          }         
-           return false;
+            RegistrationModel model = new RegistrationModel();
+            model.setUsername(user.getUsername());
+            if (CustomerDAO.searchRegistrationData(model)){
+                if (model.getPassword().equals(user.getPassword())){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
         }
-        
     }
   
     

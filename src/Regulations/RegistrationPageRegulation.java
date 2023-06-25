@@ -169,7 +169,7 @@ public class RegistrationPageRegulation {
                                    return "Security answer should not be empty";
                                 }
                                 else{
-                                    return "ok";
+                                    return DateSelected();
                                 }
                             }
                         }

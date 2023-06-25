@@ -124,7 +124,7 @@ public class DashboardView extends javax.swing.JFrame {
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnContactUs.setText("CONTACT US");
+        btnContactUs.setText("DETAILS");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {
@@ -133,11 +133,17 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, java.awt.Color.black));
         jPanel2.setLayout(null);
 
         lblWCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         lblWCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblWCakes.setText("Wedding Cakes");
+        lblWCakes.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                lblWCakesPropertyChange(evt);
+            }
+        });
         jPanel2.add(lblWCakes);
         lblWCakes.setBounds(120, 220, 179, 32);
 
@@ -341,6 +347,10 @@ public class DashboardView extends javax.swing.JFrame {
         CustomizeCakeView CaV = new CustomizeCakeView();
         CaV.show();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void lblWCakesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lblWCakesPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblWCakesPropertyChange
 
     /**
      * @param args the command line arguments

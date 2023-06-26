@@ -226,7 +226,7 @@ public class Forgotpwd extends javax.swing.JFrame {
 //                 new Login().setVisible(true);
              }
              else
-                 JOptionPane.showMessageDialog(null,"Please provide correct Answer");
+                 JOptionPane.showMessageDialog(null,"Please provide correct answer");
              
         }
         catch(Exception e){

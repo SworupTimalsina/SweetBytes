@@ -197,12 +197,12 @@ public class RegistrationView extends javax.swing.JFrame {
     }//GEN-LAST:event_secActionPerformed
     
     public RegistrationModel setNewUser(){
-        String DOB=yearField.getSelectedItem().toString()+"-"+ConvertDateToNum(monthField.getSelectedItem().toString())+"-"+dayField.getSelectedItem().toString();
+        String DOB=yearField.getSelectedItem().toString()+"-"+convertDateToNum(monthField.getSelectedItem().toString())+"-"+dayField.getSelectedItem().toString();
         model = new RegistrationModel(fnameField.getText(), lnameField.getText(), emailField.getText(), DOB, unameField1.getText(), passwordField.getText(), repeatPasswordField.getText(),sec.getText(), aans.getText());
         return model;
     }
     
-    private String ConvertDateToNum(String date){
+    private String convertDateToNum(String date){
         /*
         * Takes month names in String
         * @return the corresponding numeric value.

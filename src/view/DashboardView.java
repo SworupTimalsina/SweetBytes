@@ -3,16 +3,20 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JFrame;
+
 import view.JFrameItems;
 import view.Profile;
+import model.*;
 
 
 public class DashboardView extends javax.swing.JFrame {
 
+    RegistrationModel rModel;
     /**
      * Creates new form HomeAndItems
      */
-    public DashboardView() {
+    public DashboardView(RegistrationModel rModel) {
+        this.rModel=rModel;
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
@@ -298,6 +302,8 @@ public class DashboardView extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnProfile.setBackground(Color.pink);
         Profile JFI = new Profile();
+        JFI.fillCustomersData(rModel);
+        
         JFI.show();
 //       dispose();
         
@@ -305,7 +311,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-        DashboardView DaB = new DashboardView();
+        DashboardView DaB = new DashboardView(rModel);
         DaB.show();
 //        dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
@@ -382,10 +388,10 @@ public class DashboardView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+        RegistrationModel rModel= new RegistrationModel();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardView().setVisible(true);
+                new DashboardView(rModel).setVisible(true);
                 
             }
             

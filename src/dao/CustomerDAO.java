@@ -41,7 +41,7 @@ public class CustomerDAO {
         return false;
     }
     
-    public static boolean InsertRegistrationData(RegistrationModel model) {
+    public static boolean InsertRegistrationData(RegistrationModel rmodel) {
         /*
         * Inserts the data from registration page to database.
         * @return true if successful.
@@ -52,9 +52,9 @@ public class CustomerDAO {
         try{
             Statement stmt=conn.createStatement();
             //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-            String sqlCommand = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+model.getFirstName()+"','"+model.getLastName()+"','"+model.getEmail()+"','"+model.getDateOfBirth()+"','"+model.getUsername()+"','"+model.getPassword()+"','"+model.getSecurity()+"','"+model.getAnswer()+"')";
+            String sqlCommand = "insert into creds(f_name, l_name, email, DOB, u_name, pass, securityQ, answer) values('"+rmodel.getFirstName()+"','"+rmodel.getLastName()+"','"+rmodel.getEmail()+"','"+rmodel.getDateOfBirth()+"','"+rmodel.getUsername()+"','"+rmodel.getPassword()+"','"+rmodel.getSecurity()+"','"+rmodel.getAnswer()+"')";
             stmt.executeUpdate(sqlCommand);
-            searchRegistrationData(model);// to assign e_id.
+            searchRegistrationData(rmodel);// to assign e_id.
             return true;
         }
         catch(Exception e){
@@ -71,7 +71,7 @@ public class CustomerDAO {
         return false;
     }
     
-    public static boolean updateRegistrationData(RegistrationModel model){
+    public static boolean updateRegistrationData(RegistrationModel rmodel){
         /*
         * Updates the conn table.
         * @return true if successfull.
@@ -85,16 +85,16 @@ public class CustomerDAO {
     
         try{
             preStmt=conn.prepareStatement(sqlCommand);
-            preStmt.setInt(1,model.getId());
-            preStmt.setString(2,model.getFirstName());
-            preStmt.setString(3,model.getLastName());
-            preStmt.setString(4,model.getEmail());
-            preStmt.setString(5,model.getDateOfBirth());
-            preStmt.setString(6,model.getUsername());
-            preStmt.setString(7,model.getPassword());
-            preStmt.setString(8,model.getSecurity());
-            preStmt.setString(9,model.getAnswer());
-            preStmt.setString(10, model.getUsername());
+            preStmt.setInt(1,rmodel.getId());
+            preStmt.setString(2,rmodel.getFirstName());
+            preStmt.setString(3,rmodel.getLastName());
+            preStmt.setString(4,rmodel.getEmail());
+            preStmt.setString(5,rmodel.getDateOfBirth());
+            preStmt.setString(6,rmodel.getUsername());
+            preStmt.setString(7,rmodel.getPassword());
+            preStmt.setString(8,rmodel.getSecurity());
+            preStmt.setString(9,rmodel.getAnswer());
+            preStmt.setString(10, rmodel.getUsername());
             
             preStmt.execute();
             
@@ -113,7 +113,8 @@ public class CustomerDAO {
         }
         return false;
     }   
-    public static boolean deleteRegistrationData(RegistrationModel model){
+    
+    public static boolean deleteRegistrationData(RegistrationModel rmodel){
         /*
         * Deletes a row from the creds table according to the username.
         * @return true if successfull.
@@ -126,7 +127,7 @@ public class CustomerDAO {
         
         try{
             preStmt=conn.prepareStatement(sqlCommand);
-            preStmt.setString(1, model.getUsername());
+            preStmt.setString(1, rmodel.getUsername());
             preStmt.execute();
             return true;
         }
@@ -144,32 +145,32 @@ public class CustomerDAO {
         return false;
     }
     
-    public static boolean searchRegistrationData(RegistrationModel model){
+    public static boolean searchRegistrationData(RegistrationModel rmodel){
         /*
-        * Searches for the full detail of the username and sets the value to the model.
+        * Searches for the full detail of the username and sets the value to the rmodel.
         * @return true if successfull.
         * @return false if unsuccessfull with corressponding error message printed.
         */
-        PreparedStatement preStmt = null;
-        ResultSet rs=null;
+        PreparedStatement preStmt;
+        ResultSet rs;
         Connection conn=MyConnector.dbConnect();
         
         String sqlCommand="SELECT * FROM creds WHERE u_name=?";
         
         try{
             preStmt=conn.prepareStatement(sqlCommand);
-            preStmt.setString(1, model.getUsername());
+            preStmt.setString(1, rmodel.getUsername());
             rs=preStmt.executeQuery();
             if (rs.next()){
-                model.setId(Integer.parseInt(rs.getString("e_id")));
-                model.setFirstName(rs.getString("f_name"));
-                model.setLastName(rs.getString("l_name"));
-                model.setEmail(rs.getString("email"));
-                model.setDateOfBirth(rs.getString("DOB"));
-                model.setUsername(rs.getString("u_name"));
-                model.setPassword(rs.getString("pass"));
-                model.setSecurityQ(rs.getString("securityQ"));
-                model.setAnswer(rs.getString("answer"));
+                rmodel.setId(Integer.parseInt(rs.getString("e_id")));
+                rmodel.setFirstName(rs.getString("f_name"));
+                rmodel.setLastName(rs.getString("l_name"));
+                rmodel.setEmail(rs.getString("email"));
+                rmodel.setDateOfBirth(rs.getString("DOB"));
+                rmodel.setUsername(rs.getString("u_name"));
+                rmodel.setPassword(rs.getString("pass"));
+                rmodel.setSecurityQ(rs.getString("securityQ"));
+                rmodel.setAnswer(rs.getString("answer"));
                 
                 return true;
             }
@@ -207,6 +208,6 @@ public class CustomerDAO {
         security="What is the name of the test?";
         answer="The name is test";
                 
-        RegistrationModel mod = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
+        RegistrationModel rmodel = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
     }
 }

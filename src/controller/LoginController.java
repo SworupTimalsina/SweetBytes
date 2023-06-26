@@ -18,6 +18,8 @@ public class LoginController {
     ResultSet rs;
     Statement stmt;
     Connection conn;
+    RegistrationModel rModel;
+            
     public LoginController(LoginView view)
     {
         this.view=view;
@@ -34,7 +36,7 @@ public class LoginController {
                 if(checkUser(model)){
                     view.setMessage("Login Successfully");
                     
-                    DashboardView DBV = new DashboardView();
+                    DashboardView DBV = new DashboardView(rModel);
                     DBV.show();                                
                 }
                 else{
@@ -52,10 +54,10 @@ public class LoginController {
             * @return true if username and password matches with database.
             * @return false if it does not match.
             */
-            RegistrationModel model = new RegistrationModel();
-            model.setUsername(user.getUsername());
-            if (CustomerDAO.searchRegistrationData(model)){
-                if (model.getPassword().equals(user.getPassword())){
+            rModel = new RegistrationModel();
+            rModel.setUsername(user.getUsername());
+            if (CustomerDAO.searchRegistrationData(rModel)){
+                if (rModel.getPassword().equals(user.getPassword())){
                     return true;
                 }
                 else{

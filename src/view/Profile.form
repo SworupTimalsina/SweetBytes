@@ -133,8 +133,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="369" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton1" pref="218" max="32767" attributes="0"/>
-                              <Component id="jButton2" max="32767" attributes="0"/>
+                              <Component id="updateProfileButton" pref="218" max="32767" attributes="0"/>
+                              <Component id="deleteProfileButton" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -208,9 +208,9 @@
                       <Component id="dayComboBox" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="updateProfileButton" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="deleteProfileButton" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -667,15 +667,21 @@
             <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jLabel2PropertyChange"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="updateProfileButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="UPDATE PROFILE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateProfileButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="deleteProfileButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="DELETE PROFLE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteProfileButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -462,7 +462,12 @@ public class Profile extends javax.swing.JFrame {
 
     private void deleteProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfileButtonActionPerformed
         // TODO add your handling code here:
-        CustomerDAO.deleteRegistrationData(rModel);
+        if (CustomerDAO.deleteRegistrationData(rModel)){
+            JOptionPane.showMessageDialog(rootPane, "Successfully deleted account","Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Failed to delete account", "error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_deleteProfileButtonActionPerformed
 
     private String convertNumToDate(String date){

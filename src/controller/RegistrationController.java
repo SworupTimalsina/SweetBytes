@@ -22,11 +22,11 @@ public class RegistrationController {
                 checkCreds=new RegistrationPageRegulation(rModel);// creates a new instance of regulations
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
                 if(checkCredsResult.equals("ok")){// if every information provided is valid.
-                    view.displayMessage("User Registered");
+                    view.displayPlainMessage("User Registered", "Success");
                     CustomerDAO.InsertRegistrationData(rModel);
                 }
                 else{// displays a suitable error message pop up.
-                    view.displayMessage(checkCredsResult);
+                    view.displayErrorMessage(checkCredsResult);
                 }
             }
             catch(Exception e1){

@@ -6,19 +6,17 @@ import javax.swing.JFrame;
 
 import model.*;
 import dao.CustomerDAO;
+import javax.swing.JOptionPane;
 
 
 public class Profile extends javax.swing.JFrame {
-
+    RegistrationModel rModel;
     /**
      * Creates new form HomeAndItems
      */
     public Profile() {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        // For place holders in the fields
-        
-        
     }
 
     /**
@@ -56,8 +54,8 @@ public class Profile extends javax.swing.JFrame {
         btnProfile3 = new javax.swing.JButton();
         btnProfile4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        updateProfileButton = new javax.swing.JButton();
+        deleteProfileButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
@@ -234,9 +232,19 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("UPDATE PROFILE");
+        updateProfileButton.setText("UPDATE PROFILE");
+        updateProfileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateProfileButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("DELETE PROFLE");
+        deleteProfileButton.setText("DELETE PROFLE");
+        deleteProfileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteProfileButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -306,8 +314,8 @@ public class Profile extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(369, 369, 369)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(updateProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(deleteProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -363,9 +371,9 @@ public class Profile extends javax.swing.JFrame {
                     .addComponent(monthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(updateProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(deleteProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
 
@@ -439,6 +447,24 @@ public class Profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dayComboBoxActionPerformed
 
+    private void updateProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateProfileButtonActionPerformed
+        // TODO add your handling code here:
+        String DOB=yearComboBox.getSelectedItem().toString()+"-"+RegistrationView.convertDateToNum(monthComboBox.getSelectedItem().toString())+"-"+dayComboBox.getSelectedItem().toString();
+        RegistrationModel updateModel = new RegistrationModel(firstNameField.getText(), lastNameField.getText(), EmailField.getText(), DOB, usernameField.getText(), passwordField.getText(), repeatPasswordField.getText(), rModel.getSecurity(), rModel.getAnswer());
+        
+        if (CustomerDAO.updateRegistrationData(updateModel)){
+            JOptionPane.showMessageDialog(rootPane, "Successfully updated","Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Failed to Update Information", "error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_updateProfileButtonActionPerformed
+
+    private void deleteProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfileButtonActionPerformed
+        // TODO add your handling code here:
+        CustomerDAO.deleteRegistrationData(rModel);
+    }//GEN-LAST:event_deleteProfileButtonActionPerformed
+
     private String convertNumToDate(String date){
         /*
         * Takes month in number in String
@@ -476,7 +502,7 @@ public class Profile extends javax.swing.JFrame {
     
     public void fillCustomersData(RegistrationModel model){
         String[] date=model.getDateOfBirth().split("-");
-        
+        rModel=model;
         firstNameField.setText(model.getFirstName());
         lastNameField.setText(model.getLastName());
         usernameField.setText(model.getUsername());
@@ -539,9 +565,8 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JButton btnProfile3;
     private javax.swing.JButton btnProfile4;
     private javax.swing.JComboBox<String> dayComboBox;
+    private javax.swing.JButton deleteProfileButton;
     private javax.swing.JTextField firstNameField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -556,6 +581,7 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> monthComboBox;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField repeatPasswordField;
+    private javax.swing.JButton updateProfileButton;
     private javax.swing.JTextField usernameField;
     private javax.swing.JComboBox<String> yearComboBox;
     // End of variables declaration//GEN-END:variables

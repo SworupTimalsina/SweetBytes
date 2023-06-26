@@ -202,7 +202,7 @@ public class RegistrationView extends javax.swing.JFrame {
         return model;
     }
     
-    private String convertDateToNum(String date){
+    public static String convertDateToNum(String date){
         /*
         * Takes month names in String
         * @return the corresponding numeric value.
@@ -237,9 +237,14 @@ public class RegistrationView extends javax.swing.JFrame {
         }
     }
     
-    public void displayMessage(String message){
-        JOptionPane.showMessageDialog(this, message);
+    public void displayPlainMessage(String message, String title){
+        JOptionPane.showMessageDialog(this, message, title, JOptionPane.PLAIN_MESSAGE);
     }
+    
+    public void displayErrorMessage(String message){
+        JOptionPane.showMessageDialog(rootPane, message, "error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     
     public void addRegistrationListner(ActionListener log){
         RegisterButton.addActionListener(log);

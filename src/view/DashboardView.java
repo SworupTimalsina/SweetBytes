@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 import view.JFrameItems;
-import view.Profile;
+import view.ProfileView;
 import model.*;
 
 
@@ -301,10 +301,10 @@ public class DashboardView extends javax.swing.JFrame {
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
         btnProfile.setBackground(Color.pink);
-        Profile JFI = new Profile();
-        JFI.fillCustomersData(rModel);
+        ProfileView profilePage = new ProfileView();
+        profilePage.fillCustomersData(rModel);
         
-        JFI.show();
+        profilePage.show();
 //       dispose();
         
     }//GEN-LAST:event_btnProfileActionPerformed

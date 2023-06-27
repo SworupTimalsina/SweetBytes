@@ -2,9 +2,9 @@
 package model;
 
 
-public class RegistrationModel {
-    private String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
-    private int id;
+public class RegistrationModel{
+    String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
+    int id;
     
     public RegistrationModel(String firstName, String lastName, String email, String dateOfBirth, String username, String password, String confirmPassword, String security, String answer){
         this.firstName=firstName;
@@ -30,6 +30,7 @@ public class RegistrationModel {
         this.answer=null;
         this.id=0;
     }
+    
     
     public void setId(int id){
         this.id=id;

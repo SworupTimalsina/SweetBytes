@@ -35,12 +35,11 @@ public class LoginController {
                 model=view.getUser();
                 if(checkUser(model)){
                     view.setMessage("Login Successfully");
-                    
                     DashboardView DBV = new DashboardView(rModel);
                     DBV.show();                                
                 }
                 else{
-                    view.setMessage("Invalid username or password");
+                    view.setErrorMessage("Invalid username or password");
                 }
             }
             catch(Exception e1){}
@@ -56,13 +55,8 @@ public class LoginController {
             */
             rModel = new RegistrationModel();
             rModel.setUsername(user.getUsername());
-            if (CustomerDAO.searchRegistrationData(rModel)){
-                if (rModel.getPassword().equals(user.getPassword())){
-                    return true;
-                }
-                else{
-                    return false;
-                }
+            if (CustomerDAO.searchRegistrationData(rModel) && rModel.getPassword().equals(user.getPassword())){
+                return true;
             }
             else{
                 return false;

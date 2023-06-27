@@ -3,20 +3,27 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import model.*;
 import dao.CustomerDAO;
-import javax.swing.JOptionPane;
+import Regulations.*;
 
 
-public class Profile extends javax.swing.JFrame {
+public class ProfileView extends javax.swing.JFrame {
     RegistrationModel rModel;
+    ProfileModel pModel;
     /**
      * Creates new form HomeAndItems
      */
-    public Profile() {
+    public ProfileView() {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+    
+    public ProfileModel setNewProfile(RegistrationModel rModel){
+        pModel=(ProfileModel) this.rModel;
+        return pModel;
     }
 
     /**
@@ -450,14 +457,28 @@ public class Profile extends javax.swing.JFrame {
     private void updateProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateProfileButtonActionPerformed
         // TODO add your handling code here:
         String DOB=yearComboBox.getSelectedItem().toString()+"-"+RegistrationView.convertDateToNum(monthComboBox.getSelectedItem().toString())+"-"+dayComboBox.getSelectedItem().toString();
-        RegistrationModel updateModel = new RegistrationModel(firstNameField.getText(), lastNameField.getText(), EmailField.getText(), DOB, usernameField.getText(), passwordField.getText(), repeatPasswordField.getText(), rModel.getSecurity(), rModel.getAnswer());
-        
-        if (CustomerDAO.updateRegistrationData(updateModel)){
-            JOptionPane.showMessageDialog(rootPane, "Successfully updated","Success", JOptionPane.INFORMATION_MESSAGE);
+        var updateRegModel = new RegistrationModel(firstNameField.getText(), lastNameField.getText(), EmailField.getText(), DOB, usernameField.getText(), passwordField.getText(), repeatPasswordField.getText(), rModel.getSecurity(), rModel.getAnswer());
+        try{// sets corresponding e_id
+        updateRegModel.setId(CustomerDAO.find_e_id(rModel));
         }
-        else{
+        catch (Exception e){
+            System.out.println(e);
+        }
+        var checkCreds=new RegistrationPageRegulation(rModel);// creates a new instance of regulations
+        String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
+        if(checkCredsResult.equals("ok")){// if every information provided is valid.
+            
+            if (CustomerDAO.updateRegistrationData(updateRegModel)){
+                JOptionPane.showMessageDialog(rootPane, "Successfully updated","Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Failed to Update Information", "error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else{// displays a suitable error message pop up.
             JOptionPane.showMessageDialog(rootPane, "Failed to Update Information", "error", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_updateProfileButtonActionPerformed
 
     private void deleteProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfileButtonActionPerformed
@@ -505,15 +526,15 @@ public class Profile extends javax.swing.JFrame {
         }
     }
     
-    public void fillCustomersData(RegistrationModel model){
-        String[] date=model.getDateOfBirth().split("-");
-        rModel=model;
-        firstNameField.setText(model.getFirstName());
-        lastNameField.setText(model.getLastName());
-        usernameField.setText(model.getUsername());
-        passwordField.setText(model.getPassword());
-        repeatPasswordField.setText(model.getPassword());
-        EmailField.setText(model.getEmail());
+    public void fillCustomersData(RegistrationModel rModel){
+        String[] date=rModel.getDateOfBirth().split("-");
+        this.rModel=rModel;
+        firstNameField.setText(rModel.getFirstName());
+        lastNameField.setText(rModel.getLastName());
+        usernameField.setText(rModel.getUsername());
+        passwordField.setText(rModel.getPassword());
+        repeatPasswordField.setText(rModel.getPassword());
+        EmailField.setText(rModel.getEmail());
         dayComboBox.setSelectedItem(date[2]);
         monthComboBox.setSelectedItem(convertNumToDate(date[1]));
         yearComboBox.setSelectedItem(date[0]);
@@ -553,7 +574,7 @@ public class Profile extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profile().setVisible(true);
+                new ProfileView().setVisible(true);
                 
             }
             

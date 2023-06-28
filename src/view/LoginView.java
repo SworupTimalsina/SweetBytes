@@ -4,8 +4,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.*;
 import controller.*;
-import view.Forgotpwd;
-import view.RegistrationView;
 
 
 public class LoginView extends javax.swing.JFrame {
@@ -86,7 +84,7 @@ LoginModel model;
         btnLogin1.setBackground(new java.awt.Color(239, 215, 154));
         btnLogin1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
         btnLogin1.setForeground(new java.awt.Color(0, 0, 0));
-        btnLogin1.setText("REgister");
+        btnLogin1.setText("Register");
         btnLogin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogin1ActionPerformed(evt);
@@ -164,6 +162,9 @@ LoginModel model;
 public void setMessage(String msg)
 {
     JOptionPane.showMessageDialog(this, msg);
+}
+public void setErrorMessage(String msg){
+    JOptionPane.showMessageDialog(rootPane, msg, "Error", JOptionPane.ERROR_MESSAGE);
 }
 public void addLoginListner(ActionListener log)
 {

@@ -3,19 +3,26 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JFrame;
-import view.Items;
-import view.Profile;
+
+import model.*;
 
 
 public class DashboardView extends javax.swing.JFrame {
 
+    RegistrationModel rModel;
     /**
      * Creates new form HomeAndItems
      */
-    public DashboardView() {
+    public DashboardView(RegistrationModel rModel) {
+        this.rModel=rModel;
+      
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
+    }
+    
+    public DashboardView(){
+        initComponents();
     }
 
     /**
@@ -52,11 +59,11 @@ public class DashboardView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(252, 230, 209));
         jPanel1.setForeground(new java.awt.Color(255, 204, 204));
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
@@ -70,7 +77,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
-        btnCart.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnCart.setForeground(new java.awt.Color(0, 0, 0));
         btnCart.setText("CART");
         btnCart.setBorder(null);
@@ -83,7 +90,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
-        btnHome.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
@@ -97,7 +104,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
-        btnItems.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
@@ -110,7 +117,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
@@ -122,9 +129,9 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnContactUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnContactUs.setText("CONTACT US");
+        btnContactUs.setText("DETAILS");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {
@@ -133,11 +140,17 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, java.awt.Color.black));
         jPanel2.setLayout(null);
 
         lblWCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
         lblWCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblWCakes.setText("Wedding Cakes");
+        lblWCakes.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                lblWCakesPropertyChange(evt);
+            }
+        });
         jPanel2.add(lblWCakes);
         lblWCakes.setBounds(120, 220, 179, 32);
 
@@ -210,7 +223,7 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel4.add(jLabel3);
         jLabel3.setBounds(0, 0, 410, 570);
 
-        lblSweetBytes.setFont(new java.awt.Font("Noteworthy", 1, 24)); // NOI18N
+        lblSweetBytes.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         lblSweetBytes.setForeground(new java.awt.Color(0, 0, 0));
         lblSweetBytes.setText("Sweet Bytes");
 
@@ -291,37 +304,40 @@ public class DashboardView extends javax.swing.JFrame {
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
         btnProfile.setBackground(Color.pink);
-        Profile JFI = new Profile();
-        JFI.show();
+        ProfileView profilePage = new ProfileView();
+        profilePage.fillCustomersData(rModel);
+        
+        profilePage.show();
 //       dispose();
         
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-        DashboardView DaB = new DashboardView();
+        DashboardView DaB = new DashboardView(rModel);
         DaB.show();
-//        dispose();
+        dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
         Items JFI = new Items();
         JFI.show();
-//        dispose();
+        dispose();
     }//GEN-LAST:event_btnItemsActionPerformed
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
         // TODO add your handling code here:
         CartView CV = new CartView();
         CV.show();
-//        dispose();
+        dispose();
     }//GEN-LAST:event_btnCartActionPerformed
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
         ContactUs CoV = new ContactUs();
         CoV.show();
+        dispose();
         
     }//GEN-LAST:event_btnContactUsActionPerformed
 
@@ -329,6 +345,7 @@ public class DashboardView extends javax.swing.JFrame {
         // TODO add your handling code here:
         AboutUs AV = new AboutUs();
         AV.show();
+        dispose();
 //      
     }//GEN-LAST:event_btnAboutUsActionPerformed
 
@@ -338,9 +355,14 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        CustomizeCakeView CaV = new CustomizeCakeView();
-        CaV.show();
+        CustomizeCakeView CcV = new CustomizeCakeView();
+        CcV.show();
+  
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void lblWCakesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lblWCakesPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblWCakesPropertyChange
 
     /**
      * @param args the command line arguments
@@ -372,10 +394,10 @@ public class DashboardView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+        RegistrationModel rModel= new RegistrationModel();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardView().setVisible(true);
+                new DashboardView(rModel).setVisible(true);
                 
             }
             

@@ -101,7 +101,7 @@ public class Forgotpwd extends javax.swing.JFrame {
                             .addGap(31, 31, 31)
                             .addComponent(txtnpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(79, 79, 79)
+                            .addGap(71, 71, 71)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(51, 51, 51)
@@ -226,7 +226,7 @@ public class Forgotpwd extends javax.swing.JFrame {
 //                 new Login().setVisible(true);
              }
              else
-                 JOptionPane.showMessageDialog(null,"Please provide correct Username or Password");
+                 JOptionPane.showMessageDialog(null,"Please provide correct answer");
              
         }
         catch(Exception e){

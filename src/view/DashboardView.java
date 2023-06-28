@@ -4,8 +4,6 @@ package view;
 import java.awt.Color;
 import javax.swing.JFrame;
 
-import view.JFrameItems;
-import view.ProfileView;
 import model.*;
 
 

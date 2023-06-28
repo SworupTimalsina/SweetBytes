@@ -165,6 +165,9 @@ public void setMessage(String msg)
 {
     JOptionPane.showMessageDialog(this, msg);
 }
+public void setErrorMessage(String msg){
+    JOptionPane.showMessageDialog(rootPane, msg, "Error", JOptionPane.ERROR_MESSAGE);
+}
 public void addLoginListner(ActionListener log)
 {
     btnLogin.addActionListener(log);

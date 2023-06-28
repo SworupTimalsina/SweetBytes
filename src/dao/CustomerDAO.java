@@ -78,7 +78,7 @@ public class CustomerDAO {
         * @return false if unsuccessfull with corressponding error message printed.
         */
         
-        PreparedStatement preStmt = null;
+        PreparedStatement preStmt;
         Connection conn = MyConnector.dbConnect();
         
         String sqlCommand="UPDATE creds SET e_id=?, f_name=?, l_name=?, email=?, DOB=?, u_name=?, pass=?, securityQ=?, answer=? WHERE u_name=?";
@@ -120,7 +120,7 @@ public class CustomerDAO {
         * @return true if successfull.
         * @return false if unsuccessfull with corressponding error message printed.
         */
-        PreparedStatement preStmt=null;
+        PreparedStatement preStmt;
         Connection conn=MyConnector.dbConnect();
         
         String sqlCommand="DELETE FROM creds WHERE u_name=?";
@@ -194,6 +194,46 @@ public class CustomerDAO {
         return false;
     }
 
+    public static int find_e_id(RegistrationModel rmodel) throws Exception{
+        /*
+        * Searches for the e_id  of the username.
+        * @return the e_id.
+        
+        */
+        PreparedStatement preStmt;
+        ResultSet rs;
+        Connection conn=MyConnector.dbConnect();
+        
+        String sqlCommand="SELECT * FROM creds WHERE u_name=?";
+        
+        try{
+            preStmt=conn.prepareStatement(sqlCommand);
+            preStmt.setString(1, rmodel.getUsername());
+            rs=preStmt.executeQuery();
+            if (rs.next()){
+                return Integer.parseInt(rs.getString("e_id"));
+            }
+            else{
+                System.out.println("At CustomerDAO.find_e_id no username in database found");
+            }
+          
+        }
+        catch(Exception e){
+            System.out.println("Error in CustomerDAO.find_e_id: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error at CustomerDAO.find_e_id.try: "+e);
+            }
+         
+        }
+        throw new Exception("Error at CustomerDAO.find_e_id");
+        
+    }
+    
     public static void main(String[] args){
         // Testing methods.
         String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;

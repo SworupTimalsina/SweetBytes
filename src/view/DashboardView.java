@@ -322,7 +322,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
-        JFrameItems JFI = new JFrameItems();
+        Items JFI = new Items();
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed

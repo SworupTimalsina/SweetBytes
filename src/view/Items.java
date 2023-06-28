@@ -572,7 +572,7 @@ public class Items extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        Profile JFI = new Profile();
+        ProfileView JFI = new ProfileView();
         JFI.show();
     }//GEN-LAST:event_btnProfileActionPerformed
 

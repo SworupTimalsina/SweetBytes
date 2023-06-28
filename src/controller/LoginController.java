@@ -9,15 +9,11 @@ import java.sql.*;
 import model.*;
 import view.*;
 import view.DashboardView;
-import Database.MyConnector;
 import dao.CustomerDAO;
 
 public class LoginController {
     LoginModel model;
     LoginView view;
-    ResultSet rs;
-    Statement stmt;
-    Connection conn;
     RegistrationModel rModel;
             
     public LoginController(LoginView view)

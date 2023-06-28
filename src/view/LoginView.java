@@ -4,8 +4,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.*;
 import controller.*;
-import view.Forgotpwd;
-import view.RegistrationView;
 
 
 public class LoginView extends javax.swing.JFrame {

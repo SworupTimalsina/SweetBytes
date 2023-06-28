@@ -4,8 +4,6 @@ package view;
 import java.awt.Color;
 import javax.swing.JFrame;
 
-import view.JFrameItems;
-import view.ProfileView;
 import model.*;
 
 
@@ -21,7 +19,7 @@ public class DashboardView extends javax.swing.JFrame {
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/CustomizeCakeController.java</file>
             <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/dao/CustomerDAO.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/ProfileController.java</file>
             <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/DashboardView.java</file>
-            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/RegistrationView.java</file>
-            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/model/RegistrationModel.java</file>
-            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/Profile.java</file>
-            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/RegistrationController.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/ProfileView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/model/ProfileModel.java</file>
             <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/LoginView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/RegistrationController.java</file>
             <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/LoginController.java</file>
         </group>
     </open-files>

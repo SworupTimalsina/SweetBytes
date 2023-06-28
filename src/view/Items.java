@@ -120,6 +120,7 @@ public class Items extends javax.swing.JFrame {
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
         btnHome.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
         btnHome.setText("HOME");
+        btnHome.setBorder(null);
         btnHome.setContentAreaFilled(false);
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
@@ -572,7 +573,7 @@ public class Items extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        Profile JFI = new Profile();
+        ProfileView JFI = new ProfileView();
         JFI.show();
     }//GEN-LAST:event_btnProfileActionPerformed
 

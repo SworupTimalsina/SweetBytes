@@ -1,45 +1,60 @@
 package controller;
 
+import dao.CustomerDAO;
+import javax.swing.JOptionPane;
 import model.*;
 import view.*;
+import Regulations.*;
 
 
 public class ProfileController {
-    ProfileModel pModel;
+    ProfileModel pModel, updateProfModel;
     ProfileView pView;
+   
     
-    public ProfileController(ProfileView pView){
+    public ProfileController(ProfileView pView, boolean update){
         this.pView=pView;
+        pModel=pView.setNewProfile();
+        updateProfModel=pView.setUpdateProfile();
         
-    }
-    class ProfileListener{
-        public void actionPerformed(){
-            try{
-                System.err.println("");
-            }
-            catch(Exception e){
-                System.out.println("error at controller.ProfileController.ProfileListener.actionPerformed: "+e);
-            }
-            
+        try{// sets the e_id
+            updateProfModel.setId(CustomerDAO.find_e_id(updateProfModel));
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        
+        if (update){
+            new ProfileListener().updateActionPerformed();
+        }
+        else{
+            new ProfileListener().deleteActionPerformed();
         }
     }
     
-    public static void main(String[] args){
-        String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
+    class ProfileListener{
+        public void updateActionPerformed(){
+            var checkCreds=new ProfilePageRegulation(updateProfModel);// creates a new instance of regulations
+            String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
+            if(checkCredsResult.equals("ok")){// if every information provided is valid.
+                if (CustomerDAO.updateRegistrationData(updateProfModel)){
+                    pView.displayPlainMessage("Successfully updated","Success");
+                }else{
+                    pView.displayErrorMessage("Failed to Update Information");
+                }
+            }else{
+                pView.displayErrorMessage(checkCredsResult);
+            }
+        }
         
-        firstName="testFname";
-        lastName="testLname";
-        email="test@email.com";
-        dateOfBirth="2003-12-12";
-        username="godf";
-        password="test";
-        confirmPassword="test";
-        security="What is the name of the test?";
-        answer="The name is test";
-                
-        RegistrationModel rmodel = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
-        ProfileModel p1=(ProfileModel)new RegistrationModel();
-        p1=(ProfileModel)rmodel;
-        //System.out.println(p1.getAnswer());
+        public void deleteActionPerformed(){
+            if (CustomerDAO.deleteRegistrationData(pModel)){
+                pView.displayPlainMessage("Successfully deleted account","Success");
+            }else{
+                pView.displayErrorMessage("Failed to delete account");
+            }
+        }
     }
+    
+    public static void main(String[] args){}
 }

@@ -152,7 +152,7 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(lblWCakes);
-        lblWCakes.setBounds(120, 220, 179, 32);
+        lblWCakes.setBounds(120, 220, 178, 32);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
@@ -203,7 +203,7 @@ public class DashboardView extends javax.swing.JFrame {
         lblCCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblCCakes.setText("Customize your own cake");
         jPanel4.add(lblCCakes);
-        lblCCakes.setBounds(50, 220, 294, 32);
+        lblCCakes.setBounds(50, 220, 293, 32);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
@@ -305,7 +305,8 @@ public class DashboardView extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnProfile.setBackground(Color.pink);
         ProfileView profilePage = new ProfileView();
-        profilePage.fillCustomersData(rModel);
+        ProfileModel pModel=profilePage.setNewProfile(rModel);
+        profilePage.fillCustomersData(pModel);
         
         profilePage.show();
 //       dispose();

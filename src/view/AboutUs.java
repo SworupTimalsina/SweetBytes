@@ -24,6 +24,7 @@ public class AboutUs extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnContactUs = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         txtaboutus = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -91,6 +92,17 @@ public class AboutUs extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 990, 250));
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 204));
+        jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Back to Dashboard");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 160, 40));
+
         txtaboutus.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
         txtaboutus.setForeground(new java.awt.Color(203, 107, 107));
         txtaboutus.setText("ABOUT US");
@@ -119,6 +131,14 @@ public class AboutUs extends javax.swing.JFrame {
         CU.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnContactUsActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+                DashboardView DaB = new DashboardView();
+        DaB.show();
+        dispose();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +177,7 @@ public class AboutUs extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContactUs;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

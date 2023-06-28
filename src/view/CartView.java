@@ -52,7 +52,7 @@ public class CartView extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 204, 204));
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("MS PMincho", 0, 18)); // NOI18N
+        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
@@ -66,14 +66,14 @@ public class CartView extends javax.swing.JFrame {
         });
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnContactUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
         btnContactUs.setText("DETAILS");
         btnContactUs.setBorder(null);
@@ -83,7 +83,7 @@ public class CartView extends javax.swing.JFrame {
         jSeparator1.setOpaque(true);
 
         btnProfile1.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile1.setFont(new java.awt.Font("MS PMincho", 0, 18)); // NOI18N
+        btnProfile1.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile1.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile1.setText("CART");
         btnProfile1.setBorder(null);
@@ -97,7 +97,7 @@ public class CartView extends javax.swing.JFrame {
         });
 
         btnProfile2.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile2.setFont(new java.awt.Font("MS PMincho", 0, 18)); // NOI18N
+        btnProfile2.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile2.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile2.setText("HOME");
         btnProfile2.setBorder(null);
@@ -111,7 +111,7 @@ public class CartView extends javax.swing.JFrame {
         });
 
         btnProfile3.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile3.setFont(new java.awt.Font("MS PMincho", 0, 18)); // NOI18N
+        btnProfile3.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile3.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile3.setText("ITEMS");
         btnProfile3.setBorder(null);
@@ -221,21 +221,20 @@ public class CartView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnProfile4)
-                        .addGap(450, 450, 450))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(92, 92, 92)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnProfile4)
+                                .addGap(469, 469, 469)))))
                 .addComponent(jLabel2)
                 .addGap(67, 67, 67))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -283,7 +282,7 @@ public class CartView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

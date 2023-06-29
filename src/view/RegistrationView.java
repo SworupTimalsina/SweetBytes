@@ -251,7 +251,7 @@ public class RegistrationView extends javax.swing.JFrame {
     }
     
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        RegistrationController c1= new RegistrationController(this);
+        new RegistrationController(this);
     }//GEN-LAST:event_RegisterButtonActionPerformed
 
     private void dayFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayFieldActionPerformed

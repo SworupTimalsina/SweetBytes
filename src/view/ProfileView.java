@@ -6,8 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import model.*;
-import dao.CustomerDAO;
-import Regulations.*;
+import controller.ProfileController;
 
 
 public class ProfileView extends javax.swing.JFrame {
@@ -21,11 +20,31 @@ public class ProfileView extends javax.swing.JFrame {
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     
-    public ProfileModel setNewProfile(RegistrationModel rModel){
-        pModel=(ProfileModel) this.rModel;
+    public ProfileModel setNewProfile(){
+        pModel=new ProfileModel(rModel.getFirstName(), rModel.getLastName(), rModel.getEmail(), rModel.getDateOfBirth(),
+                rModel.getUsername(), rModel.getPassword(), rModel.getPassword(), rModel.getSecurity(), rModel.getAnswer());
         return pModel;
     }
-
+    public ProfileModel setNewProfile(RegistrationModel rModel){
+        pModel=new ProfileModel(rModel.getFirstName(), rModel.getLastName(), rModel.getEmail(), rModel.getDateOfBirth(),
+                rModel.getUsername(), rModel.getPassword(), rModel.getPassword(), rModel.getSecurity(), rModel.getAnswer());
+        return pModel;
+    }
+    public ProfileModel setUpdateProfile(){
+        String DOB=yearComboBox.getSelectedItem().toString()+"-"+RegistrationView.convertDateToNum(monthComboBox.getSelectedItem().toString())+"-"+dayComboBox.getSelectedItem().toString();
+        var updateRegModel = new ProfileModel(firstNameField.getText(), lastNameField.getText(), EmailField.getText(),
+                DOB, usernameField.getText(), passwordField.getText(), repeatPasswordField.getText(), rModel.getSecurity(), rModel.getAnswer());
+        return updateRegModel;
+    }
+    
+    public void displayPlainMessage(String message, String title){
+        JOptionPane.showMessageDialog(this, message, title, JOptionPane.PLAIN_MESSAGE);
+    }
+    
+    public void displayErrorMessage(String message){
+        JOptionPane.showMessageDialog(rootPane, message, "error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -456,39 +475,12 @@ public class ProfileView extends javax.swing.JFrame {
 
     private void updateProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateProfileButtonActionPerformed
         // TODO add your handling code here:
-        String DOB=yearComboBox.getSelectedItem().toString()+"-"+RegistrationView.convertDateToNum(monthComboBox.getSelectedItem().toString())+"-"+dayComboBox.getSelectedItem().toString();
-        var updateRegModel = new RegistrationModel(firstNameField.getText(), lastNameField.getText(), EmailField.getText(), DOB, usernameField.getText(), passwordField.getText(), repeatPasswordField.getText(), rModel.getSecurity(), rModel.getAnswer());
-        try{// sets corresponding e_id
-        updateRegModel.setId(CustomerDAO.find_e_id(rModel));
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        var checkCreds=new RegistrationPageRegulation(rModel);// creates a new instance of regulations
-        String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
-        if(checkCredsResult.equals("ok")){// if every information provided is valid.
-            
-            if (CustomerDAO.updateRegistrationData(updateRegModel)){
-                JOptionPane.showMessageDialog(rootPane, "Successfully updated","Success", JOptionPane.INFORMATION_MESSAGE);
-            }
-            else{
-                JOptionPane.showMessageDialog(rootPane, "Failed to Update Information", "error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        else{// displays a suitable error message pop up.
-            JOptionPane.showMessageDialog(rootPane, "Failed to Update Information", "error", JOptionPane.ERROR_MESSAGE);
-        }
-        
+        var profCon=new ProfileController(this,true);
     }//GEN-LAST:event_updateProfileButtonActionPerformed
 
     private void deleteProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfileButtonActionPerformed
         // TODO add your handling code here:
-        if (CustomerDAO.deleteRegistrationData(rModel)){
-            JOptionPane.showMessageDialog(rootPane, "Successfully deleted account","Success", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            JOptionPane.showMessageDialog(rootPane, "Failed to delete account", "error", JOptionPane.ERROR_MESSAGE);
-        }
+        var profCon=new ProfileController((this),false);
     }//GEN-LAST:event_deleteProfileButtonActionPerformed
 
     private String convertNumToDate(String date){
@@ -526,6 +518,19 @@ public class ProfileView extends javax.swing.JFrame {
         }
     }
     
+    public void fillCustomersData(){
+        String[] date=pModel.getDateOfBirth().split("-");
+        this.rModel=pModel;
+        firstNameField.setText(pModel.getFirstName());
+        lastNameField.setText(pModel.getLastName());
+        usernameField.setText(pModel.getUsername());
+        passwordField.setText(pModel.getPassword());
+        repeatPasswordField.setText(pModel.getPassword());
+        EmailField.setText(pModel.getEmail());
+        dayComboBox.setSelectedItem(date[2]);
+        monthComboBox.setSelectedItem(convertNumToDate(date[1]));
+        yearComboBox.setSelectedItem(date[0]);
+    }
     public void fillCustomersData(RegistrationModel rModel){
         String[] date=rModel.getDateOfBirth().split("-");
         this.rModel=rModel;
@@ -538,7 +543,6 @@ public class ProfileView extends javax.swing.JFrame {
         dayComboBox.setSelectedItem(date[2]);
         monthComboBox.setSelectedItem(convertNumToDate(date[1]));
         yearComboBox.setSelectedItem(date[0]);
-        
     }
     
     /**

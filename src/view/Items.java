@@ -17,6 +17,13 @@ import javax.swing.JFrame;
  * @author pemagurung
  */
 public class Items extends javax.swing.JFrame {
+              public  int countleb1 = 0;
+              public  int countleb2 = 0;
+              public  int countleb3 = 0;
+              public  int countleb4 = 0;
+              public  int countleb5 = 0;
+              public  int countleb6 = 0;
+ 
 
     /**
      * Creates new form Items
@@ -49,42 +56,42 @@ public class Items extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        countLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
+        countLabel2 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        countLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        countLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
+        countLabel6 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        btnProfile = new javax.swing.JButton();
-        btnCart = new javax.swing.JButton();
-        btnHome = new javax.swing.JButton();
-        btnItems = new javax.swing.JButton();
-        btnContactUs = new javax.swing.JButton();
-        btnAboutUs = new javax.swing.JButton();
+        countLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -107,11 +114,21 @@ public class Items extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton7.setText("-");
         jButton7.setBorderPainted(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(255, 204, 0));
         jButton8.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton8.setText("+");
         jButton8.setBorderPainted(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel7.setText("Macarons");
@@ -119,6 +136,10 @@ public class Items extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 153, 51));
         jLabel13.setText("Rs. 80");
+
+        countLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel1.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel1.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -133,7 +154,9 @@ public class Items extends javax.swing.JFrame {
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(countLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -145,11 +168,12 @@ public class Items extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8)
                     .addComponent(jButton7)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(countLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -166,15 +190,29 @@ public class Items extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton9.setText("+");
         jButton9.setBorderPainted(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton14.setBackground(new java.awt.Color(255, 204, 0));
         jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton14.setText("-");
         jButton14.setBorderPainted(false);
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
-        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel14.setText("Rs. 70");
+        countLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel2.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel2.setText("0");
+
+        jLabel19.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel19.setText("Rs. 70");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -182,17 +220,22 @@ public class Items extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(4, 4, 4)
+                        .addComponent(countLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel8)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(40, 40, 40)
+                    .addComponent(jLabel19)
+                    .addContainerGap(206, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,12 +244,17 @@ public class Items extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton9)
                     .addComponent(jButton14)
-                    .addComponent(jLabel14))
+                    .addComponent(countLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(241, Short.MAX_VALUE)
+                    .addComponent(jLabel19)
+                    .addContainerGap()))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -222,15 +270,29 @@ public class Items extends javax.swing.JFrame {
         jButton11.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton11.setText("+");
         jButton11.setBorderPainted(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton16.setBackground(new java.awt.Color(255, 204, 0));
         jButton16.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton16.setText("-");
         jButton16.setBorderPainted(false);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 153, 51));
         jLabel16.setText("Rs. 50");
+
+        countLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel4.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel4.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -243,7 +305,9 @@ public class Items extends javax.swing.JFrame {
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(countLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel10)
@@ -261,7 +325,8 @@ public class Items extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
                     .addComponent(jButton16)
-                    .addComponent(jLabel16))
+                    .addComponent(jLabel16)
+                    .addComponent(countLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -278,15 +343,29 @@ public class Items extends javax.swing.JFrame {
         jButton10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton10.setText("+");
         jButton10.setBorderPainted(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton15.setBackground(new java.awt.Color(255, 204, 0));
         jButton15.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton15.setText("-");
         jButton15.setBorderPainted(false);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 153, 51));
         jLabel15.setText("Rs. 60");
+
+        countLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel3.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel3.setText("0");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -299,7 +378,9 @@ public class Items extends javax.swing.JFrame {
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(countLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel9)
@@ -317,7 +398,8 @@ public class Items extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(jButton15)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel15)
+                    .addComponent(countLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -334,15 +416,29 @@ public class Items extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton13.setText("+");
         jButton13.setBorderPainted(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton18.setBackground(new java.awt.Color(255, 204, 0));
         jButton18.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton18.setText("-");
         jButton18.setBorderPainted(false);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jLabel18.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 153, 51));
         jLabel18.setText("Rs. 100");
+
+        countLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel6.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel6.setText("0");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -355,7 +451,9 @@ public class Items extends javax.swing.JFrame {
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(countLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel12)
@@ -373,7 +471,8 @@ public class Items extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton13)
                     .addComponent(jButton18)
-                    .addComponent(jLabel18))
+                    .addComponent(jLabel18)
+                    .addComponent(countLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -390,15 +489,29 @@ public class Items extends javax.swing.JFrame {
         jButton12.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton12.setText("+");
         jButton12.setBorderPainted(false);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton17.setBackground(new java.awt.Color(255, 204, 0));
         jButton17.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton17.setText("-");
         jButton17.setBorderPainted(false);
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 153, 51));
         jLabel17.setText("Rs. 90");
+
+        countLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        countLabel5.setForeground(new java.awt.Color(255, 153, 51));
+        countLabel5.setText("0");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -411,7 +524,9 @@ public class Items extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(countLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel11)
@@ -429,7 +544,8 @@ public class Items extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton12)
                     .addComponent(jButton17)
-                    .addComponent(jLabel17))
+                    .addComponent(jLabel17)
+                    .addComponent(countLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -575,7 +691,7 @@ public class Items extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -639,6 +755,77 @@ public class Items extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_btnAboutUsActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        countleb1++;
+        countLabel1.setText(Integer.toString(countleb1));
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        countleb1--;
+        countLabel1.setText(Integer.toString(countleb1));
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        countleb2++;
+        countLabel2.setText(Integer.toString(countleb2));
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        countleb3++;
+        countLabel3.setText(Integer.toString(countleb3));
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        countleb4++;
+        countLabel4.setText(Integer.toString(countleb4));
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        countleb5++;
+        countLabel5.setText(Integer.toString(countleb5));
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        countleb6++;
+        countLabel6.setText(Integer.toString(countleb6));
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+         countleb2--;
+        countLabel2.setText(Integer.toString(countleb2));
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+         countleb3--;
+        countLabel3.setText(Integer.toString(countleb3));
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+         countleb4--;
+        countLabel4.setText(Integer.toString(countleb4));
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+         countleb5--;
+        countLabel5.setText(Integer.toString(countleb5));
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+         countleb6--;
+        countLabel6.setText(Integer.toString(countleb6));
+    }//GEN-LAST:event_jButton18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -684,6 +871,12 @@ public class Items extends javax.swing.JFrame {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnItems;
     private javax.swing.JButton btnProfile;
+    private javax.swing.JLabel countLabel1;
+    private javax.swing.JLabel countLabel2;
+    private javax.swing.JLabel countLabel3;
+    private javax.swing.JLabel countLabel4;
+    private javax.swing.JLabel countLabel5;
+    private javax.swing.JLabel countLabel6;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -701,11 +894,11 @@ public class Items extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

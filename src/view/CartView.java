@@ -48,7 +48,7 @@ public class CartView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(252, 230, 209));
         jPanel1.setForeground(new java.awt.Color(255, 204, 204));
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));

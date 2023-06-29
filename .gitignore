@@ -2,3 +2,5 @@
 /build
 /nbproject
 /src/Database
+src/.DS_Store
+src/view/.DS_Store

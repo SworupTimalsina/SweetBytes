@@ -227,7 +227,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/fancybday25.jpg"/>
+                  <Image iconType="3" name="/Images/fancybday25.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -451,7 +451,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/classicbday18.jpg"/>
+                  <Image iconType="3" name="/Images/classicbday18.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel3"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

@@ -81,7 +81,7 @@ public class BirthdayCakeView extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 153, 51));
         jLabel13.setText("Rs. 0");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fancybday25.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fancybday25.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -203,7 +203,7 @@ public class BirthdayCakeView extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 153, 51));
         jLabel15.setText("Rs. 0");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/classicbday18.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/classicbday18.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

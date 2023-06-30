@@ -422,7 +422,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
-        Items JFI = new Items();
+        ItemsView JFI = new ItemsView();
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed

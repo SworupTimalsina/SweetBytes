@@ -90,7 +90,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
                         }
                 });
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setAutoRequestFocus(false);
                 setBackground(new java.awt.Color(252, 230, 209));
                 setMinimumSize(new java.awt.Dimension(1200, 660));

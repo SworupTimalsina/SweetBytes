@@ -53,7 +53,6 @@ public class CartView extends javax.swing.JFrame {
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
         btnProfile.setBorderPainted(false);
@@ -67,14 +66,12 @@ public class CartView extends javax.swing.JFrame {
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
         btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
         btnContactUs.setText("DETAILS");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
@@ -84,7 +81,6 @@ public class CartView extends javax.swing.JFrame {
 
         btnProfile1.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile1.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile1.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile1.setText("CART");
         btnProfile1.setBorder(null);
         btnProfile1.setBorderPainted(false);
@@ -98,7 +94,6 @@ public class CartView extends javax.swing.JFrame {
 
         btnProfile2.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile2.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile2.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile2.setText("HOME");
         btnProfile2.setBorder(null);
         btnProfile2.setBorderPainted(false);
@@ -112,7 +107,6 @@ public class CartView extends javax.swing.JFrame {
 
         btnProfile3.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile3.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile3.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile3.setText("ITEMS");
         btnProfile3.setBorder(null);
         btnProfile3.setBorderPainted(false);
@@ -126,7 +120,6 @@ public class CartView extends javax.swing.JFrame {
 
         btnProfile4.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile4.setFont(new java.awt.Font("MS PMincho", 0, 48)); // NOI18N
-        btnProfile4.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile4.setText("Your Cart");
         btnProfile4.setBorder(null);
         btnProfile4.setBorderPainted(false);
@@ -181,10 +174,9 @@ public class CartView extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Apply Promo Code:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 200, 21);
+        jLabel1.setBounds(40, 20, 200, 22);
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.add(jTextField1);
@@ -192,24 +184,21 @@ public class CartView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("OK");
         jPanel2.add(jButton1);
-        jButton1.setBounds(180, 110, 75, 26);
+        jButton1.setBounds(180, 110, 75, 28);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel3.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cart Summary");
         jPanel3.add(jLabel3);
         jLabel3.setBounds(30, 20, 130, 20);
 
         jButton2.setBackground(new java.awt.Color(255, 153, 51));
         jButton2.setFont(new java.awt.Font("The Bold Font", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("CHECKOUT");
         jPanel3.add(jButton2);
         jButton2.setBounds(350, 170, 100, 30);
@@ -219,14 +208,19 @@ public class CartView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnProfile4)
-                        .addGap(469, 469, 469)))
+                        .addGap(469, 469, 469))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel2)
                 .addGap(67, 67, 67))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()

@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author AduMan
- */
+
 import model.*;
 public class CustomizeCakeView extends javax.swing.JFrame {
     RegistrationModel rModel;
@@ -921,7 +914,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
-        Items JFI = new Items();
+        ItemsView JFI = new ItemsView();
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed

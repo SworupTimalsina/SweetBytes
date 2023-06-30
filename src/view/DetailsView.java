@@ -26,21 +26,200 @@ public class DetailsView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnProfile = new javax.swing.JButton();
+        btnCart = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
+        btnItems = new javax.swing.JButton();
+        btnContactUs = new javax.swing.JButton();
+        btnAboutUs = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(252, 232, 201));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnProfile.setBackground(new java.awt.Color(255, 204, 204));
+        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
+        btnProfile.setText("PROFILE");
+        btnProfile.setBorder(null);
+        btnProfile.setBorderPainted(false);
+        btnProfile.setContentAreaFilled(false);
+        btnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfileActionPerformed(evt);
+            }
+        });
+
+        btnCart.setBackground(new java.awt.Color(255, 204, 204));
+        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnCart.setForeground(new java.awt.Color(0, 0, 0));
+        btnCart.setText("CART");
+        btnCart.setBorder(null);
+        btnCart.setBorderPainted(false);
+        btnCart.setContentAreaFilled(false);
+        btnCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartActionPerformed(evt);
+            }
+        });
+
+        btnHome.setBackground(new java.awt.Color(255, 204, 204));
+        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(0, 0, 0));
+        btnHome.setText("HOME");
+        btnHome.setBorder(null);
+        btnHome.setBorderPainted(false);
+        btnHome.setContentAreaFilled(false);
+        btnHome.setDefaultCapable(false);
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+
+        btnItems.setBackground(new java.awt.Color(255, 204, 204));
+        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnItems.setForeground(new java.awt.Color(0, 0, 0));
+        btnItems.setText("ITEMS");
+        btnItems.setBorder(null);
+        btnItems.setBorderPainted(false);
+        btnItems.setContentAreaFilled(false);
+        btnItems.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnItemsActionPerformed(evt);
+            }
+        });
+
+        btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
+        btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
+        btnContactUs.setText("DETAILS");
+        btnContactUs.setBorder(null);
+        btnContactUs.setContentAreaFilled(false);
+        btnContactUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContactUsActionPerformed(evt);
+            }
+        });
+
+        btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
+        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
+        btnAboutUs.setText("ABOUT US");
+        btnAboutUs.setBorder(null);
+        btnAboutUs.setContentAreaFilled(false);
+        btnAboutUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAboutUsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(btnProfile)
+                .addGap(67, 67, 67)
+                .addComponent(btnCart)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
+                .addComponent(btnHome)
+                .addGap(54, 54, 54)
+                .addComponent(btnItems)
+                .addGap(52, 52, 52)
+                .addComponent(btnContactUs)
+                .addGap(39, 39, 39)
+                .addComponent(btnAboutUs)
+                .addGap(40, 40, 40))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnProfile)
+                    .addComponent(btnCart)
+                    .addComponent(btnHome)
+                    .addComponent(btnItems)
+                    .addComponent(btnContactUs)
+                    .addComponent(btnAboutUs))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(628, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
+        // TODO add your handling code here:
+
+        ProfileView JFI = new ProfileView();
+        //        JFI.fillCustomersData(rModel);
+
+        JFI.show();
+        //        dispose();
+    }//GEN-LAST:event_btnProfileActionPerformed
+
+    private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
+        // TODO add your handling code here:
+        CartView CV = new CartView();
+        CV.show();
+        dispose();
+    }//GEN-LAST:event_btnCartActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        DashboardView DaB = new DashboardView();
+        DaB.show();
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
+        // TODO add your handling code here:
+        Items JFI = new Items();
+        JFI.show();
+        dispose();
+    }//GEN-LAST:event_btnItemsActionPerformed
+
+    private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
+        // TODO add your handling code here:
+        DetailsView DV = new DetailsView();
+        DV.show();
+        dispose();
+    }//GEN-LAST:event_btnContactUsActionPerformed
+
+    private void btnAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutUsActionPerformed
+        // TODO add your handling code here:
+        AboutUs AV = new AboutUs();
+        AV.show();
+        dispose();
+        //
+    }//GEN-LAST:event_btnAboutUsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +258,13 @@ public class DetailsView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAboutUs;
+    private javax.swing.JButton btnCart;
+    private javax.swing.JButton btnContactUs;
+    private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnItems;
+    private javax.swing.JButton btnProfile;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

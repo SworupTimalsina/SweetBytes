@@ -44,6 +44,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         poundCakeButton = new javax.swing.JButton();
         spongeCakeButton = new javax.swing.JButton();
+        butterCakeButton = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         greenColorButton = new javax.swing.JButton();
@@ -120,23 +121,25 @@ public class CustomizeCakeView extends javax.swing.JFrame {
             }
         });
 
-                tenInchButton.setBackground(new java.awt.Color(171, 213, 255));
-                tenInchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
-                tenInchButton.setText("10\"");
-                tenInchButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                tenInchButtonActionPerformed(evt);
-                        }
-                });
+        tenInchButton.setBackground(new java.awt.Color(171, 213, 255));
+        tenInchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
+        tenInchButton.setForeground(new java.awt.Color(0, 0, 0));
+        tenInchButton.setText("10\"");
+        tenInchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tenInchButtonActionPerformed(evt);
+            }
+        });
 
-                twelveInchButton.setBackground(new java.awt.Color(171, 213, 255));
-                twelveInchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
-                twelveInchButton.setText("12\"");
-                twelveInchButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                twelveInchButtonActionPerformed(evt);
-                        }
-                });
+        twelveInchButton.setBackground(new java.awt.Color(171, 213, 255));
+        twelveInchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
+        twelveInchButton.setForeground(new java.awt.Color(0, 0, 0));
+        twelveInchButton.setText("12\"");
+        twelveInchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twelveInchButtonActionPerformed(evt);
+            }
+        });
 
         sixInchButton.setBackground(new java.awt.Color(171, 213, 255));
         sixInchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
@@ -282,6 +285,16 @@ public class CustomizeCakeView extends javax.swing.JFrame {
             }
         });
 
+        butterCakeButton.setBackground(new java.awt.Color(171, 213, 255));
+        butterCakeButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 16)); // NOI18N
+        butterCakeButton.setForeground(new java.awt.Color(0, 0, 0));
+        butterCakeButton.setText("Butter Cake");
+        butterCakeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butterCakeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -291,7 +304,8 @@ public class CustomizeCakeView extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(poundCakeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(spongeCakeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(spongeCakeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(butterCakeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -299,11 +313,13 @@ public class CustomizeCakeView extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel3)
-                .addGap(23, 23, 23)
-                .addComponent(poundCakeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(poundCakeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spongeCakeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(butterCakeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(249, 172, 117));
@@ -464,13 +480,14 @@ public class CustomizeCakeView extends javax.swing.JFrame {
             }
         });
 
-                okButton.setBackground(new java.awt.Color(204, 204, 255));
-                okButton.setText("OK");
-                okButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                okButtonActionPerformed(evt);
-                        }
-                });
+        okButton.setBackground(new java.awt.Color(204, 204, 255));
+        okButton.setForeground(new java.awt.Color(0, 0, 0));
+        okButton.setText("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1039,17 +1056,17 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 	disableAllChooseTypeButtons();
     }//GEN-LAST:event_spongeCakeButtonActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
 	cModel.setType("Butter");
 	disableAllChooseTypeButtons();
-    }//GEN-LAST:event_butterCakeButtonActionPerformed
+    }                                                
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
 	cModel.setFilling("Chocolate");
 	disableAllFillingButtons();
-    }//GEN-LAST:event_chocolateFillingButtonActionPerformed
+    }                                                      
 
     private void strawberryFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strawberryFillingButtonActionPerformed
         // TODO add your handling code here:
@@ -1178,6 +1195,14 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 		var c1=new CustomizeCakeController(this, cModel, false);
         }//GEN-LAST:event_okButtonActionPerformed
 
+    private void chocolateFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chocolateFillingButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chocolateFillingButtonActionPerformed
+
+    private void butterCakeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butterCakeButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butterCakeButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1223,6 +1248,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     private javax.swing.JButton btnHome1;
     private javax.swing.JButton btnItems;
     private javax.swing.JButton btnProfile;
+    private javax.swing.JButton butterCakeButton;
     private javax.swing.JTextField cakeTypeField;
     private javax.swing.JButton chocolateFillingButton;
     private javax.swing.JButton cyanColorButton;

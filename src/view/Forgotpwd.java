@@ -217,7 +217,7 @@ public class Forgotpwd extends javax.swing.JFrame {
         String answer=txtanswer.getText();
         try {
              Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Sweetbytes","root","root@2003");
+             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Sweetbytes","root","43a4a53290");
              Statement st=conn.createStatement();
              ResultSet rs=st.executeQuery("select * from creds where u_name='"+username+"' and answer='"+answer+"'");
              if(rs.next()) {

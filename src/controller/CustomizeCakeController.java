@@ -1,15 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controller;
 
-import view.*;
-import model.*;
-
-
+/**
+ *
+ * @author Allan
+ */
 public class CustomizeCakeController {
-	CustomizeCakeView cView;
 	
-	public CustomizeCakeController(CustomizeCakeView cView){
-		this.cView=cView;
-		
-	}
-		
 }

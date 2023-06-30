@@ -63,7 +63,7 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 204, 204));
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnProfile.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
@@ -77,7 +77,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
-        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnCart.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnCart.setForeground(new java.awt.Color(0, 0, 0));
         btnCart.setText("CART");
         btnCart.setBorder(null);
@@ -90,7 +90,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
-        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnHome.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
@@ -104,7 +104,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
-        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnItems.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
@@ -117,7 +117,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        btnAboutUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
         btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
@@ -143,7 +143,7 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, java.awt.Color.black));
         jPanel2.setLayout(null);
 
-        lblWCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        lblWCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
         lblWCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblWCakes.setText("Wedding Cakes");
         lblWCakes.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -152,15 +152,18 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(lblWCakes);
-        lblWCakes.setBounds(120, 220, 178, 32);
+        lblWCakes.setBounds(70, 220, 270, 50);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Browse Now");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
-        jButton1.setBounds(160, 270, 105, 37);
+        jButton1.setBounds(160, 280, 105, 37);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CAKE.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -172,15 +175,13 @@ public class DashboardView extends javax.swing.JFrame {
 
         jPanel3.setLayout(null);
 
-        lblBCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        lblBCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
         lblBCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblBCakes.setText("Birthday cakes");
         jPanel3.add(lblBCakes);
-        lblBCakes.setBounds(120, 220, 170, 32);
+        lblBCakes.setBounds(70, 220, 241, 43);
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Browse Now");
         jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -199,15 +200,13 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel4.setLayout(null);
 
         lblCCakes.setBackground(new java.awt.Color(0, 0, 0));
-        lblCCakes.setFont(new java.awt.Font("Academy Engraved LET", 1, 24)); // NOI18N
+        lblCCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 32)); // NOI18N
         lblCCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblCCakes.setText("Customize your own cake");
         jPanel4.add(lblCCakes);
-        lblCCakes.setBounds(50, 220, 293, 32);
+        lblCCakes.setBounds(20, 210, 430, 43);
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Browse Now");
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +222,7 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel4.add(jLabel3);
         jLabel3.setBounds(0, 0, 410, 570);
 
-        lblSweetBytes.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        lblSweetBytes.setFont(new java.awt.Font("Noteworthy", 1, 24)); // NOI18N
         lblSweetBytes.setForeground(new java.awt.Color(0, 0, 0));
         lblSweetBytes.setText("Sweet Bytes");
 
@@ -247,9 +246,9 @@ public class DashboardView extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(btnAboutUs))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(78, 78, 78)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,12 +278,17 @@ public class DashboardView extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSweetBytes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 57, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 61, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -299,6 +303,7 @@ public class DashboardView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
@@ -336,8 +341,8 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        ContactUs CoV = new ContactUs();
-        CoV.show();
+        DetailsView DV = new DetailsView();
+        DV.show();
         dispose();
         
     }//GEN-LAST:event_btnContactUsActionPerformed
@@ -352,18 +357,30 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        BirthdayCakeView BcV = new BirthdayCakeView();
+        BcV.show();
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         CustomizeCakeView CcV = new CustomizeCakeView();
         CcV.show();
+        dispose();
   
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void lblWCakesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lblWCakesPropertyChange
         // TODO add your handling code here:
+
     }//GEN-LAST:event_lblWCakesPropertyChange
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        WeddingCakeView WcV = new WeddingCakeView();
+        WcV.show();
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

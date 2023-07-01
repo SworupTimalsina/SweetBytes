@@ -10,10 +10,13 @@ public class CustomizeCakeController {
 	private javax.swing.JTextArea txtBillPrint;
 	CustomizeCakeView cView;
 	CustomizeCakeModel cModel;
+	RegistrationModel rModel;
 	
-	public CustomizeCakeController(CustomizeCakeView cView, CustomizeCakeModel cModel, boolean print){
+	public CustomizeCakeController(CustomizeCakeView cView, CustomizeCakeModel cModel, RegistrationModel rModel, boolean print){
 		this.cView=cView;
 		this.cModel=cModel;
+		this.rModel=rModel;
+		
 		if (!print){
 			new CustomizeCakeListener().actionPerformed();
 		}
@@ -29,8 +32,10 @@ public class CustomizeCakeController {
 	
 	public void printLayout(){
 		txtBillPrint = new javax.swing.JTextArea();
-		String print ="********** SweetBytes **********\n\n\n"+
-			"Size : "+cModel.getSize()+" inches\n"
+		String print ="********** SweetBytes **********\n\n\n"
+			+"Cashier Name : "+rModel.getFirstName()+" "+rModel.getLastName()+"\n"
+			+"Cashier Username : "+rModel.getUsername()+"\n"
+			+"Size : "+cModel.getSize()+" inches\n"
 			+"Layers : "+ cModel.getLayers()+"\n"
 			+"Type : "+cModel.getType()+" Cake\n"
 			+"Icing color : "+cModel.getColor()+"\n"

@@ -176,7 +176,7 @@ public class CartView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         jLabel1.setText("Apply Promo Code:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 200, 22);
+        jLabel1.setBounds(40, 20, 200, 21);
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.add(jTextField1);
@@ -186,7 +186,7 @@ public class CartView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
         jButton1.setText("OK");
         jPanel2.add(jButton1);
-        jButton1.setBounds(180, 110, 75, 28);
+        jButton1.setBounds(180, 110, 75, 26);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -241,12 +241,6 @@ public class CartView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jSeparator1)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -29,6 +29,7 @@ public class RegistrationView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        showpass = new javax.swing.JCheckBox();
         repeatPasswordField = new javax.swing.JPasswordField();
         passwordField = new javax.swing.JPasswordField();
         emailField = new javax.swing.JTextField();
@@ -49,6 +50,19 @@ public class RegistrationView extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1040, 681));
         getContentPane().setLayout(null);
 
+        showpass.setBackground(new java.awt.Color(231, 228, 213));
+        showpass.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
+        showpass.setForeground(new java.awt.Color(0, 0, 0));
+        showpass.setText("Show Password");
+        showpass.setBorder(null);
+        showpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showpassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(showpass);
+        showpass.setBounds(800, 370, 119, 19);
+
         repeatPasswordField.setBackground(new java.awt.Color(217, 217, 217));
         repeatPasswordField.setForeground(new java.awt.Color(102, 102, 102));
         repeatPasswordField.setBorder(null);
@@ -58,6 +72,11 @@ public class RegistrationView extends javax.swing.JFrame {
         passwordField.setBackground(new java.awt.Color(217, 217, 217));
         passwordField.setForeground(new java.awt.Color(102, 102, 102));
         passwordField.setBorder(null);
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(passwordField);
         passwordField.setBounds(580, 338, 150, 20);
 
@@ -275,6 +294,22 @@ public class RegistrationView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lnameFieldActionPerformed
 
+    private void showpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showpassActionPerformed
+        // TODO add your handling code here:
+        if(showpass.isSelected()){
+            passwordField.setEchoChar((char)0);
+            repeatPasswordField.setEchoChar((char)0);
+        }
+        else{
+            passwordField.setEchoChar('•');
+            repeatPasswordField.setEchoChar('•');
+        }
+    }//GEN-LAST:event_showpassActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +363,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JPasswordField repeatPasswordField;
     private javax.swing.JTextField sec;
+    private javax.swing.JCheckBox showpass;
     private javax.swing.JTextField unameField1;
     private javax.swing.JComboBox<String> yearField;
     // End of variables declaration//GEN-END:variables

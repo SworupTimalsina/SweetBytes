@@ -173,6 +173,7 @@ public class DashboardView extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOpaque(true);
 
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.setLayout(null);
 
         lblBCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
@@ -314,7 +315,7 @@ public class DashboardView extends javax.swing.JFrame {
         profilePage.fillCustomersData(pModel);
         
         profilePage.show();
-//       dispose();
+        dispose();
         
     }//GEN-LAST:event_btnProfileActionPerformed
 

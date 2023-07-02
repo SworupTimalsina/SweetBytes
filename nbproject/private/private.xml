@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/SweetBytes/src/view/Forgotpwd.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/SweetBytes/src/Database/MyConnection.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/SweetBytes/src/view/ForgotpwdView.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/SweetBytes/src/model/ForgotPwdModel.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/SweetBytes/src/controller/ForgotPwdController.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/controller/CustomizeCakeController.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/ContactUs.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/Regulations/ProfilePageRegulation.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/Images/sb_logo.jpg</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/CustomizeCakeView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/BirthdayCakeView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/CartView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/model/CustomizeCakeModel.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/ProfileView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/view/LoginView.java</file>
+            <file>file:/C:/Users/Allan/Documents/NetBeansProjects/SweetBytes/src/Regulations/RegistrationPageRegulation.java</file>
         </group>
     </open-files>
 </project-private>

@@ -13,9 +13,10 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     CustomizeCakeModel cModel= new CustomizeCakeModel();
     
     
-    public CustomizeCakeView() {
+    public CustomizeCakeView(RegistrationModel rModel) {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -916,7 +917,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 
     private void proceedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedButtonActionPerformed
         // TODO add your handling code here:
-	var c1=new CustomizeCakeController(this, cModel, true);
+	var c1=new CustomizeCakeController(this, cModel, rModel, true);
     }//GEN-LAST:event_proceedButtonActionPerformed
     public void fillCustomizeCakeData(CustomizeCakeModel cModel){
 	SizeField.setText(cModel.getSize()+"\"");
@@ -1190,13 +1191,14 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
                 // TODO add your handling code here:
 		cModel.setMessage(messageTextField.getText());
-		var c1=new CustomizeCakeController(this, cModel, false);
+		var c1=new CustomizeCakeController(this, cModel, rModel, false);
         }//GEN-LAST:event_okButtonActionPerformed
 
     private void chocolateFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chocolateFillingButtonActionPerformed
         // TODO add your handling code here:
         cModel.setFilling("Chocolate");
 	disableAllFillingButtons();
+	
     }//GEN-LAST:event_chocolateFillingButtonActionPerformed
 
     /**
@@ -1229,7 +1231,9 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomizeCakeView().setVisible(true);
+		RegistrationModel model= new RegistrationModel();
+                new CustomizeCakeView(model).setVisible(true);
+		
             }
         });
     }

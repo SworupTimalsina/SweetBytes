@@ -25,7 +25,12 @@ public class ProfilePageRegulation extends RegistrationPageRegulation{
                 return "Passwords does not match";
             }
             else{
-                return "ok";
+                if (isValidEmail(model.getEmail())){
+			return "ok";
+		}
+		else{
+			return "Enter a valid email";
+		}
             }
         }else{
             return firstCheck;
@@ -38,16 +43,21 @@ public class ProfilePageRegulation extends RegistrationPageRegulation{
         * @return "ok" if everything is valid.
         * @return corresponding error message.
         */
-        String firstCheck=FieldEmptyCheck(model);
+        String firstCheck=FieldEmptyCheck();
         if (firstCheck.equals("ok")){
             
         
-            if (!BothPasswordsMatch(model.getPassword(), model.getConfirmPassword())){
+            if (!BothPasswordsMatch()){
                 return "Passwords does not match";
                 }
 
             else{
-                return "ok";
+                if (isValidEmail()){
+			return "ok";
+		}
+		else{
+			return "Enter a valid email";
+		}
             }
         }
         else{

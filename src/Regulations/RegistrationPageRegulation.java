@@ -1,6 +1,8 @@
 package Regulations;
 
 import java.sql.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import model.*;
 import Database.MyConnector;
@@ -29,7 +31,12 @@ public class RegistrationPageRegulation {
                 }
             else{
                 if (!UsernameTaken(model.getUsername())){// Checks if username is taken.
-                    return "ok";
+                    if (isValidEmail(model.getEmail())){
+			return "ok";    
+		    }
+		    else{
+			    return "Enter a valid email";
+		    }
                 }
                 else{
                     return "Username is taken";
@@ -56,7 +63,12 @@ public class RegistrationPageRegulation {
 
             else{
                 if (!UsernameTaken()){
-                    return "ok";
+                    if (isValidEmail()){
+			    return "ok";
+		    }
+		    else{
+			    return "Enter a valid email";
+		    }
                 }
                 else{
                     return "Username taken";
@@ -254,7 +266,35 @@ public class RegistrationPageRegulation {
         
     }
     
+    public boolean isValidEmail(String email) {
+	/*
+	* Checks if email is valid or not.
+	* @return true if given email is valid.
+	*/
+
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+.[A-Za-z]+$";// Regular expression for email validation
+        
+        Pattern pattern = Pattern.compile(emailRegex);// Create a pattern object
+
+        Matcher matcher = pattern.matcher(email);// Match the input string with the pattern
+
+        return matcher.matches();// Return true if the email is valid, false otherwise
+    }
     
+    public boolean isValidEmail() {
+	/*
+	* Checks if email is valid or not.
+	* @return true if given email is valid.
+	*/
+        
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+.[A-Za-z]+$";// Regular expression for email validation
+        
+        Pattern pattern = Pattern.compile(emailRegex);// Create a pattern object
+
+        Matcher matcher = pattern.matcher(model.getEmail());// Match the input string with the pattern
+
+        return matcher.matches();// Return true if the email is valid, false otherwise
+    }
         
     public static void main(String[] args){}
         

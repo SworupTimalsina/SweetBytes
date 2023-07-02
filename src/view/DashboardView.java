@@ -63,7 +63,7 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 204, 204));
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
@@ -77,7 +77,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
-        btnCart.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnCart.setForeground(new java.awt.Color(0, 0, 0));
         btnCart.setText("CART");
         btnCart.setBorder(null);
@@ -90,7 +90,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
-        btnHome.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
@@ -104,7 +104,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
-        btnItems.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
@@ -117,7 +117,7 @@ public class DashboardView extends javax.swing.JFrame {
         });
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Myanmar MN", 0, 18)); // NOI18N
+        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
@@ -173,6 +173,7 @@ public class DashboardView extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOpaque(true);
 
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.setLayout(null);
 
         lblBCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
@@ -314,7 +315,7 @@ public class DashboardView extends javax.swing.JFrame {
         profilePage.fillCustomersData(pModel);
         
         profilePage.show();
-//       dispose();
+        dispose();
         
     }//GEN-LAST:event_btnProfileActionPerformed
 

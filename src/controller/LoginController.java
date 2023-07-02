@@ -27,7 +27,8 @@ public class LoginController {
                 if(checkUser(model)){
                     view.setMessage("Login Successfully");
                     DashboardView DBV = new DashboardView(rModel);
-                    DBV.show();                                
+                    DBV.show();     
+                    view.dispose();
                 }
                 else{
                     view.setErrorMessage("Invalid username or password");

@@ -195,6 +195,7 @@ public class DashboardView extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BDAYCAKE.png"))); // NOI18N
         jLabel2.setText("jLabel2");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel3.add(jLabel2);
         jLabel2.setBounds(0, 0, 400, 570);
 

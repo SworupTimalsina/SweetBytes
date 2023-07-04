@@ -34,7 +34,7 @@ public class ExoticWedView extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(252, 232, 201));
         setMinimumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
@@ -97,11 +97,11 @@ public class ExoticWedView extends javax.swing.JFrame {
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(jButton1)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 500, 360);
+        jPanel1.setBounds(0, 0, 500, 420);
 
         pack();
         setLocationRelativeTo(null);

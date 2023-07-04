@@ -26,34 +26,24 @@ public class ForgotPwdController {
     
     public ForgotPwdController(ForgotpwdView view) {
         this.view=view;
-//        new searchListener().actionPerformedsearch(model, view);
-//        new ForgotPwdListener().actionPerformedconfirm(model, view);
+
    }
     
     public ForgotPwdController(){
         
     }
     
-//    class searchListener{
     public void actionPerformedsearch(ForgotPwdModel model,ForgotpwdView view) {
             try {
                 System.out.println("fetching question........"); 
                 model=view.getUser();
                 if(checkQuestion(model)) {
                     String Squestion;
-                    
-                    
-//                    System.out.println("fetcing question");
-//                    view.setMessage(Squestion);
                     view.setMessage("Provide Correct credentials!!!");
                 }
                 else {
-//                    view.setMessage("Provide Correct credentials!!!");
-//                    view.setMessage(Squestion);
-                        view.setSquestion(Squestion);
-//                                              System.out.println(rs.getString(Squestion));
-
-                      
+//                    to make the question visible
+                        view.setSquestion(Squestion);       
                 }
             }
             catch (Exception e) {
@@ -62,47 +52,19 @@ public class ForgotPwdController {
         }
         public boolean checkQuestion(ForgotPwdModel user) throws Exception {
              Class.forName("com.mysql.cj.jdbc.Driver");
-//             ForgotPwdModel mymodel;
              Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","43a4a53290");
              String sql ="select securityQ from forgot_pwd where username='"+user.getUsername()+"'";
              try {
-//                  stmt=conn.createStatement();
+
                   pst=conn.prepareStatement(sql);
                   rs=pst.executeQuery(sql);
                   if(rs.next()) {
                       Squestion=rs.getString("securityQ");
-                      
-                      
-//                      System.out.println(rs.getString(Squestion));
-//                      view.setMessage("Testing ");
-                      
-                      
-//                      view.setSquestion(rs.getString(Squestion));
-//                      user.setSquestion(Squestion);
-                      
-                      
-//                      model.setText(rs.getString(1));
 
-//                      pst.setString(2, user.getSquestion());
-//                      pst.setString(8, user.getSquestion());
-//                      pst.executeUpdate();
-                      
-                      
                   }
                   
-//                  if(rs.next())
-//                {
-//                 return true;
-//                }
              conn.close();
-        
-        
-        
-//                  while(rs.next()) {
-//                      user.setText(rs.getString(1));
-//                  }
-//                  if (!Squestion.getText().isEmpty)
-            
+           
              
              }
              catch(Exception e) {
@@ -111,10 +73,9 @@ public class ForgotPwdController {
              
              return false;
         }
-//    }
+
         
     
-//    class ForgotPwdListener{
         public void actionPerformedconfirm(ForgotPwdModel model,ForgotpwdView view) {
             try {
                 if(checkPass(model)) {
@@ -150,5 +111,5 @@ public class ForgotPwdController {
             return false;
         }
     }
-//}
+
     

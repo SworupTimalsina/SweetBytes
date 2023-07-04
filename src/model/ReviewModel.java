@@ -9,5 +9,18 @@ package model;
  * @author DELL
  */
 public class ReviewModel {
+    String review;
+    
+    public ReviewModel (String review) {
+        this.review=review;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
     
 }

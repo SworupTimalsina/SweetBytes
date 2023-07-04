@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
-/**
- *
- * @author Allan
- */
+import view.*;
+import model.*;
+
+
 public class BirthdayCakeController {
+	BirthdayCakeModel bModel;
+	BirthdayCakeView bView;
 	
+	public BirthdayCakeController(BirthdayCakeModel bModel){
+		this.bModel=bModel;
+	}
 }

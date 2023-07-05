@@ -24,10 +24,11 @@ public class ItemsController {
 		public void actionPerformed(ActionEvent action){
 			try{
 				String buttonClicked=iView.findButtonName(action);
-				if (buttonClicked.equals("addToCartButtoan")){
+				if (buttonClicked.equals("addToCartButton")){
 					addToCartProcess();
 					addToModel();
-					CartView CV = new CartView();
+					iView.setVisible(false);
+					CartView CV = new CartView(iModel);
 					CV.setVisible(true);
 				}
 			}

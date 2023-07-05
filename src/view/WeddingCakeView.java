@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author AduMan
- */
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
+
 public class WeddingCakeView extends javax.swing.JFrame {
 
     /**
@@ -16,6 +13,67 @@ public class WeddingCakeView extends javax.swing.JFrame {
     public WeddingCakeView() {
         initComponents();
     }
+    
+    public void addWeddingCakeListener(ActionListener listenForAction){
+	    roseThemedButton.addActionListener(listenForAction);
+	    classyThemedButton.addActionListener(listenForAction);
+	    exoticThemedButton.addActionListener(listenForAction);
+	    wedProceedButton.addActionListener(listenForAction);
+    }
+    
+    public void displayPlainMessage(String message, String title){
+        JOptionPane.showMessageDialog(this, message, title, JOptionPane.PLAIN_MESSAGE);
+    }
+    
+    public void displayErrorMessage(String message){
+        JOptionPane.showMessageDialog(rootPane, message, "error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public String getPoundsField(){
+	    return poundsTextField.getText();
+    }
+    public String getname1Field(){
+	    return name1TextField.getText();
+    }
+    public String getname2Field(){
+	    return name2TextField.getText();
+    }
+    
+    public String getButtonName(ActionEvent a)throws Exception{
+	    var b = a.getSource();
+	    if (b==roseThemedButton){
+		    return "roseThemedButton";
+	    }
+	    else if (b==classyThemedButton){
+		    return "classyThemedButton";
+	    }
+	    else if (b==exoticThemedButton){
+		    return "exoticThemedButton";
+	    }
+	    else if (b==wedProceedButton){
+		    return "wedProceedButton";
+	    }
+	    else{
+		throw new Exception("Button not found");
+	    }
+    }
+    public void disableButton(String button){
+		switch (button){
+			case "roseThemedButton":
+				roseThemedButton.setEnabled(false);
+				break;
+			case "classyThemedButton":
+				classyThemedButton.setEnabled(false);
+				break;
+			case "exoticThemedButton":
+				exoticThemedButton.setEnabled(false);
+				break;
+			default:
+				System.err.println("Error in WeddingCakeView.disableButton");
+				break;
+		}
+		
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -497,22 +555,12 @@ public class WeddingCakeView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void exoticThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exoticThemedButtonActionPerformed
-        // TODO add your handling code here:
-
-   
-
     }//GEN-LAST:event_exoticThemedButtonActionPerformed
 
     private void roseThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roseThemedButtonActionPerformed
-   
-  
     }//GEN-LAST:event_roseThemedButtonActionPerformed
 
     private void classyThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_classyThemedButtonActionPerformed
-        // TODO add your handling code here:
-  
-     
-
     }//GEN-LAST:event_classyThemedButtonActionPerformed
 
     /**

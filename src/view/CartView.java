@@ -4,6 +4,8 @@ package view;
 import java.awt.Color;
 import javax.swing.JFrame;
 
+import model.*;
+
 
 public class CartView extends javax.swing.JFrame {
 
@@ -13,7 +15,12 @@ public class CartView extends javax.swing.JFrame {
     public CartView() {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
+    }
+    public CartView(CartModel cModel){
+	    initComponents();
+	    for (String item : cModel.getItems()){
+		System.out.println(item);
+	    }
     }
 
     /**

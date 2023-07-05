@@ -72,7 +72,7 @@ public class CartView extends javax.swing.JFrame {
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setText("DETAILS");
+        btnContactUs.setText("REVIEW");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
 

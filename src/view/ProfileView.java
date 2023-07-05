@@ -289,7 +289,7 @@ public class ProfileView extends javax.swing.JFrame {
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnContactUs.setText("DETAILS");
+        btnContactUs.setText("REVIEW");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {
@@ -364,7 +364,6 @@ public class ProfileView extends javax.swing.JFrame {
                             .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(repeatPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(btnProfile4)
                         .addGap(294, 294, 294)))
                 .addGap(551, 551, 551))

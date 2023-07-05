@@ -296,7 +296,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
         btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnContactUs.setText("DETAILS");
+        btnContactUs.setText("REVIEW");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {

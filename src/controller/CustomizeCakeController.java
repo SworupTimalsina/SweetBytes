@@ -33,8 +33,8 @@ public class CustomizeCakeController {
 	public void printLayout(){
 		txtBillPrint = new javax.swing.JTextArea();
 		String print ="********** SweetBytes **********\n\n\n"
-			+"Cashier Name : "+rModel.getFirstName()+" "+rModel.getLastName()+"\n"
-			+"Cashier Username : "+rModel.getUsername()+"\n"
+//			+"Cashier Name : "+rModel.getFirstName()+" "+rModel.getLastName()+"\n"
+//			+"Cashier Username : "+rModel.getUsername()+"\n"
 			+"Size : "+cModel.getSize()+" inches\n"
 			+"Layers : "+ cModel.getLayers()+"\n"
 			+"Type : "+cModel.getType()+" Cake\n"

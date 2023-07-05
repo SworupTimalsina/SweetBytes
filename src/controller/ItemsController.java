@@ -3,8 +3,6 @@ package controller;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import model.*;
 import view.*;
@@ -26,7 +24,7 @@ public class ItemsController {
 		public void actionPerformed(ActionEvent action){
 			try{
 				String buttonClicked=iView.findButtonName(action);
-				if (buttonClicked.equals("addToCartButton")){
+				if (buttonClicked.equals("addToCartButtoan")){
 					addToCartProcess();
 					addToModel();
 					CartView CV = new CartView();

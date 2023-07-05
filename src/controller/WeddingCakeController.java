@@ -19,8 +19,15 @@ public class WeddingCakeController {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+			try{
+				String buttonClicked = wView.getButtonName(e);// returns the name of the button clicked.
+				
+				
+			}
+			catch (Exception exe){// when button is not found.
+				System.out.println(exe);
+			}
 		}
-		
 	}
+	
 }

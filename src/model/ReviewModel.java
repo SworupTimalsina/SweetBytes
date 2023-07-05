@@ -22,5 +22,5 @@ public class ReviewModel {
     public void setReview(String review) {
         this.review = review;
     }
-    
+
 }

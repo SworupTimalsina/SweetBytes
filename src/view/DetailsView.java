@@ -3,13 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+//import model.*;
+//import controller.*;
 /**
  *
  * @author AduMan
  */
 public class DetailsView extends javax.swing.JFrame {
-
+//    ReviewModel model;
+//    ReviewController controller;
     /**
      * Creates new form DetailsVew
      */
@@ -48,9 +50,9 @@ public class DetailsView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnadd = new javax.swing.JButton();
+        btnupdate = new javax.swing.JButton();
+        btndelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +64,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
         btnProfile.setBorderPainted(false);
@@ -76,7 +77,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
         btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnCart.setForeground(new java.awt.Color(0, 0, 0));
         btnCart.setText("CART");
         btnCart.setBorder(null);
         btnCart.setBorderPainted(false);
@@ -89,7 +89,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
         btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
@@ -103,7 +102,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
         btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
         btnItems.setBorderPainted(false);
@@ -116,7 +114,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
         btnContactUs.setText("DETAILS");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
@@ -128,7 +125,6 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
         btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
@@ -150,7 +146,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("REVIEW 1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -174,7 +169,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REVIEW 2");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -198,7 +192,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("REVIEW 3");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -222,7 +215,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("REVIEW 4");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -246,7 +238,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel5.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("REVIEW 5");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -270,7 +261,6 @@ public class DetailsView extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("REVIEW 6");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -329,20 +319,22 @@ public class DetailsView extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 51));
-        jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("ADD REVIEW");
+        btnadd.setBackground(new java.awt.Color(255, 153, 51));
+        btnadd.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btnadd.setText("ADD REVIEW");
+        btnadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 51));
-        jButton2.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("UPDATE REVIEW");
+        btnupdate.setBackground(new java.awt.Color(255, 153, 51));
+        btnupdate.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btnupdate.setText("UPDATE REVIEW");
 
-        jButton3.setBackground(new java.awt.Color(255, 153, 51));
-        jButton3.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("DELETE REVIEW");
+        btndelete.setBackground(new java.awt.Color(255, 153, 51));
+        btndelete.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btndelete.setText("DELETE REVIEW");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -371,9 +363,9 @@ public class DetailsView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btndelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -392,11 +384,11 @@ public class DetailsView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(166, 166, 166)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -464,6 +456,11 @@ public class DetailsView extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_btnAboutUsActionPerformed
 
+    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnaddActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -507,9 +504,9 @@ public class DetailsView extends javax.swing.JFrame {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnItems;
     private javax.swing.JButton btnProfile;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnadd;
+    private javax.swing.JButton btndelete;
+    private javax.swing.JButton btnupdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -498,22 +498,19 @@ public class WeddingCakeView extends javax.swing.JFrame {
 
     private void exoticThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exoticThemedButtonActionPerformed
         // TODO add your handling code here:
-        ExoticWedView EW = new ExoticWedView();
-        EW.show();
+
    
 
     }//GEN-LAST:event_exoticThemedButtonActionPerformed
 
     private void roseThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roseThemedButtonActionPerformed
-        RosethemedWedView RtWV = new RosethemedWedView();
-        RtWV.show();
+   
   
     }//GEN-LAST:event_roseThemedButtonActionPerformed
 
     private void classyThemedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_classyThemedButtonActionPerformed
         // TODO add your handling code here:
-        ClassyWed CW = new ClassyWed();
-        CW.show();
+  
      
 
     }//GEN-LAST:event_classyThemedButtonActionPerformed

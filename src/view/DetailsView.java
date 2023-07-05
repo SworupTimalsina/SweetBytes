@@ -114,7 +114,12 @@ public class DetailsView extends javax.swing.JFrame {
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+<<<<<<< HEAD
         btnContactUs.setText("DETAILS");
+=======
+        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
+        btnContactUs.setText("REVIEW");
+>>>>>>> c536d2891edc1579469ad97471f5b063c8673dce
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {
@@ -349,7 +354,7 @@ public class DetailsView extends javax.swing.JFrame {
                 .addComponent(btnProfile)
                 .addGap(67, 67, 67)
                 .addComponent(btnCart)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 379, Short.MAX_VALUE)
                 .addComponent(btnHome)
                 .addGap(54, 54, 54)
                 .addComponent(btnItems)

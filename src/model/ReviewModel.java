@@ -9,10 +9,12 @@ package model;
  * @author DELL
  */
 public class ReviewModel {
-    String review;
+    String review,revnum;
     
-    public ReviewModel (String review) {
+    public ReviewModel (String review, String revnum) {
         this.review=review;
+        this.revnum=revnum;
+        
     }
 
     public String getReview() {
@@ -21,6 +23,14 @@ public class ReviewModel {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    public String getRevnum() {
+        return revnum;
+    }
+
+    public void setRevnum(String revnum) {
+        this.revnum = revnum;
     }
 
 }

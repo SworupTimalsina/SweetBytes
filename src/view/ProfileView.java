@@ -579,7 +579,7 @@ public class ProfileView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        DetailsView DV = new DetailsView();
+        ReviewView DV = new ReviewView();
         DV.show();
         dispose();
 

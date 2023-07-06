@@ -18,7 +18,7 @@ import Database.MyConnector;
 
 public class CartDAO {
     
-    public static boolean InsertCartData(ItemsModel imodel) {
+    public static boolean InsertCartData(CartModel camodel) {
         /*
         * Inserts the data from cart page to database.
         * @return true if successful.
@@ -29,20 +29,90 @@ public class CartDAO {
         try{
             Statement stmt=conn.createStatement();
             //String DOB=yearField.getSelectedItem().toString()+"-"+monthField.getSelectedItem().toString()+"-"+dayField.getSelectedItem().toString();
-            String sqlCommand = "insert into cart(name, price ,qunatity ,Total ) values('"+imodel.items()+"','"+rmodel.getLastName()+"','"+rmodel.getEmail()+"','"+rmodel.getDateOfBirth()+"','"+rmodel.getUsername()+"','"+rmodel.getPassword()+"','"+rmodel.getSecurity()+"','"+rmodel.getAnswer()+"')";
+            String sqlCommand = "insert into cart(name, price ,quantity ,Total ) values('"+camodel.getItems()+"','"+camodel.getPrice()+"','"+camodel.getQuantity()+"','"+camodel.getTotal()+"')";
             stmt.executeUpdate(sqlCommand);
-            searchRegistrationData(rmodel);// to assign e_id.
+//            searchRegistrationData(imodel);// to assign e_id.
             return true;
         }
         catch(Exception e){
-            System.out.println("Error message in InsertRegistrationData: "+e);  
+            System.out.println("Error message in InsertCartData: "+e);  
         }
         finally{
             try{
                 conn.close();
             }
             catch(Exception e){
-                System.out.println("Error in dao.CustomerDAO.InsertRegistrationData().finally: "+e);
+                System.out.println("Error in dao.CartDAO.InsertCartData().finally: "+e);
+            }
+        }
+        return false;
+    }
+    
+    public static boolean updateCartData(CartModel camodel){
+        /*
+        * Updates the conn table.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        
+        PreparedStatement preStmt;
+        Connection conn = MyConnector.dbConnect();
+        
+        String sqlCommand="UPDATE cart SET name=?, price=?, quantity=?, Total=? WHERE name=?";
+    
+        try{
+            preStmt=conn.prepareStatement(sqlCommand);
+            preStmt.setString(1,camodel.getItems().get(0));
+            preStmt.setString(2,camodel.getPrice().get(0));
+            preStmt.setString(3,camodel.getQuantity().get(0));
+            preStmt.setString(4,camodel.getTotal().get(0));
+            preStmt.setString(5,camodel.getItems().get(0));
+ 
+            
+            preStmt.execute();
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.update: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println(" Error in dao.CartDAO.update().finally: "+e);
+            }
+        }
+        return false;
+    }  
+    
+    public static boolean deleteCartData(CartModel camodel){
+        /*
+        * Deletes a row from the creds table according to the username.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        PreparedStatement preStmt;
+        Connection conn=MyConnector.dbConnect();
+        
+        String sqlCommand="DELETE FROM cart WHERE name=?";
+        
+        try{
+            preStmt=conn.prepareStatement(sqlCommand);
+            preStmt.setString(1, camodel.getItems().get(0));
+            preStmt.execute();
+            return true;
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.delete: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println(" Error at CartDAO.delete.finally: "+e);
             }
         }
         return false;

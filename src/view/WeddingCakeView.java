@@ -60,7 +60,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
 		throw new Exception("Button not found");
 	    }
     }
-    public void disableButton(String button){
+    public void disableCakeButtons(String button){
 		switch (button){
 			case "roseThemedButton":
 				roseThemedButton.setEnabled(false);
@@ -78,9 +78,9 @@ public class WeddingCakeView extends javax.swing.JFrame {
 		
 	}
     public void disableAllCakeButtons(){
-	    disableButton("roseThemedButton");
-	    disableButton("classyThemedButton");
-	    disableButton("exoticThemedButton");
+	    disableCakeButtons("roseThemedButton");
+	    disableCakeButtons("classyThemedButton");
+	    disableCakeButtons("exoticThemedButton");
     }
     public void disableProceedButton(){
 	    wedProceedButton.setEnabled(false);

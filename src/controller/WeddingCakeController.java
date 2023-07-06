@@ -53,7 +53,7 @@ public class WeddingCakeController {
 		
 		if (!(pound.isBlank())){
 			try{
-				if (!(Integer.parseInt(pound)>0 && Integer.parseInt(pound)<=5)){
+				if ((Integer.parseInt(pound)>0 && Integer.parseInt(pound)<=5)){
 					if (!fname.isBlank()){
 						if (!lname.isBlank()){
 							return "ok";

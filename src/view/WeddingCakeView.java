@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+import controller.WeddingCakeController;
 
 public class WeddingCakeView extends javax.swing.JFrame {
 
@@ -12,12 +13,14 @@ public class WeddingCakeView extends javax.swing.JFrame {
      */
     public WeddingCakeView() {
         initComponents();
+	new WeddingCakeController(this);
     }
     
     public void addWeddingCakeListener(ActionListener listenForAction){
 	    roseThemedButton.addActionListener(listenForAction);
 	    classyThemedButton.addActionListener(listenForAction);
 	    exoticThemedButton.addActionListener(listenForAction);
+	    
 	    wedProceedButton.addActionListener(listenForAction);
     }
     
@@ -74,6 +77,20 @@ public class WeddingCakeView extends javax.swing.JFrame {
 		}
 		
 	}
+    public void disableAllCakeButtons(){
+	    disableButton("roseThemedButton");
+	    disableButton("classyThemedButton");
+	    disableButton("exoticThemedButton");
+    }
+    public void disableProceedButton(){
+	    wedProceedButton.setEnabled(false);
+    }
+    
+    public void enableProceedButton(){
+	    wedProceedButton.setEnabled(true);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -62,6 +62,8 @@ public class CartDAO {
     
         try{
             preStmt=conn.prepareStatement(sqlCommand);
+            
+            
             preStmt.setString(1,camodel.getItems().get(0));
             preStmt.setString(2,camodel.getPrice().get(0));
             preStmt.setString(3,camodel.getQuantity().get(0));

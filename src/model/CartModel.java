@@ -1,10 +1,14 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class CartModel {
     ArrayList<String> items, price,quantity,total;
+    HashMap<String,Integer> itemsMap;
+
+    
     String promoCode,cartSummary;
     
     public CartModel(){
@@ -26,7 +30,14 @@ public class CartModel {
         this.cartSummary=cartSummary;
         
     }
-    
+    public HashMap<String, Integer> getItemsMap() {
+        return itemsMap;
+    }
+
+    public void setItemsMap(HashMap<String, Integer> itemsMap) {
+        this.itemsMap = itemsMap;
+    }
+
     public void setPromoCode(String promoCode) {
         this.promoCode = promoCode;
     }
@@ -43,14 +54,6 @@ public class CartModel {
         return cartSummary;
     }
 
-    public void setItems(ArrayList<String> items) {
-        this.items = items;
-    }
-
-    public void setPrice(ArrayList<String> price) {
-        this.price = price;
-    }
-
     public void setQuantity(ArrayList<String> quantity) {
         this.quantity = quantity;
     }
@@ -63,8 +66,16 @@ public class CartModel {
         return items;
     }
 
+    public void setItems(ArrayList<String> items) {
+        this.items = items;
+    }
+    
     public ArrayList<String> getPrice() {
         return price;
+    }
+    
+    public void setPrice(ArrayList<String> price) {
+        this.price = price;
     }
 
     public ArrayList<String> getQuantity() {

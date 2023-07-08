@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 
 import model.*;
 import Database.MyConnector;
+import controller.*;
 import org.junit.Assert;
 
 public class CustomerDAO {

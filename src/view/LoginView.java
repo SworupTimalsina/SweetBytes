@@ -49,10 +49,11 @@ LoginModel model;
         txtusername.setBounds(330, 340, 320, 30);
 
         txtpassword.setBackground(new java.awt.Color(231, 228, 213));
+        txtpassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtpassword.setForeground(new java.awt.Color(0, 0, 0));
         txtpassword.setBorder(null);
         getContentPane().add(txtpassword);
-        txtpassword.setBounds(330, 400, 340, 30);
+        txtpassword.setBounds(330, 390, 340, 40);
 
         showpass.setBackground(new java.awt.Color(231, 228, 213));
         showpass.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N

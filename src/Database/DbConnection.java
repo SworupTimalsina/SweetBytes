@@ -16,7 +16,7 @@ public class DbConnection {
     public static Connection dbconnect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+            Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/SweetBytes","root","43a4a53290");
                     
             System.out.println("connected");
             return(conn);

@@ -11,8 +11,10 @@ import dao.*;
 import view.*;
 import controller.*;
 import model.*;
-import junit.framework.Assert;
+import junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
+import static view.RegistrationView.convertDateToNum;
 
 public class RegisterTest {
     RegistrationView rview = new RegistrationView();
@@ -25,19 +27,29 @@ public class RegisterTest {
     @Test
     public void testActionPerformed() {
          RegistrationController controller = new RegistrationController(rview);
-//         rview.NameText.setText("test");
-//         rview.ContactText.setText("777");
-//         rview.PasswordText.setText("wda");
-//         rview.ConfirmpassText.setText(" adawd");
-//         rview.emailText4.setText("AWDAWD");
-//         rview.RegisterBtn.doClick();
+         rview.fnameField.setText("test");
+         rview.lnameField.setText("testlname");
+         rview.emailField.setText("test@gmail.com");
+         rview.dayField.setSelectedItem("01");
+         rview.monthField.setSelectedItem("Feb");
+         rview.yearField.setSelectedItem("2001");
+         rview.unameField1.setText("tester");
+         rview.passwordField.setText("test@gmail.com");
+         rview.repeatPasswordField.setText("test@gmail.com");
+         rview.sec.setText("test@gmail.com");
+         rview.aans.setText("test@gmail.com");
+         String DOB=rview.yearField.getSelectedItem().toString()+"-"+convertDateToNum(rview.monthField.getSelectedItem().toString())+"-"+rview.dayField.getSelectedItem().toString();
+         
+         
+         
+
 
          
 
         Boolean expResult=true;
         
-//        Boolean Result=dao.RegisterData(mod);
-//        assertEquals(expResult, Result);
+        Boolean Result=dao.InsertRegistrationData(mod);
+        assertEquals(expResult, Result);
       
     
 }

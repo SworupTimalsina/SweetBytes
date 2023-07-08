@@ -352,20 +352,20 @@ public class RegistrationView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LoginButton;
     private javax.swing.JButton RegisterButton;
-    private javax.swing.JTextField aans;
-    private javax.swing.JComboBox<String> dayField;
-    private javax.swing.JTextField emailField;
-    private javax.swing.JTextField fnameField;
+    public javax.swing.JTextField aans;
+    public javax.swing.JComboBox<String> dayField;
+    public javax.swing.JTextField emailField;
+    public javax.swing.JTextField fnameField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField lnameField;
-    private javax.swing.JComboBox<String> monthField;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JPasswordField repeatPasswordField;
-    private javax.swing.JTextField sec;
+    public javax.swing.JTextField lnameField;
+    public javax.swing.JComboBox<String> monthField;
+    public javax.swing.JPasswordField passwordField;
+    public javax.swing.JPasswordField repeatPasswordField;
+    public javax.swing.JTextField sec;
     private javax.swing.JCheckBox showpass;
-    private javax.swing.JTextField unameField1;
-    private javax.swing.JComboBox<String> yearField;
+    public javax.swing.JTextField unameField1;
+    public javax.swing.JComboBox<String> yearField;
     // End of variables declaration//GEN-END:variables
 }
 //</editor-fold>

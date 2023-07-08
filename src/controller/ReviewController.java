@@ -4,6 +4,8 @@
  */
 package controller;
 
+import java.sql.Connection; 
+import java.sql.DriverManager;
 import view.*;
 import model.*;
 /**
@@ -33,6 +35,8 @@ public class ReviewController {
     }
     
     public void actionPerformeddel(ReviewModel model, ReviewView view) {
-        view.setMessage("Hello World");
+//        view.setMessage("Hello World");
+          DeleteReviewFrame DR=new DeleteReviewFrame();
+          DR.show();
     }
 }

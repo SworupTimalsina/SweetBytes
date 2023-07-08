@@ -1,11 +1,9 @@
 package view;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import controller.*;
+import java.util.HashMap;
 import model.*;
-
 
 public class ItemsView extends javax.swing.JFrame {
               public  int countleb1 = 0;
@@ -14,9 +12,8 @@ public class ItemsView extends javax.swing.JFrame {
               public  int countleb4 = 0;
               public  int countleb5 = 0;
               public  int countleb6 = 0;
- 
-
-    /**
+              public HashMap<String,Integer> itemsMap = new HashMap<>();
+     /**
      * Creates new form Items
      */
     /*
@@ -52,7 +49,7 @@ public class ItemsView extends javax.swing.JFrame {
 	    cupcakesAddButton.addActionListener(listenForEvents);
 	    cupcakesSubButton.addActionListener(listenForEvents);
     }
-    
+       
     public String findButtonName(ActionEvent e) throws Exception{
 	    var a=e.getSource();
 	    if (a == addToCartButton){
@@ -90,12 +87,8 @@ public class ItemsView extends javax.swing.JFrame {
 	    }
 	    else{
 		    throw new Exception("Button not found");
-	    }
-	
-	    
-	    
-    }
-    
+	    }	    
+    }        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -776,122 +769,116 @@ public class ItemsView extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
-        // TODO add your handling code here:
-        ProfileView JFI = new ProfileView();
+       ProfileView JFI = new ProfileView();
         JFI.show();
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
-        // TODO add your handling code here:
-        CartView CV = new CartView();
+       CartView CV = new CartView();
         CV.show();
     }//GEN-LAST:event_btnCartActionPerformed
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
-        // TODO add your handling code here:
         ItemsView JFI = new ItemsView();
         JFI.show();
     }//GEN-LAST:event_btnItemsActionPerformed
 
     private void btnAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutUsActionPerformed
-        // TODO add your handling code here:
         AboutUs AV = new AboutUs();
         AV.show();
     }//GEN-LAST:event_btnAboutUsActionPerformed
-
+   
     private void macronsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_macronsAddButtonActionPerformed
         countleb1++;
         macronsCountLabel.setText(Integer.toString(countleb1));
     }//GEN-LAST:event_macronsAddButtonActionPerformed
 
     private void macronsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_macronsSubButtonActionPerformed
-        // TODO add your handling code here:
         countleb1--;
         macronsCountLabel.setText(Integer.toString(countleb1));
     }//GEN-LAST:event_macronsSubButtonActionPerformed
 
     private void croissantsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_croissantsAddButtonActionPerformed
-        // TODO add your handling code here:
-        countleb2++;
+       countleb2++;
         croissantsCountLabel.setText(Integer.toString(countleb2));
     }//GEN-LAST:event_croissantsAddButtonActionPerformed
 
     private void breadAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breadAddButtonActionPerformed
-        // TODO add your handling code here:
         countleb3++;
         breadCountLabel.setText(Integer.toString(countleb3));
     }//GEN-LAST:event_breadAddButtonActionPerformed
 
     private void bunsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bunsAddButtonActionPerformed
-        // TODO add your handling code here:
         countleb4++;
         bunsCountLabel.setText(Integer.toString(countleb4));
     }//GEN-LAST:event_bunsAddButtonActionPerformed
 
     private void cookiesAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesAddButtonActionPerformed
-        // TODO add your handling code here:
         countleb5++;
         cookiesCountLabel.setText(Integer.toString(countleb5));
     }//GEN-LAST:event_cookiesAddButtonActionPerformed
 
     private void cupcakesAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupcakesAddButtonActionPerformed
-        // TODO add your handling code here:
         countleb6++;
         cupcakesCountLabel.setText(Integer.toString(countleb6));
     }//GEN-LAST:event_cupcakesAddButtonActionPerformed
 
     private void croissantsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_croissantsSubButtonActionPerformed
-        // TODO add your handling code here:
          countleb2--;
         croissantsCountLabel.setText(Integer.toString(countleb2));
     }//GEN-LAST:event_croissantsSubButtonActionPerformed
 
     private void breadSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breadSubButtonActionPerformed
-        // TODO add your handling code here:
          countleb3--;
         breadCountLabel.setText(Integer.toString(countleb3));
     }//GEN-LAST:event_breadSubButtonActionPerformed
 
     private void bunsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bunsSubButtonActionPerformed
-        // TODO add your handling code here:
          countleb4--;
         bunsCountLabel.setText(Integer.toString(countleb4));
     }//GEN-LAST:event_bunsSubButtonActionPerformed
 
     private void cookiesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesSubButtonActionPerformed
-        // TODO add your handling code here:
-         countleb5--;
+                 countleb5--;
         cookiesCountLabel.setText(Integer.toString(countleb5));
     }//GEN-LAST:event_cookiesSubButtonActionPerformed
 
     private void cupcakesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupcakesSubButtonActionPerformed
-        // TODO add your handling code here:
-         countleb6--;
+                 countleb6--;
         cupcakesCountLabel.setText(Integer.toString(countleb6));
     }//GEN-LAST:event_cupcakesSubButtonActionPerformed
-
+    
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
-        // TODO add your handling code here:
+                    // Create an instance of ItemsView
+        
+        itemsMap.put("macrons",countleb1);
+        itemsMap.put("crossaint",countleb2);
+        itemsMap.put("bread",countleb3);
+        itemsMap.put("buns",countleb4);
+        itemsMap.put("cookies",countleb5);
+        itemsMap.put("cupcakes",countleb6);
+        ItemsView iView = new ItemsView();
+
+        // Create an instance of ItemsController and pass the ItemsView instance
+        ItemsController iController = new ItemsController(iView);
+        // Call the addToCartProcess() method
+        iController.addToCartProcess();
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void below0(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_below0
-        // TODO add your handling code here:
-        
+    
     }//GEN-LAST:event_below0
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
-        DashboardView DaB = new DashboardView();
+      DashboardView DaB = new DashboardView();
         DaB.show();
         dispose();
-
     }//GEN-LAST:event_btnHomeActionPerformed
-
-    /**
+   /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -932,7 +919,6 @@ public class ItemsView extends javax.swing.JFrame {
             }
         });
     }
-
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton addToCartButton;
         private javax.swing.JButton breadAddButton;
@@ -989,7 +975,5 @@ public class ItemsView extends javax.swing.JFrame {
 
     //private void sclit() {
       //  throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    //}
-
-    
+    //}    
 }

@@ -3,12 +3,16 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JFrame;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
 import model.*;
+import view.*;
 
 
 public class CartView extends javax.swing.JFrame {
-
+    ItemsModel cModel;
+    private HashMap<String,Integer> itemsMap = new HashMap<String,Integer>();
     /**
      * Creates new form HomeAndItems
      */
@@ -16,13 +20,28 @@ public class CartView extends javax.swing.JFrame {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-    public CartView(CartModel cModel){
+    public CartView(ItemsModel cModel){
 	    initComponents();
-	    for (String item : cModel.getItems()){
-		System.out.println(item);
-	    }
+            this.cModel=cModel;
+            this.itemsMap = cModel.getItemsMap();
+            loadCart();
+   }
+    public void loadCart (){
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.setRowCount(0);
+        //System.out.println(itemsMap);
+        for (int i = 0; i < cModel.getItems().size(); i++) {
+        Object[] rowData = {
+            cModel.getItems().get(i),
+            cModel.getPrice().get(i),
+            cModel.getQuantity().get(i),
+            cModel.getTotal().get(i)
+        };
+        model.addRow(rowData);
     }
+        System.out.println(cModel);
 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,6 +70,7 @@ public class CartView extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        btnSMC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
@@ -183,7 +203,7 @@ public class CartView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         jLabel1.setText("Apply Promo Code:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 200, 21);
+        jLabel1.setBounds(40, 20, 200, 22);
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.add(jTextField1);
@@ -192,8 +212,13 @@ public class CartView extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
         jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
-        jButton1.setBounds(180, 110, 75, 26);
+        jButton1.setBounds(180, 110, 75, 28);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -210,6 +235,13 @@ public class CartView extends javax.swing.JFrame {
         jPanel3.add(jButton2);
         jButton2.setBounds(350, 170, 100, 30);
 
+        btnSMC.setText("Show My Cart");
+        btnSMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSMCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -219,7 +251,9 @@ public class CartView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnProfile4)
-                        .addGap(469, 469, 469))
+                        .addGap(290, 290, 290)
+                        .addComponent(btnSMC)
+                        .addGap(101, 101, 101))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -268,7 +302,9 @@ public class CartView extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnProfile4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnProfile4)
+                            .addComponent(btnSMC))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
@@ -314,17 +350,31 @@ public class CartView extends javax.swing.JFrame {
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
         btnProfile.setBackground(Color.pink);
-
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnProfile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfile4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProfile4ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnSMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSMCActionPerformed
+        // TODO add your handling code here:
+        loadCart();
+     
+        System.out.println("Items: " + cModel.getItems());
+        System.out.println("Price: " + cModel.getPrice());
+        System.out.println("Quantity: " + cModel.getQuantity());
+        System.out.println("Total: " + cModel.getTotal());
+        System.out.println(itemsMap);
+        loadCart();
+                
+    }//GEN-LAST:event_btnSMCActionPerformed
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -351,16 +401,7 @@ public class CartView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CartView().setVisible(true);
-                
-            }
-            
-        });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAboutUs;
     private javax.swing.JButton btnContactUs;
@@ -369,6 +410,7 @@ public class CartView extends javax.swing.JFrame {
     private javax.swing.JButton btnProfile2;
     private javax.swing.JButton btnProfile3;
     private javax.swing.JButton btnProfile4;
+    private javax.swing.JButton btnSMC;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

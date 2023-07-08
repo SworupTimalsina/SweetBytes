@@ -3,6 +3,8 @@ package controller;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import model.*;
 import view.*;
@@ -28,6 +30,8 @@ public class ItemsController {
 					addToCartProcess();
 					addToModel();
 					iView.setVisible(false);
+                                        iModel.setItemsMap(iView.itemsMap);
+                                    
 					CartView CV = new CartView(iModel);
 					CV.setVisible(true);
 				}

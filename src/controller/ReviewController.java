@@ -4,10 +4,35 @@
  */
 package controller;
 
+import view.*;
+import model.*;
 /**
  *
  * @author DELL
  */
 public class ReviewController {
+    ReviewView view;
+    ReviewModel model;
     
+    public ReviewController (ReviewView view) {
+        this.view=view;
+    }
+    
+    public ReviewController(){
+        
+    }
+    
+    public void actionPerformedadd(ReviewModel model,ReviewView view) {
+//        view.setMessage("Hello");
+        AddReviewFrame AR=new AddReviewFrame();
+        AR.show();
+    }
+    
+    public void actionPerformedref(ReviewModel model, ReviewView view) {
+        view.setMessage("Hi");
+    }
+    
+    public void actionPerformeddel(ReviewModel model, ReviewView view) {
+        view.setMessage("Hello World");
+    }
 }

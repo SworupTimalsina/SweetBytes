@@ -3,12 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
+import java.awt.event.ActionListener;
 /**
  *
  * @author AduMan
  */
+import model.*;
+import controller.*;
+
 public class ReviewView extends javax.swing.JFrame {
+    ReviewModel model;
+    ReviewController controller;
 
     /**
      * Creates new form ReviewView
@@ -18,6 +25,10 @@ public class ReviewView extends javax.swing.JFrame {
         
     }
 
+    public void setMessage(String msg) {
+        JOptionPane.showMessageDialog(this, msg);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +46,7 @@ public class ReviewView extends javax.swing.JFrame {
         btnItems = new javax.swing.JButton();
         btnContactUs = new javax.swing.JButton();
         btnAboutUs = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnadd = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -62,8 +73,8 @@ public class ReviewView extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         txt4 = new javax.swing.JTextArea();
         rev4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnrefresh = new javax.swing.JButton();
+        btndelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,9 +156,14 @@ public class ReviewView extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 51));
-        jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton1.setText("ADD REVIEW");
+        btnadd.setBackground(new java.awt.Color(255, 153, 51));
+        btnadd.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btnadd.setText("ADD REVIEW");
+        btnadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -392,13 +408,23 @@ public class ReviewView extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 51));
-        jButton2.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton2.setText("REFRESH");
+        btnrefresh.setBackground(new java.awt.Color(255, 153, 51));
+        btnrefresh.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btnrefresh.setText("REFRESH");
+        btnrefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrefreshActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 153, 51));
-        jButton3.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton3.setText("DELETE REVIEW");
+        btndelete.setBackground(new java.awt.Color(255, 153, 51));
+        btndelete.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        btndelete.setText("DELETE REVIEW");
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -425,12 +451,13 @@ public class ReviewView extends javax.swing.JFrame {
                         .addComponent(jSeparator1)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnrefresh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnadd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btndelete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -449,15 +476,15 @@ public class ReviewView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(46, 46, 46)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -474,6 +501,7 @@ public class ReviewView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
@@ -522,6 +550,42 @@ public class ReviewView extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_btnAboutUsActionPerformed
 
+    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        // TODO add your handling code here:
+        ReviewController add=new ReviewController();
+        add.actionPerformedadd(setNewReview(), this);
+    }//GEN-LAST:event_btnaddActionPerformed
+
+    private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
+        // TODO add your handling code here:
+        ReviewController ref=new ReviewController();
+        ref.actionPerformedref(setNewReview(), this);
+    }//GEN-LAST:event_btnrefreshActionPerformed
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+        ReviewController del=new ReviewController();
+        del.actionPerformeddel(setNewReview(), this);
+    }//GEN-LAST:event_btndeleteActionPerformed
+
+    
+    public ReviewModel setNewReview() {
+        model=new ReviewModel(txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText());
+        return model;
+    }
+    
+    public void addListner(ActionListener add) {
+        btnadd.addActionListener(add);
+    }
+    
+    public void refreshListner(ActionListener ref) {
+        btnrefresh.addActionListener(ref);
+    }
+    
+    public void deleteListner(ActionListener del) {
+        btndelete.addActionListener(del);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -564,9 +628,9 @@ public class ReviewView extends javax.swing.JFrame {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnItems;
     private javax.swing.JButton btnProfile;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnadd;
+    private javax.swing.JButton btndelete;
+    private javax.swing.JButton btnrefresh;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;

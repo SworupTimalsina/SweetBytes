@@ -26,7 +26,6 @@ public class LoginController {
             try{
                 model=view.getUser();
                 
-                //Assert.assertEquals(model,checkUser(model));
                 
                 if(checkUser(model)){
                     view.setMessage("Login Successfully");

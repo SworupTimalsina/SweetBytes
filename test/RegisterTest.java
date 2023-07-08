@@ -34,13 +34,25 @@ public class RegisterTest {
          rview.monthField.setSelectedItem("Feb");
          rview.yearField.setSelectedItem("2001");
          rview.unameField1.setText("tester");
-         rview.passwordField.setText("test@gmail.com");
-         rview.repeatPasswordField.setText("test@gmail.com");
-         rview.sec.setText("test@gmail.com");
-         rview.aans.setText("test@gmail.com");
-         String DOB=rview.yearField.getSelectedItem().toString()+"-"+convertDateToNum(rview.monthField.getSelectedItem().toString())+"-"+rview.dayField.getSelectedItem().toString();
+         rview.passwordField.setText("testpass");
+         rview.repeatPasswordField.setText("testpass");
+         rview.sec.setText("test?");
+         rview.aans.setText("test");
+//         String DOB=rview.yearField.getSelectedItem().toString()+"-"+convertDateToNum(rview.monthField.getSelectedItem().toString())+"-"+rview.dayField.getSelectedItem().toString();
          
-         
+        RegistrationModel modell = new RegistrationModel();
+        mod.setFirstName(rview.fnameField.getText());
+        mod.setLastName(rview.lnameField.getText());
+        mod.setEmail(rview.emailField.getText());
+        String day = rview.dayField.getSelectedItem().toString();
+        String month = convertDateToNum(rview.monthField.getSelectedItem().toString());
+        String year = rview.yearField.getSelectedItem().toString();
+        String dob = year + "-" + month + "-" + day;
+        mod.setDateOfBirth(dob);
+        mod.setUsername(rview.unameField1.getText());
+        mod.setPassword(rview.passwordField.getText());
+        mod.setSecurityQ(rview.sec.getText());
+        mod.setAnswer(rview.aans.getText());
          
 
 

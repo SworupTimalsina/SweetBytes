@@ -3,28 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/Database/MyConnector.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/WeddingCakeController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/RegistrationModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/CartModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/LoginModel.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/dao/CartDAO.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/CartController.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ForgotPwdController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/RegistrationController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/LoginController.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ForgotPwdModel.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/test/LoginTest.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ItemsView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/dao/CustomerDAO.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ProfileModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/BirthdayCakeController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ForgotpwdView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/Forgotpwd.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/DashboardView.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ReviewController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/Database/MyConnector.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/BirthdayCakeModel.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/dao/CartDAO.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ForgotPwdController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/test/RegisterTest.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ProfileController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ForgotPwdModel.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ProfileModel.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/CustomizeCakeController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/CustomizeCakeModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/LoginView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ReviewModel.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/DashboardView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ReviewView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ReviewController.java</file>
         </group>
     </open-files>
 </project-private>

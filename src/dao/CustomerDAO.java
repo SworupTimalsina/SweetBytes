@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 
 import model.*;
 import Database.MyConnector;
+import org.junit.Assert;
 
 public class CustomerDAO {
     
@@ -122,7 +123,7 @@ public class CustomerDAO {
         */
         PreparedStatement preStmt;
         Connection conn=MyConnector.dbConnect();
-        
+        //Assert.assertEquals();
         String sqlCommand="DELETE FROM creds WHERE u_name=?";
         
         try{
@@ -158,6 +159,7 @@ public class CustomerDAO {
         String sqlCommand="SELECT * FROM creds WHERE u_name=?";
         
         try{
+//            Assert.assertEquals(preStmt, conn);
             preStmt=conn.prepareStatement(sqlCommand);
             preStmt.setString(1, rmodel.getUsername());
             rs=preStmt.executeQuery();
@@ -233,6 +235,40 @@ public class CustomerDAO {
         throw new Exception("Error at CustomerDAO.find_e_id");
         
     }
+        
+        
+        public boolean checkData(LoginModel user) {
+     try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
+
+        String query = "select * from creds where u_name='" + user.getUsername() + "' AND pass='" + user.getPassword() + "'";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            System.out.println(user.getUsername());
+            System.out.println(user.getPassword());
+            if (rs.next()) {
+                return true;
+
+            }
+            conn.close();
+
+        } catch (Exception e3) {
+            System.out.println(e3.getMessage());
+
+        }
+     }
+     catch(Exception e){
+         
+     }
+        return false;
+    
+    
+    }
+        
+    
     
     public static void main(String[] args){
         // Testing methods.

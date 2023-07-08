@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.*;
 import controller.*;
+import junit.framework.Assert;
 
 
 public class LoginView extends javax.swing.JFrame {
@@ -207,13 +208,13 @@ public void addLoginListner(ActionListener log)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
+    public javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogin1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JCheckBox showpass;
-    private javax.swing.JPasswordField txtpassword;
-    private javax.swing.JTextField txtusername;
+    public javax.swing.JPasswordField txtpassword;
+    public javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }

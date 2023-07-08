@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+import controller.WeddingCakeController;
 
 public class WeddingCakeView extends javax.swing.JFrame {
 
@@ -12,12 +13,14 @@ public class WeddingCakeView extends javax.swing.JFrame {
      */
     public WeddingCakeView() {
         initComponents();
+	new WeddingCakeController(this);
     }
     
     public void addWeddingCakeListener(ActionListener listenForAction){
 	    roseThemedButton.addActionListener(listenForAction);
 	    classyThemedButton.addActionListener(listenForAction);
 	    exoticThemedButton.addActionListener(listenForAction);
+	    
 	    wedProceedButton.addActionListener(listenForAction);
     }
     
@@ -57,7 +60,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
 		throw new Exception("Button not found");
 	    }
     }
-    public void disableButton(String button){
+    public void disableCakeButtons(String button){
 		switch (button){
 			case "roseThemedButton":
 				roseThemedButton.setEnabled(false);
@@ -74,6 +77,20 @@ public class WeddingCakeView extends javax.swing.JFrame {
 		}
 		
 	}
+    public void disableAllCakeButtons(){
+	    disableCakeButtons("roseThemedButton");
+	    disableCakeButtons("classyThemedButton");
+	    disableCakeButtons("exoticThemedButton");
+    }
+    public void disableProceedButton(){
+	    wedProceedButton.setEnabled(false);
+    }
+    
+    public void enableProceedButton(){
+	    wedProceedButton.setEnabled(true);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -518,7 +535,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        DetailsView DV = new DetailsView();
+        ReviewView DV = new ReviewView();
         DV.show();
         dispose();
     }//GEN-LAST:event_btnContactUsActionPerformed

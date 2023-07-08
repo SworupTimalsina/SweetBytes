@@ -98,7 +98,6 @@ public class ProfileView extends javax.swing.JFrame {
         jSeparator1.setOpaque(true);
 
         jLabel1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("First Name");
 
         firstNameField.addActionListener(new java.awt.event.ActionListener() {
@@ -137,32 +136,25 @@ public class ProfileView extends javax.swing.JFrame {
         yearComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "year", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", " ", " " }));
 
         jLabel5.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Last Name");
 
         jLabel6.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
 
         jLabel7.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Date of Birth");
 
         jLabel8.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Username");
 
         jLabel9.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Password");
 
         jLabel10.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Repeat Password");
 
         btnProfile4.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile4.setFont(new java.awt.Font("MS PMincho", 0, 48)); // NOI18N
-        btnProfile4.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile4.setText("PROFILE");
         btnProfile4.setBorder(null);
         btnProfile4.setBorderPainted(false);
@@ -183,7 +175,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         updateProfileButton.setBackground(new java.awt.Color(255, 153, 51));
         updateProfileButton.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        updateProfileButton.setForeground(new java.awt.Color(0, 0, 0));
         updateProfileButton.setText("UPDATE PROFILE");
         updateProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,7 +184,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         deleteProfileButton.setBackground(new java.awt.Color(255, 153, 51));
         deleteProfileButton.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        deleteProfileButton.setForeground(new java.awt.Color(0, 0, 0));
         deleteProfileButton.setText("DELETE PROFLE");
         deleteProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,16 +204,13 @@ public class ProfileView extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Security Question");
 
         jLabel4.setFont(new java.awt.Font("Imprint MT Shadow", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Answer");
 
         showpass.setBackground(new java.awt.Color(252, 232, 201));
         showpass.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
-        showpass.setForeground(new java.awt.Color(0, 0, 0));
         showpass.setText("Show Password");
         showpass.setBorder(null);
         showpass.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +221,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
         btnProfile.setBorderPainted(false);
@@ -248,7 +234,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
         btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnCart.setForeground(new java.awt.Color(0, 0, 0));
         btnCart.setText("CART");
         btnCart.setBorder(null);
         btnCart.setBorderPainted(false);
@@ -261,7 +246,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
         btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
@@ -275,7 +259,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
         btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
         btnItems.setBorderPainted(false);
@@ -288,7 +271,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
         btnContactUs.setText("REVIEW");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
@@ -300,7 +282,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
         btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
@@ -312,7 +293,6 @@ public class ProfileView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 153, 153));
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("LOG OUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,9 +307,9 @@ public class ProfileView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(126, 126, 126)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -364,8 +344,8 @@ public class ProfileView extends javax.swing.JFrame {
                             .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(repeatPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnProfile4)
-                        .addGap(294, 294, 294)))
+                        .addGap(392, 392, 392)
+                        .addComponent(btnProfile4)))
                 .addGap(551, 551, 551))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +559,7 @@ public class ProfileView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        DetailsView DV = new DetailsView();
+        ReviewView DV = new ReviewView();
         DV.show();
         dispose();
 

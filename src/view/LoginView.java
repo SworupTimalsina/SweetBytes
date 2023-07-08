@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.*;
 import controller.*;
+import junit.framework.Assert;
 
 
 public class LoginView extends javax.swing.JFrame {
@@ -48,10 +49,11 @@ LoginModel model;
         txtusername.setBounds(330, 340, 320, 30);
 
         txtpassword.setBackground(new java.awt.Color(231, 228, 213));
+        txtpassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtpassword.setForeground(new java.awt.Color(0, 0, 0));
         txtpassword.setBorder(null);
         getContentPane().add(txtpassword);
-        txtpassword.setBounds(330, 400, 340, 30);
+        txtpassword.setBounds(330, 390, 340, 40);
 
         showpass.setBackground(new java.awt.Color(231, 228, 213));
         showpass.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
@@ -138,7 +140,7 @@ LoginModel model;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Forgotpwd FP = new Forgotpwd();
+        ForgotpwdView FP = new ForgotpwdView();
         FP.show();
         dispose();
         
@@ -207,13 +209,13 @@ public void addLoginListner(ActionListener log)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
+    public javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogin1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JCheckBox showpass;
-    private javax.swing.JPasswordField txtpassword;
-    private javax.swing.JTextField txtusername;
+    public javax.swing.JPasswordField txtpassword;
+    public javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }

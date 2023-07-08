@@ -52,8 +52,8 @@ public class ForgotPwdController {
         }
         public boolean checkQuestion(ForgotPwdModel user) throws Exception {
              Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","43a4a53290");
-             String sql ="select securityQ from forgot_pwd where username='"+user.getUsername()+"'";
+             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
+             String sql ="select securityQ from creds where u_name='"+user.getUsername()+"'";
              try {
 
                   pst=conn.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class ForgotPwdController {
                     view.setMessage("Password updated Sucessfully!!");
                 }
                 else {
-                    view.setMessage("Incorrect credentials!");
+                    view.setMessage("Incorrect Answer!");
                 }
             }
             catch (Exception e) {
@@ -92,14 +92,14 @@ public class ForgotPwdController {
         
         public boolean checkPass (ForgotPwdModel user) throws Exception {
             Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","43a4a53290");
-             String sql="select * from forgot_pwd where username='"+user.getUsername()+"' and answer='"+user.getAnswer()+"'";
+             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Sweetbytes","root","43a4a53290");
+             String sql="select * from creds where u_name='"+user.getUsername()+"' and answer='"+user.getAnswer()+"'";
             try {
                 stmt=conn.createStatement();
                 rs=stmt.executeQuery(sql);
                 if(rs.next())
                 {
-                    stmt.executeUpdate("update forgot_pwd set password='"+user.getNpassword()+"' where username='"+user.getUsername()+"' and answer='"+user.getAnswer()+"'");
+                    stmt.executeUpdate("update creds set pass='"+user.getNpassword()+"' where u_name='"+user.getUsername()+"' and answer='"+user.getAnswer()+"'");
                     return true;
                 }
                 conn.close();

@@ -11,7 +11,7 @@ import view.*;
 
 
 public class CartView extends javax.swing.JFrame {
-    ItemsModel cModel;
+    CartModel cModel;
     private HashMap<String,Integer> itemsMap = new HashMap<String,Integer>();
     /**
      * Creates new form HomeAndItems
@@ -20,7 +20,7 @@ public class CartView extends javax.swing.JFrame {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-    public CartView(ItemsModel cModel){
+    public CartView(CartModel cModel){
 	    initComponents();
             this.cModel=cModel;
             this.itemsMap = cModel.getItemsMap();

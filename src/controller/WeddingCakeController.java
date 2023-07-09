@@ -30,6 +30,9 @@ public class WeddingCakeController {
 					if (check.equals("ok")){
 						setDataToModel();
 						wView.displayPlainMessage("Order listed successfully", "Thank You");
+						wView.dispose();
+						var CV = new CartView(wModel);
+						CV.setVisible(true);
 					}else{
 						wView.displayErrorMessage(check);
 					}
@@ -90,7 +93,21 @@ public class WeddingCakeController {
 		wModel.setQuantity(pounds);
 		
 		ArrayList<String> item = new ArrayList<>();
-		item.add(cakeName);
+		switch (cakeName){
+			case "roseThemedButton":
+				item.add("Rose Theme Cake");
+				break;
+			case "classyThemedButton":
+				item.add("Classy Theme Cake");
+				break;
+			case "exoticThemedButton":
+				item.add("Exotic Theme Cake");
+				break;
+			default:
+				item.add(cakeName);
+				break;
+		}
+			
 		wModel.setItems(item);
 		
 		ArrayList<String> total = new ArrayList<>();

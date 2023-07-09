@@ -30,6 +30,9 @@ public class BirthdayCakeController {
 					if (check.equals("ok")){
 						setDataToModel();
 						bView.displayPlainMessage("Order listed successfully", "Thank You");
+						bView.dispose();
+						var CV=new CartView(bModel);
+						CV.setVisible(true);
 					}else{
 						bView.displayErrorMessage(check);
 					}
@@ -84,7 +87,21 @@ public class BirthdayCakeController {
 		bModel.setQuantity(pounds);
 		
 		ArrayList<String> item = new ArrayList<>();
-		item.add(cakeName);
+		switch (cakeName){
+			case "simpleCakeButton":
+				item.add("Simple Cake");
+				break;
+			case "fancyCakeButton":
+				item.add("Fancy Cake");
+				break;
+			case "classicCakeButton":
+				item.add("Classic Cake");
+				break;
+			default:
+				item.add(cakeName);
+				break;
+		}
+		
 		bModel.setItems(item);
 		
 		ArrayList<String> total = new ArrayList<>();

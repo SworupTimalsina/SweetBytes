@@ -65,11 +65,17 @@ public class CartView extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        promotxt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        gtotallbl = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        totallbl = new javax.swing.JLabel();
+        discountlbl = new javax.swing.JLabel();
         btnSMC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -203,11 +209,11 @@ public class CartView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         jLabel1.setText("Apply Promo Code:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 200, 22);
+        jLabel1.setBounds(40, 20, 200, 21);
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(60, 60, 310, 30);
+        promotxt.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.add(promotxt);
+        promotxt.setBounds(60, 60, 310, 30);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
@@ -218,7 +224,7 @@ public class CartView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(180, 110, 75, 28);
+        jButton1.setBounds(180, 110, 75, 26);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -233,9 +239,45 @@ public class CartView extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("The Bold Font", 0, 12)); // NOI18N
         jButton2.setText("CHECKOUT");
         jPanel3.add(jButton2);
-        jButton2.setBounds(350, 170, 100, 30);
+        jButton2.setBounds(380, 180, 100, 30);
 
-        btnSMC.setText("Show My Cart");
+        jLabel4.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Grand Total :");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(70, 140, 110, 20);
+
+        gtotallbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        gtotallbl.setForeground(new java.awt.Color(0, 0, 0));
+        gtotallbl.setText("0.0");
+        jPanel3.add(gtotallbl);
+        gtotallbl.setBounds(300, 140, 70, 20);
+
+        jLabel8.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Discount :");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(70, 100, 90, 20);
+
+        jLabel9.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Total :");
+        jPanel3.add(jLabel9);
+        jLabel9.setBounds(70, 60, 70, 20);
+
+        totallbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        totallbl.setForeground(new java.awt.Color(0, 0, 0));
+        totallbl.setText("0.0");
+        jPanel3.add(totallbl);
+        totallbl.setBounds(300, 60, 70, 20);
+
+        discountlbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        discountlbl.setForeground(new java.awt.Color(0, 0, 0));
+        discountlbl.setText("0.0");
+        jPanel3.add(discountlbl);
+        discountlbl.setBounds(300, 100, 70, 20);
+
+        btnSMC.setText("REFRESH");
         btnSMC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSMCActionPerformed(evt);
@@ -251,9 +293,9 @@ public class CartView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnProfile4)
-                        .addGap(290, 290, 290)
-                        .addComponent(btnSMC)
-                        .addGap(101, 101, 101))
+                        .addGap(304, 304, 304)
+                        .addComponent(btnSMC, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -304,7 +346,7 @@ public class CartView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnProfile4)
-                            .addComponent(btnSMC))
+                            .addComponent(btnSMC, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
@@ -358,6 +400,35 @@ public class CartView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        int numrow = jTable2.getRowCount();
+        double totl = 0;
+        double discount = 0;
+        double grandTotal = 0;
+
+        for (int i = 0; i < numrow; i++) {
+            double val = Double.valueOf(jTable2.getValueAt(i, 3).toString());
+            totl += val;
+        }
+
+        String promoCode = promotxt.getText().trim();
+
+
+        if (promoCode.equalsIgnoreCase("SWEETBYTES")) {
+            discount = 0.15 * totl;  
+        } else if(promoCode.equalsIgnoreCase("SOFTWARICA")){
+            discount = 0.2 * totl;  
+        }
+            else if(promoCode.equalsIgnoreCase("LEDGROUP3")){
+            discount = 0.25 * totl;  
+        }
+
+
+        grandTotal = totl - discount;
+
+        totallbl.setText(Double.toString(totl));
+        discountlbl.setText(Double.toString(discount));
+        gtotallbl.setText(Double.toString(grandTotal));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSMCActionPerformed
@@ -411,17 +482,23 @@ public class CartView extends javax.swing.JFrame {
     private javax.swing.JButton btnProfile3;
     private javax.swing.JButton btnProfile4;
     private javax.swing.JButton btnSMC;
+    private javax.swing.JLabel discountlbl;
+    private javax.swing.JLabel gtotallbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField promotxt;
+    private javax.swing.JLabel totallbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -354,6 +354,11 @@ public class ReviewView extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("← BACK");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -431,6 +436,13 @@ public class ReviewView extends javax.swing.JFrame {
         ReviewController del=new ReviewController();
         del.actionPerformeddel(setNewReview(), this);
     }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DashboardView DaB = new DashboardView();
+        DaB.show();
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     public ReviewModel setNewReview() {

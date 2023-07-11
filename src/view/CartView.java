@@ -5,6 +5,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.*;
 import view.*;
@@ -501,4 +503,6 @@ public class CartView extends javax.swing.JFrame {
     private javax.swing.JTextField promotxt;
     private javax.swing.JLabel totallbl;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

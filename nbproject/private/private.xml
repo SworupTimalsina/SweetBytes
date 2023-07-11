@@ -10,24 +10,29 @@
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/RegistrationController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/test/WrongDetailsLogin.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/LoginController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/AddReviewFrame.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/test/LoginTest.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ItemsView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ContactUs.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ForgotpwdView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/Forgotpwd.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/CartView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/DashboardView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/CustomizeCakeView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/Database/MyConnector.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/AboutUs.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/RegistrationView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/DeleteReviewFrame.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/BirthdayCakeModel.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/OnlinePaymentview.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ForgotPwdController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/CheckOutView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/test/RegisterTest.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/ItemsController.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ProfileView.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ProfileModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/BirthdayCakeView.java</file>
-            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/LoginView.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/WeddingCakeView.java</file>
+            <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/controller/CustomizeCakeController.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/CustomizeCakeModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/model/ItemsModel.java</file>
             <file>file:/D:/class/LED%20projject%202/Projects/ByteBakery/SweetBytes/src/view/ReviewView.java</file>

@@ -80,13 +80,8 @@ public class ProfileView extends javax.swing.JFrame {
         showpass = new javax.swing.JCheckBox();
         passwordField = new javax.swing.JPasswordField();
         repeatPasswordField = new javax.swing.JPasswordField();
-        btnProfile = new javax.swing.JButton();
-        btnCart = new javax.swing.JButton();
-        btnHome = new javax.swing.JButton();
-        btnItems = new javax.swing.JButton();
-        btnContactUs = new javax.swing.JButton();
-        btnAboutUs = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
@@ -219,78 +214,6 @@ public class ProfileView extends javax.swing.JFrame {
             }
         });
 
-        btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setText("PROFILE");
-        btnProfile.setBorder(null);
-        btnProfile.setBorderPainted(false);
-        btnProfile.setContentAreaFilled(false);
-        btnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfileActionPerformed(evt);
-            }
-        });
-
-        btnCart.setBackground(new java.awt.Color(255, 204, 204));
-        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnCart.setText("CART");
-        btnCart.setBorder(null);
-        btnCart.setBorderPainted(false);
-        btnCart.setContentAreaFilled(false);
-        btnCart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCartActionPerformed(evt);
-            }
-        });
-
-        btnHome.setBackground(new java.awt.Color(255, 204, 204));
-        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnHome.setText("HOME");
-        btnHome.setBorder(null);
-        btnHome.setBorderPainted(false);
-        btnHome.setContentAreaFilled(false);
-        btnHome.setDefaultCapable(false);
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
-
-        btnItems.setBackground(new java.awt.Color(255, 204, 204));
-        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnItems.setText("ITEMS");
-        btnItems.setBorder(null);
-        btnItems.setBorderPainted(false);
-        btnItems.setContentAreaFilled(false);
-        btnItems.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemsActionPerformed(evt);
-            }
-        });
-
-        btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setText("REVIEW");
-        btnContactUs.setBorder(null);
-        btnContactUs.setContentAreaFilled(false);
-        btnContactUs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnContactUsActionPerformed(evt);
-            }
-        });
-
-        btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setText("ABOUT US");
-        btnAboutUs.setBorder(null);
-        btnAboutUs.setContentAreaFilled(false);
-        btnAboutUs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAboutUsActionPerformed(evt);
-            }
-        });
-
         jButton1.setBackground(new java.awt.Color(255, 153, 153));
         jButton1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
         jButton1.setText("LOG OUT");
@@ -299,6 +222,12 @@ public class ProfileView extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("← BACK");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -349,19 +278,6 @@ public class ProfileView extends javax.swing.JFrame {
                 .addGap(551, 551, 551))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(btnProfile)
-                        .addGap(51, 51, 51)
-                        .addComponent(btnCart)
-                        .addGap(361, 361, 361)
-                        .addComponent(btnHome)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnItems)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnContactUs)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAboutUs))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(369, 369, 369)
@@ -372,26 +288,18 @@ public class ProfileView extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnProfile)
-                            .addComponent(btnCart))
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnHome)
-                            .addComponent(btnItems)
-                            .addComponent(btnContactUs)
-                            .addComponent(btnAboutUs))
-                        .addGap(27, 27, 27)))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -524,56 +432,6 @@ public class ProfileView extends javax.swing.JFrame {
 		}
         }//GEN-LAST:event_showpassActionPerformed
 
-    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
-        // TODO add your handling code here:
-        btnProfile.setBackground(Color.pink);
-        ProfileView profilePage = new ProfileView();
-        ProfileModel pModel=profilePage.setNewProfile(rModel);
-        profilePage.fillCustomersData(pModel);
-
-        profilePage.show();
-        //       dispose();
-
-    }//GEN-LAST:event_btnProfileActionPerformed
-
-    private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
-        // TODO add your handling code here:
-        CartView CV = new CartView();
-        CV.show();
-        dispose();
-    }//GEN-LAST:event_btnCartActionPerformed
-
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
-        DashboardView DaB = new DashboardView(rModel);
-        DaB.show();
-        dispose();
-    }//GEN-LAST:event_btnHomeActionPerformed
-
-    private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
-        // TODO add your handling code here:
-        ItemsView JFI = new ItemsView();
-        JFI.show();
-        dispose();
-    }//GEN-LAST:event_btnItemsActionPerformed
-
-    private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
-        // TODO add your handling code here:
-        ReviewView DV = new ReviewView();
-        DV.show();
-        dispose();
-
-    }//GEN-LAST:event_btnContactUsActionPerformed
-
-    private void btnAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutUsActionPerformed
-        // TODO add your handling code here:
-        AboutUs AV = new AboutUs();
-        AV.show();
-        dispose();
-        
-        //
-    }//GEN-LAST:event_btnAboutUsActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         LoginView LV = new LoginView();
@@ -691,17 +549,12 @@ public class ProfileView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailField;
     private javax.swing.JTextField answerField;
-    private javax.swing.JButton btnAboutUs;
-    private javax.swing.JButton btnCart;
-    private javax.swing.JButton btnContactUs;
-    private javax.swing.JButton btnHome;
-    private javax.swing.JButton btnItems;
-    private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnProfile4;
     private javax.swing.JComboBox<String> dayComboBox;
     private javax.swing.JButton deleteProfileButton;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

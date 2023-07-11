@@ -66,12 +66,6 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         vanillaFillingButton = new javax.swing.JButton();
         chocolateFillingButton = new javax.swing.JButton();
         proceedButton = new javax.swing.JButton();
-        btnProfile = new javax.swing.JButton();
-        btnCart = new javax.swing.JButton();
-        btnHome = new javax.swing.JButton();
-        btnItems = new javax.swing.JButton();
-        btnContactUs = new javax.swing.JButton();
-        btnAboutUs = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -87,6 +81,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         fillingField = new javax.swing.JTextField();
         btnHome1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -580,84 +575,6 @@ public class CustomizeCakeView extends javax.swing.JFrame {
             }
         });
 
-        btnProfile.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
-        btnProfile.setText("PROFILE");
-        btnProfile.setBorder(null);
-        btnProfile.setBorderPainted(false);
-        btnProfile.setContentAreaFilled(false);
-        btnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfileActionPerformed(evt);
-            }
-        });
-
-        btnCart.setBackground(new java.awt.Color(255, 204, 204));
-        btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnCart.setForeground(new java.awt.Color(0, 0, 0));
-        btnCart.setText("CART");
-        btnCart.setBorder(null);
-        btnCart.setBorderPainted(false);
-        btnCart.setContentAreaFilled(false);
-        btnCart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCartActionPerformed(evt);
-            }
-        });
-
-        btnHome.setBackground(new java.awt.Color(255, 204, 204));
-        btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(0, 0, 0));
-        btnHome.setText("HOME");
-        btnHome.setBorder(null);
-        btnHome.setBorderPainted(false);
-        btnHome.setContentAreaFilled(false);
-        btnHome.setDefaultCapable(false);
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
-
-        btnItems.setBackground(new java.awt.Color(255, 204, 204));
-        btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnItems.setForeground(new java.awt.Color(0, 0, 0));
-        btnItems.setText("ITEMS");
-        btnItems.setBorder(null);
-        btnItems.setBorderPainted(false);
-        btnItems.setContentAreaFilled(false);
-        btnItems.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemsActionPerformed(evt);
-            }
-        });
-
-        btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnContactUs.setText("REVIEW");
-        btnContactUs.setBorder(null);
-        btnContactUs.setContentAreaFilled(false);
-        btnContactUs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnContactUsActionPerformed(evt);
-            }
-        });
-
-        btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
-        btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
-        btnAboutUs.setText("ABOUT US");
-        btnAboutUs.setBorder(null);
-        btnAboutUs.setContentAreaFilled(false);
-        btnAboutUs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAboutUsActionPerformed(evt);
-            }
-        });
-
         jPanel5.setBackground(new java.awt.Color(249, 172, 117));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -815,28 +732,21 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         jButton1.setText("PROCEED");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("← BACK");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(btnProfile)
-                .addGap(51, 51, 51)
-                .addComponent(btnCart)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnHome)
-                .addGap(38, 38, 38)
-                .addComponent(btnItems)
-                .addGap(45, 45, 45)
-                .addComponent(btnContactUs)
-                .addGap(37, 37, 37)
-                .addComponent(btnAboutUs)
-                .addGap(65, 65, 65))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -867,19 +777,22 @@ public class CustomizeCakeView extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProfile)
-                    .addComponent(btnCart)
-                    .addComponent(btnHome)
-                    .addComponent(btnItems)
-                    .addComponent(btnContactUs)
-                    .addComponent(btnAboutUs))
-                .addGap(26, 26, 26)
+                .addGap(16, 16, 16)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -914,11 +827,6 @@ public class CustomizeCakeView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void proceedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedButtonActionPerformed
-        // TODO add your handling code here:
-	var c1=new CustomizeCakeController(this, cModel, rModel, true);
-    }//GEN-LAST:event_proceedButtonActionPerformed
     public void fillCustomizeCakeData(CustomizeCakeModel cModel){
 	SizeField.setText(cModel.getSize()+"\"");
 	layersField.setText(Integer.toString(cModel.getLayers()));
@@ -928,55 +836,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 	messageField.setText(cModel.getMessage());
     
     }
-    
-    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
-        // TODO add your handling code here:
-    
-        ProfileView JFI = new ProfileView();
-        JFI.fillCustomersData(rModel);
-
-        JFI.show();
-        //        dispose();
-
-    }//GEN-LAST:event_btnProfileActionPerformed
-
-    private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
-        // TODO add your handling code here:
-        CartView CV = new CartView();
-        CV.show();
-        dispose();
-    }//GEN-LAST:event_btnCartActionPerformed
-
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
-        DashboardView DaB = new DashboardView();
-        DaB.show();
-        dispose();
-    }//GEN-LAST:event_btnHomeActionPerformed
-
-    private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
-        // TODO add your handling code here:
-        ItemsView JFI = new ItemsView();
-        JFI.show();
-        dispose();
-    }//GEN-LAST:event_btnItemsActionPerformed
-
-    private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
-        // TODO add your handling code here:
-        ContactUs CoV = new ContactUs();
-        CoV.show();
-        dispose();
-
-    }//GEN-LAST:event_btnContactUsActionPerformed
-
-    private void btnAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutUsActionPerformed
-        // TODO add your handling code here:
-        AboutUs AV = new AboutUs();
-        AV.show();
-        dispose();
-        //
-    }//GEN-LAST:event_btnAboutUsActionPerformed
-    
+        
     public void disableAllSizeButtons(){
 	    /*
 	    * disables all choose size buttons
@@ -1019,42 +879,6 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     
     
     
-    private void sixInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixInchButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setSize(6);
-	disableAllSizeButtons();
-    }//GEN-LAST:event_sixInchButtonActionPerformed
-
-    private void oneLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneLayerButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setLayers(1);
-	disabeleAllNumberOfLayersButtons();
-    }//GEN-LAST:event_oneLayerButtonActionPerformed
-
-    private void threeLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeLayerButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setLayers(3);
-	disabeleAllNumberOfLayersButtons();
-    }//GEN-LAST:event_threeLayerButtonActionPerformed
-
-    private void twoLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoLayerButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setLayers(2);
-	disabeleAllNumberOfLayersButtons();
-    }//GEN-LAST:event_twoLayerButtonActionPerformed
-
-    private void poundCakeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poundCakeButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setType("Egg");
-	disableAllChooseTypeButtons();
-    }//GEN-LAST:event_poundCakeButtonActionPerformed
-
-    private void spongeCakeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spongeCakeButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setType("Eggless");
-	disableAllChooseTypeButtons();
-    }//GEN-LAST:event_spongeCakeButtonActionPerformed
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
 	cModel.setType("Butter");
@@ -1067,139 +891,185 @@ public class CustomizeCakeView extends javax.swing.JFrame {
 	disableAllFillingButtons();
     }                                                      
 
-    private void strawberryFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strawberryFillingButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setFilling("Strawberry");
-	disableAllFillingButtons();
-    }//GEN-LAST:event_strawberryFillingButtonActionPerformed
-
-    private void vanillaFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vanillaFillingButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setFilling("Vanilla");
-	disableAllFillingButtons();
-    }//GEN-LAST:event_vanillaFillingButtonActionPerformed
-
-    private void greenColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Green");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_greenColorButtonActionPerformed
-
-    private void redColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Red");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_redColorButtonActionPerformed
-
-    private void purpleColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purpleColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Purple");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_purpleColorButtonActionPerformed
-
-    private void orangeColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Orange");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_orangeColorButtonActionPerformed
-
-    private void blueColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blueColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Blue");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_blueColorButtonActionPerformed
-
-    private void yellowColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yellowColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Yellow");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_yellowColorButtonActionPerformed
-
-    private void whiteColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_whiteColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("White");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_whiteColorButtonActionPerformed
-
-    private void cyanColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cyanColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Cyan");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_cyanColorButtonActionPerformed
-
-    private void pinkColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinkColorButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setColor("Pink");
-	disableAllIcingColorButtons();
-    }//GEN-LAST:event_pinkColorButtonActionPerformed
-
-    private void eightInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightInchButtonActionPerformed
-        // TODO add your handling code here:
-	cModel.setSize(8);
-	disableAllSizeButtons();
-    }//GEN-LAST:event_eightInchButtonActionPerformed
-
-    private void messageTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageTextFieldActionPerformed
-        // TODO add your handling code here:
-	
-    }//GEN-LAST:event_messageTextFieldActionPerformed
-
-    private void SizeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SizeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SizeFieldActionPerformed
-
-    private void cakeTypeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeTypeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cakeTypeFieldActionPerformed
-
-    private void icingColorFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icingColorFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_icingColorFieldActionPerformed
-
-    private void messageFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_messageFieldActionPerformed
-
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void layersFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_layersFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_layersFieldActionPerformed
-
-    private void fillingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillingFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fillingFieldActionPerformed
 
     private void btnHome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHome1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHome1ActionPerformed
 
-        private void tenInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenInchButtonActionPerformed
-                // TODO add your handling code here:
-		cModel.setSize(10);
-		disableAllSizeButtons();
-        }//GEN-LAST:event_tenInchButtonActionPerformed
+    private void fillingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillingFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fillingFieldActionPerformed
 
-        private void twelveInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twelveInchButtonActionPerformed
-                // TODO add your handling code here:
-		cModel.setSize(12);
-		disableAllSizeButtons();
-        }//GEN-LAST:event_twelveInchButtonActionPerformed
+    private void layersFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_layersFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_layersFieldActionPerformed
 
-        private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-                // TODO add your handling code here:
-		cModel.setMessage(messageTextField.getText());
-		var c1=new CustomizeCakeController(this, cModel, rModel, false);
-        }//GEN-LAST:event_okButtonActionPerformed
+    private void messageFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messageFieldActionPerformed
+
+    private void icingColorFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icingColorFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_icingColorFieldActionPerformed
+
+    private void cakeTypeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeTypeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cakeTypeFieldActionPerformed
+
+    private void SizeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SizeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SizeFieldActionPerformed
+
+    private void proceedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedButtonActionPerformed
+        // TODO add your handling code here:
+        var c1=new CustomizeCakeController(this, cModel, rModel, true);
+    }//GEN-LAST:event_proceedButtonActionPerformed
 
     private void chocolateFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chocolateFillingButtonActionPerformed
         // TODO add your handling code here:
         cModel.setFilling("Chocolate");
-	disableAllFillingButtons();
-	
+        disableAllFillingButtons();
     }//GEN-LAST:event_chocolateFillingButtonActionPerformed
+
+    private void vanillaFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vanillaFillingButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setFilling("Vanilla");
+        disableAllFillingButtons();
+    }//GEN-LAST:event_vanillaFillingButtonActionPerformed
+
+    private void strawberryFillingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strawberryFillingButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setFilling("Strawberry");
+        disableAllFillingButtons();
+    }//GEN-LAST:event_strawberryFillingButtonActionPerformed
+
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setMessage(messageTextField.getText());
+        var c1=new CustomizeCakeController(this, cModel, rModel, false);
+    }//GEN-LAST:event_okButtonActionPerformed
+
+    private void messageTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messageTextFieldActionPerformed
+
+    private void pinkColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinkColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Pink");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_pinkColorButtonActionPerformed
+
+    private void cyanColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cyanColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Cyan");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_cyanColorButtonActionPerformed
+
+    private void whiteColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_whiteColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("White");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_whiteColorButtonActionPerformed
+
+    private void yellowColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yellowColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Yellow");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_yellowColorButtonActionPerformed
+
+    private void blueColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blueColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Blue");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_blueColorButtonActionPerformed
+
+    private void orangeColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orangeColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Orange");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_orangeColorButtonActionPerformed
+
+    private void purpleColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purpleColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Purple");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_purpleColorButtonActionPerformed
+
+    private void redColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Red");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_redColorButtonActionPerformed
+
+    private void greenColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenColorButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setColor("Green");
+        disableAllIcingColorButtons();
+    }//GEN-LAST:event_greenColorButtonActionPerformed
+
+    private void spongeCakeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spongeCakeButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setType("Eggless");
+        disableAllChooseTypeButtons();
+    }//GEN-LAST:event_spongeCakeButtonActionPerformed
+
+    private void poundCakeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poundCakeButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setType("Egg");
+        disableAllChooseTypeButtons();
+    }//GEN-LAST:event_poundCakeButtonActionPerformed
+
+    private void twoLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoLayerButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setLayers(2);
+        disabeleAllNumberOfLayersButtons();
+    }//GEN-LAST:event_twoLayerButtonActionPerformed
+
+    private void threeLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeLayerButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setLayers(3);
+        disabeleAllNumberOfLayersButtons();
+    }//GEN-LAST:event_threeLayerButtonActionPerformed
+
+    private void oneLayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneLayerButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setLayers(1);
+        disabeleAllNumberOfLayersButtons();
+    }//GEN-LAST:event_oneLayerButtonActionPerformed
+
+    private void sixInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixInchButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setSize(6);
+        disableAllSizeButtons();
+    }//GEN-LAST:event_sixInchButtonActionPerformed
+
+    private void twelveInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twelveInchButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setSize(12);
+        disableAllSizeButtons();
+    }//GEN-LAST:event_twelveInchButtonActionPerformed
+
+    private void tenInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenInchButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setSize(10);
+        disableAllSizeButtons();
+    }//GEN-LAST:event_tenInchButtonActionPerformed
+
+    private void eightInchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightInchButtonActionPerformed
+        // TODO add your handling code here:
+        cModel.setSize(8);
+        disableAllSizeButtons();
+    }//GEN-LAST:event_eightInchButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DashboardView DaB = new DashboardView(rModel);
+        DaB.show();
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1241,13 +1111,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField SizeField;
     private javax.swing.JButton blueColorButton;
-    private javax.swing.JButton btnAboutUs;
-    private javax.swing.JButton btnCart;
-    private javax.swing.JButton btnContactUs;
-    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnHome1;
-    private javax.swing.JButton btnItems;
-    private javax.swing.JButton btnProfile;
     private javax.swing.JTextField cakeTypeField;
     private javax.swing.JButton chocolateFillingButton;
     private javax.swing.JButton cyanColorButton;
@@ -1256,6 +1120,7 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     private javax.swing.JButton greenColorButton;
     private javax.swing.JTextField icingColorField;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

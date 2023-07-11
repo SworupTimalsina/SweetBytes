@@ -24,6 +24,7 @@ public class CartController {
 					cView.calculateDiscount();
 					break;
 				case "CHECKOUT":
+                                        cView.checkoutdisplay();
 					
 					break;
 				default :

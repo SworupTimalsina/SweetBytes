@@ -83,6 +83,11 @@ public class CartView extends javax.swing.JFrame {
         discountlbl.setText(Double.toString(discount));
         gtotallbl.setText(Double.toString(grandTotal));
     }
+    
+    public void checkoutdisplay(){
+        CheckOutView AU=new CheckOutView();
+        AU.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

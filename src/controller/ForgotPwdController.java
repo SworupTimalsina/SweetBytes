@@ -15,7 +15,7 @@ import java.sql.*;
  *
  * @author DELL
  */
-public class ForgotPwdController {
+public class ForgotPwdController { 
     String Squestion;
     ForgotPwdModel model;
     ForgotpwdView view;

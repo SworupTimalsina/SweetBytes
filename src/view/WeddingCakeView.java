@@ -3,6 +3,7 @@ package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.*;
 
 import controller.WeddingCakeController;
 
@@ -12,6 +13,7 @@ public class WeddingCakeView extends javax.swing.JFrame {
      * Creates new form WeddingCakes
      */
     public WeddingCakeView() {
+        
         initComponents();
 	new WeddingCakeController(this);
     }

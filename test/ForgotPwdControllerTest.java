@@ -20,7 +20,7 @@ public class ForgotPwdControllerTest {
     public void setUp() throws Exception {
         String url = "jdbc:mysql://localhost:3306/SweetBytes";
         String username = "root";
-        String password = "Asdf1234@";
+        String password = "43a4a53290";
         connection = DriverManager.getConnection(url, username, password);
     }
 

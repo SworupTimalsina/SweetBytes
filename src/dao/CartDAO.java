@@ -121,7 +121,5 @@ public class CartDAO {
             }
         }
         return false;
-    }
-    
-    
+   }       
 }

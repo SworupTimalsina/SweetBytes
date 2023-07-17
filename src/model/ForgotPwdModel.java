@@ -18,6 +18,10 @@ public class ForgotPwdModel {
         this.answer=answer;
         this.npassword=npassword;
     }
+
+    public ForgotPwdModel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public String getUsername() {
         return username;

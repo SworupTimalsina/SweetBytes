@@ -15,6 +15,7 @@ import model.*;
 public class ReviewController {
     ReviewView view;
     ReviewModel model;
+    AddReviewFrame view1;
     
     public ReviewController (ReviewView view) {
         this.view=view;
@@ -28,6 +29,7 @@ public class ReviewController {
 //        view.setMessage("Hello");
         AddReviewFrame AR=new AddReviewFrame();
         AR.show();
+        
     }
     
     public void actionPerformedref(ReviewModel model, ReviewView view) {

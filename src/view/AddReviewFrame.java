@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,12 +17,32 @@ import javax.swing.JOptionPane;
  * @author DELL
  */
 public class AddReviewFrame extends javax.swing.JFrame {
+    ReviewView view=new ReviewView();
+    String review1;
 
     /**
      * Creates new form AddReviewFrame
      */
     public AddReviewFrame() {
         initComponents();
+        //this.view=view;
+
+        
+//        Connection conn;
+//        Statement st;
+//        ResultSet rs;
+//        try {
+//        Class.forName("com.mysql.cj.jdbc.Driver");
+//        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+//        st=conn.createStatement();
+//        rs=st.executeQuery("select * from review");
+//        if(rs.next()) {
+//            
+//        }
+//        }
+//        catch (ClassNotFoundException ex) {
+//            JOptionPane.showMessageDialog(null,"Error");
+//        }
     }
 
     /**
@@ -135,19 +156,41 @@ public class AddReviewFrame extends javax.swing.JFrame {
              pst.setString(2,txtreview.getText());
              pst.executeUpdate();
              JOptionPane.showMessageDialog(this,"Review Added Successfully");
-             
+                display();
+      
+
+//             ReviewView RV=new ReviewView();             
+//             RV.txt1.setText(txtreview.getText());
+//             RV.setVisible(true);
+        
              conn.close();
              this.dispose();
         }
+        
         catch(Exception e){
             JOptionPane.showMessageDialog(null,"Error in connection");
             System.out.println(e);
         }
-        
         }
+        
+        
+        
 
     }//GEN-LAST:event_btnEnterActionPerformed
 
+    public void display()
+    {
+               view.txt1.setText(view.txt1.getText());
+             
+                   String st=view.txt1.getText();
+                   System.out.println(st);
+                   //view.txt1.setText(st);
+      
+    }
+    public void setReview(String rev1) {
+         txtreview.setText(rev1);     
+     }
+    
     private void txtnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnumActionPerformed
@@ -195,7 +238,11 @@ public class AddReviewFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtnum;
-    private javax.swing.JTextField txtreview;
+    public javax.swing.JTextField txtnum;
+    public javax.swing.JTextField txtreview;
     // End of variables declaration//GEN-END:variables
+
+    void setReview(JLabel rev1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

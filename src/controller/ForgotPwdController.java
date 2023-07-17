@@ -52,7 +52,7 @@ public class ForgotPwdController {
         }
         public boolean checkQuestion(ForgotPwdModel user) throws Exception {
              Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
+             Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/SweetBytes","root","43a4a53290");
              String sql ="select securityQ from creds where u_name='"+user.getUsername()+"'";
              try {
 
@@ -92,7 +92,7 @@ public class ForgotPwdController {
         
         public boolean checkPass (ForgotPwdModel user) throws Exception {
             Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Sweetbytes","root","43a4a53290");
+             Connection conn=DriverManager.getConnection("jdbx:mysql://localhost:3306/SweetBytes","root","43a4a53290");
              String sql="select * from creds where u_name='"+user.getUsername()+"' and answer='"+user.getAnswer()+"'";
             try {
                 stmt=conn.createStatement();
@@ -112,4 +112,4 @@ public class ForgotPwdController {
         }
     }
 
-    
+

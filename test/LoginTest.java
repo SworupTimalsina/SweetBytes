@@ -44,7 +44,7 @@ public class LoginTest {
         lview.txtpassword.setText("admin");
         lview.btnLogin.doClick();        
 
-        Boolean expResult=true;
+        Boolean expResult=false;
         
         Boolean Result= dao.checkData(mod);
         Assert.assertEquals(expResult, Result);

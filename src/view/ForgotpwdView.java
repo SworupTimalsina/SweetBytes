@@ -236,17 +236,15 @@ public class ForgotpwdView extends javax.swing.JFrame {
         btnSearch.addActionListener(sch);
     }
     
-     public void ForgotPwdListner(ActionListener con) {
+    public void ForgotPwdListner(ActionListener con) {
         btnConfirm.addActionListener(con);
     }
     
-     public void setSquestion(String question) {
-         txtquestion.setText(question);
-         
-         
-     }
+    public void setSquestion(String question) {
+         txtquestion.setText(question);    
+    }
+
     
-     
     /**
      * @param args the command line arguments
      */
@@ -286,16 +284,16 @@ public class ForgotpwdView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnConfirm;
-    private javax.swing.JButton btnSearch;
+    public javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtanswer;
-    private javax.swing.JTextField txtnpwd;
-    private javax.swing.JTextField txtquestion;
-    private javax.swing.JTextField txtusername;
+    public javax.swing.JTextField txtanswer;
+    public javax.swing.JTextField txtnpwd;
+    public javax.swing.JTextField txtquestion;
+    public javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }

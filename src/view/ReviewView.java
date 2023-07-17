@@ -6,12 +6,16 @@ package view;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.Connection;
+
 /**
  *
  * @author AduMan
  */
 import model.*;
 import controller.*;
+import javax.swing.JTextArea;
 
 public class ReviewView extends javax.swing.JFrame {
     ReviewModel model;
@@ -23,8 +27,27 @@ public class ReviewView extends javax.swing.JFrame {
     public ReviewView() {
         initComponents();
         
+//        Connection conn;
+//        Statement st;
+//        ResultSet rs;
+//        
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+//            st=conn.createStatement();
+//            rs=st.executeQuery("select * from review");
+//            if (rs.next()) {
+//                txt1.setText(rs.getString(2));
+//                txt2.setText(rs.getString(2));
+//                
+//            }
+//        }
+//        catch (Exception e) {
+//            
+//        }
+      
     }
-
+    
     public void setMessage(String msg) {
         JOptionPane.showMessageDialog(this, msg);
     }
@@ -519,6 +542,8 @@ public class ReviewView extends javax.swing.JFrame {
         CartView CV = new CartView();
         CV.show();
         dispose();
+        //txt1=new JTextArea();
+        
     }//GEN-LAST:event_btnCartActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -552,8 +577,15 @@ public class ReviewView extends javax.swing.JFrame {
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // TODO add your handling code here:
+        //new AddReviewFrame().display();
+        AddReviewFrame ar=new AddReviewFrame();
+        ar.display();
+        System.out.println();
+        
         ReviewController add=new ReviewController();
         add.actionPerformedadd(setNewReview(), this);
+        
+        
     }//GEN-LAST:event_btnaddActionPerformed
 
     private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
@@ -567,7 +599,6 @@ public class ReviewView extends javax.swing.JFrame {
         ReviewController del=new ReviewController();
         del.actionPerformeddel(setNewReview(), this);
     }//GEN-LAST:event_btndeleteActionPerformed
-
     
     public ReviewModel setNewReview() {
         model=new ReviewModel(txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText());
@@ -583,6 +614,7 @@ public class ReviewView extends javax.swing.JFrame {
     }
     
     public void deleteListner(ActionListener del) {
+//        txt1.setText(" ");
         btndelete.addActionListener(del);
     }
     
@@ -653,11 +685,11 @@ public class ReviewView extends javax.swing.JFrame {
     private javax.swing.JLabel rev4;
     private javax.swing.JLabel rev5;
     private javax.swing.JLabel rev6;
-    private javax.swing.JTextArea txt1;
-    private javax.swing.JTextArea txt2;
-    private javax.swing.JTextArea txt3;
-    private javax.swing.JTextArea txt4;
-    private javax.swing.JTextArea txt5;
-    private javax.swing.JTextArea txt6;
+    public javax.swing.JTextArea txt1;
+    public javax.swing.JTextArea txt2;
+    public javax.swing.JTextArea txt3;
+    public javax.swing.JTextArea txt4;
+    public javax.swing.JTextArea txt5;
+    public javax.swing.JTextArea txt6;
     // End of variables declaration//GEN-END:variables
 }

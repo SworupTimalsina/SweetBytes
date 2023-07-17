@@ -10,18 +10,41 @@ public class ItemsModel extends CartModel{
         this.price=null;
         this.quantity=null;
         this.total=null;
-        this.promoCode=null;
-        this.cartSummary=null;
+
     }
     
-    public ItemsModel(ArrayList<String> items,ArrayList<String> price,ArrayList<String> quantity,ArrayList<String> total,String promoCode,String cartSummary){
+    public ItemsModel(ArrayList<String> items,ArrayList<String> price,ArrayList<String> quantity,ArrayList<String> total){
         this.items=items;
         this.price=price;
         this.quantity=quantity;
         this.total=total;
-        this.promoCode=promoCode;
-        this.cartSummary=cartSummary;
+
         
     }
-	
+	public ArrayList<Integer> getPriceAsIntegers() {
+        ArrayList<Integer> priceIntegers = new ArrayList<>();
+        for (String priceString : price) {
+            int priceInteger = Integer.parseInt(priceString);
+            priceIntegers.add(priceInteger);
+        }
+        return priceIntegers;
+    }
+    
+    public ArrayList<Integer> getQuantityAsIntegers() {
+        ArrayList<Integer> quantityIntegers = new ArrayList<>();
+        for (String quantityString : quantity) {
+            int quantityInteger = Integer.parseInt(quantityString);
+            quantityIntegers.add(quantityInteger);
+        }
+        return quantityIntegers;
+    }
+    
+    public ArrayList<Integer> getTotalAsIntegers() {
+        ArrayList<Integer> totalIntegers = new ArrayList<>();
+        for (String totalString : total) {
+            int totalInteger = Integer.parseInt(totalString);
+            totalIntegers.add(totalInteger);
+        }
+        return totalIntegers;
+    }
 }

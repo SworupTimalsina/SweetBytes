@@ -6,7 +6,7 @@ package view;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-import Database.MyConnection; 
+import Database.MyConnector; 
 //import com.mysql.cj.protocol.Resultset;
 import java.sql.DriverManager;
 import java.util.Vector;
@@ -21,7 +21,7 @@ public class ReView extends javax.swing.JFrame {
     
     private static final String username="root";
     private static final String password="Ranapurnima123$$";
-    private static final String dataconn="project_sb";
+    private static final String dataconn="project_s";
     
     Connection conn=null;
     ResultSet rs=null;

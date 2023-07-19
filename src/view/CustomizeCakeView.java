@@ -14,10 +14,10 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     public RegistrationModel rModel;
     CustomizeCakeModel cModel= new CustomizeCakeModel();
     
-    
     public CustomizeCakeView(RegistrationModel rModel) {
         initComponents();
         this.rModel=rModel;
+        okButton.setEnabled(false);
         new CustomizeCakeController(this);
     }
     
@@ -91,9 +91,20 @@ public class CustomizeCakeView extends javax.swing.JFrame {
     }
     
     public void openDashboard(){
-        DashboardView DaB = new DashboardView(rModel);
-        DaB.show();
-        dispose();
+//        DashboardView DaB = new DashboardView(rModel);
+//        DaB.setVisible(true);
+//        dispose();
+    }
+    
+    public void openCart(CartModel cartMod){
+//        CartView cV = new CartView(cartMod);
+//                   
+//        cV.setVisible(true);
+//        dispose();
+    }
+    
+    public void enableOkButton(boolean enable){
+        okButton.setEnabled(enable);
     }
     
     /**

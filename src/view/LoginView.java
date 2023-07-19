@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.*;
 import controller.*;
-import junit.framework.Assert;
 
 
 public class LoginView extends javax.swing.JFrame {

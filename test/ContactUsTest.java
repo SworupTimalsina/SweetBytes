@@ -7,7 +7,7 @@
  *
  * @author pemagurung
  */
-import static org.hamcrest.CoreMatchers.equalTo;
+import static			 org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.*;
 import static org.hamcrest.MatcherAssert.assertThat;

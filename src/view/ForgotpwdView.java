@@ -16,8 +16,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class ForgotpwdView extends javax.swing.JFrame {
+    
     ForgotPwdController controller;
     ForgotPwdModel model;
+    public String Squestion;
 
     /**
      * Creates new form ForgotpwdView
@@ -282,8 +284,8 @@ public class ForgotpwdView extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnConfirm;
+    public javax.swing.JButton btnBack;
+    public javax.swing.JButton btnConfirm;
     public javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

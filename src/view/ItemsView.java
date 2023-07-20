@@ -1,9 +1,9 @@
 package view;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import controller.*;
 import java.util.HashMap;
-import model.*;
 
 public class ItemsView extends javax.swing.JFrame {
               public  int countleb1 = 0;
@@ -22,7 +22,7 @@ public class ItemsView extends javax.swing.JFrame {
         
     }
     */
-    public ItemsView() {
+    public ItemsView(String dashboardView) {
         initComponents();
 	new ItemsController(this);
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -619,7 +619,6 @@ public class ItemsView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("← BACK");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -707,14 +706,14 @@ public class ItemsView extends javax.swing.JFrame {
         itemsMap.put("buns",countleb4);
         itemsMap.put("cookies",countleb5);
         itemsMap.put("cupcakes",countleb6);
-        ItemsView iView = new ItemsView();
+        ItemsView iView = new ItemsView("DashboardView");
 
         // Create an instance of ItemsController and pass the ItemsView instance
         ItemsController iController = new ItemsController(iView);
         // Call the addToCartProcess() method
         iController.addToCartProcess();
     }//GEN-LAST:event_addToCartButtonActionPerformed
-
+/*
     private void cookiesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesSubButtonActionPerformed
         countleb5--;
         cookiesCountLabel.setText(Integer.toString(countleb5));
@@ -778,7 +777,70 @@ public class ItemsView extends javax.swing.JFrame {
         countleb1--;
         macronsCountLabel.setText(Integer.toString(countleb1));
     }//GEN-LAST:event_macronsSubButtonActionPerformed
+        
+    ****THESE CODE ARE NOT WORKING FOR TESTING SO I HAVE RECREATED THEM BELOW****
+    
+    
+    */
+    public void macronsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        countleb1--;
+        macronsCountLabel.setText(Integer.toString(countleb1));
+    }
+    public void below0(java.awt.event.ActionEvent evt) {                        
 
+    }                       
+
+    public void macronsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        countleb1++;
+        macronsCountLabel.setText(Integer.toString(countleb1));
+    }   
+    public void croissantsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        countleb2--;
+        croissantsCountLabel.setText(Integer.toString(countleb2));
+    }                                                   
+
+    public void croissantsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        countleb2++;
+        croissantsCountLabel.setText(Integer.toString(countleb2));
+    }    
+    public void breadSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        countleb3--;
+        breadCountLabel.setText(Integer.toString(countleb3));
+    }                                              
+
+    public void breadAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        countleb3++;
+        breadCountLabel.setText(Integer.toString(countleb3));
+    }                                              
+
+    public void bunsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        countleb4--;
+        bunsCountLabel.setText(Integer.toString(countleb4));
+    }                                             
+
+    public void bunsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        countleb4++;
+        bunsCountLabel.setText(Integer.toString(countleb4));
+    } 
+    public void cookiesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        countleb5--;
+        cookiesCountLabel.setText(Integer.toString(countleb5));
+    }                                                
+
+    public void cookiesAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        countleb5++;
+        cookiesCountLabel.setText(Integer.toString(countleb5));
+    }                                                
+
+    public void cupcakesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        countleb6--;
+        cupcakesCountLabel.setText(Integer.toString(countleb6));
+    }                                                 
+
+    public void cupcakesAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        countleb6++;
+        cupcakesCountLabel.setText(Integer.toString(countleb6));
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         DashboardView DaB = new DashboardView();
@@ -822,7 +884,7 @@ public class ItemsView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ItemsView().setVisible(true);
+                new ItemsView("DashboardView").setVisible(true);
             }
         });
     }

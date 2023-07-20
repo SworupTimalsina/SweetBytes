@@ -470,7 +470,7 @@ public class ReviewView extends javax.swing.JFrame {
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
-        ItemsView JFI = new ItemsView();
+        ItemsView JFI = new ItemsView("DashboardView");
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed

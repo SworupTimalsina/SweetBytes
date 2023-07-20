@@ -1,7 +1,6 @@
 
 
 
-import javax.security.auth.callback.Callback;
 import org.junit.Before;
 import org.junit.Test;
 import view.ItemsView;
@@ -31,17 +30,18 @@ public class ItemsViewTest {
         assertEquals(initialCount + 1, updatedCount);
     }
     
-    
-    
-    
-//    
-//    
-//    
-//    
-//    
-    
-    
-    
-    
-    
+    @Test
+    public void testMacronsSubButton() {
+        // Get the initial count of macrons
+        int initialCount = itemsView.countleb1;
+
+        // Click the macronsSubButton
+        itemsView.macronsSubButtonActionPerformed(new java.awt.event.ActionEvent(itemsView, 0, "macronsSubButton"));
+
+        // Get the updated count of macrons after the click
+        int updatedCount = itemsView.countleb1;
+
+        // Assert that the count has decreased by 1
+        assertEquals(initialCount - 1, updatedCount);
+    }
 }

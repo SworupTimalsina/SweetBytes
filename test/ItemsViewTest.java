@@ -91,6 +91,21 @@ public class ItemsViewTest {
     }
     
     @Test
+    public void TestCupcakesAddButton(){
+        // Get the initial count of Cupcakes
+        int initialCount = itemsView.countleb6;
+
+        // Click the CupcakesAddButton
+        itemsView.cupcakesAddButtonActionPerformed(new java.awt.event.ActionEvent(itemsView, 0, "CupcakesAddButton"));
+
+        // Get the updated count of Cupcakes after the click
+        int updatedCount = itemsView.countleb6;
+
+        // Assert that the count has increased by 1
+        assertEquals(initialCount + 1, updatedCount);
+    }
+    
+    @Test
     public void testMacronsSubButton() {
         // Get the initial count of macrons
         int initialCount = itemsView.countleb1;

@@ -149,4 +149,19 @@ public class ItemsViewTest {
         //Assert that the count has decrease by 1
         assertEquals(initialCount -1, updatedCount);
     }
+    
+    @Test
+    public void testCookiesSubButton(){
+        //Get the initial count of Cookies
+        int initialCount = itemsView.countleb5;
+        
+        //Click the CookiesSubButtons
+        itemsView.cookiesSubButtonActionPerformed(new java.awt.event.ActionEvent(itemsView,0,"CookiesSubButton"));
+        
+        //Assret the update count of Cookies after the click
+        int updatedCount = itemsView.countleb5;
+        
+        //Assert that the count has decrease by 1
+        assertEquals(initialCount -1, updatedCount);
+    }
 }

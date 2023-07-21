@@ -46,6 +46,21 @@ public class ItemsViewTest {
     }
     
     @Test
+    public void TestBreadsAddButton(){
+        // Get the initial count of Breads
+        int initialCount = itemsView.countleb3;
+
+        // Click the BreadsAddButton
+        itemsView.breadAddButtonActionPerformed(new java.awt.event.ActionEvent(itemsView, 0, "BreadsAddButton"));
+
+        // Get the updated count of Breads after the click
+        int updatedCount = itemsView.countleb3;
+
+        // Assert that the count has increased by 1
+        assertEquals(initialCount + 1, updatedCount);
+    }
+    
+    @Test
     public void testMacronsSubButton() {
         // Get the initial count of macrons
         int initialCount = itemsView.countleb1;
@@ -60,7 +75,18 @@ public class ItemsViewTest {
         assertEquals(initialCount - 1, updatedCount);
     }
     
-//    public void testCroissantsSubButton(){
-//        
-//    }
+    @Test
+    public void testCroissantsSubButton(){
+        //Get the initial count of corissants
+        int initialCount = itemsView.countleb2;
+        
+        //Click the croissantsSubButtons
+        itemsView.croissantsSubButtonActionPerformed(new java.awt.event.ActionEvent(itemsView,0,"croissantsSubButton"));
+        
+        //Assret the update count of corissant after the click
+        int updatedCount = itemsView.countleb2;
+        
+        //Assert that the count has decrease by 1
+        assertEquals(initialCount -1, updatedCount);
+    }
 }

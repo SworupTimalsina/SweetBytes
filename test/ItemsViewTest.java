@@ -119,4 +119,19 @@ public class ItemsViewTest {
         //Assert that the count has decrease by 1
         assertEquals(initialCount -1, updatedCount);
     }
+    
+     @Test
+    public void testBunsSubButton(){
+        //Get the initial count of Buns
+        int initialCount = itemsView.countleb4;
+        
+        //Click the BunsSubButtons
+        itemsView.bunsSubButtonActionPerformed(new java.awt.event.ActionEvent(itemsView,0,"BunsSubButton"));
+        
+        //Assret the update count of Buns after the click
+        int updatedCount = itemsView.countleb4;
+        
+        //Assert that the count has decrease by 1
+        assertEquals(initialCount -1, updatedCount);
+    }
 }

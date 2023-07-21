@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionListener;
-
+import java.awt.event.ActionEvent;
 import model.*;
 import view.*;
 import controller.CartController;
@@ -16,12 +16,14 @@ import controller.CartController;
 public class CartView extends javax.swing.JFrame {
     CartModel cModel;
     private HashMap<String,Integer> itemsMap = new HashMap<String,Integer>();
+    private DashboardView dashboardView;
     /**
      * Creates new form HomeAndItems
      */
     public CartView() {
         initComponents();
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
+    dashboardView = null;
     }
     public CartView(CartModel cModel){
 	    initComponents();
@@ -30,7 +32,12 @@ public class CartView extends javax.swing.JFrame {
             loadCart();
 	    new CartController(this);
    }
-    
+    public DashboardView getDashboardView() {
+        return dashboardView;
+    }
+    public void setDashboardView(DashboardView dashboardView) {
+        this.dashboardView = dashboardView;
+    }
     public void addCartViewListener(ActionListener listenForAction){
 	    okButton.addActionListener(listenForAction);
 	    checkoutButton.addActionListener(listenForAction);
@@ -185,9 +192,14 @@ public class CartView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         jLabel1.setText("Apply Promo Code:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 200, 21);
+        jLabel1.setBounds(40, 20, 200, 22);
 
         promotxt.setBackground(new java.awt.Color(204, 204, 204));
+        promotxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                promotxtActionPerformed(evt);
+            }
+        });
         jPanel2.add(promotxt);
         promotxt.setBounds(60, 60, 310, 30);
 
@@ -200,7 +212,7 @@ public class CartView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(okButton);
-        okButton.setBounds(180, 110, 75, 26);
+        okButton.setBounds(180, 110, 75, 28);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -214,48 +226,46 @@ public class CartView extends javax.swing.JFrame {
         checkoutButton.setBackground(new java.awt.Color(255, 153, 51));
         checkoutButton.setFont(new java.awt.Font("The Bold Font", 0, 12)); // NOI18N
         checkoutButton.setText("CHECKOUT");
+        checkoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkoutButtonActionPerformed(evt);
+            }
+        });
         jPanel3.add(checkoutButton);
         checkoutButton.setBounds(380, 180, 100, 30);
 
         jLabel4.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Grand Total :");
         jPanel3.add(jLabel4);
         jLabel4.setBounds(70, 140, 110, 20);
 
         gtotallbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        gtotallbl.setForeground(new java.awt.Color(0, 0, 0));
         gtotallbl.setText("0.0");
         jPanel3.add(gtotallbl);
         gtotallbl.setBounds(300, 140, 70, 20);
 
         jLabel8.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Discount :");
         jPanel3.add(jLabel8);
         jLabel8.setBounds(70, 100, 90, 20);
 
         jLabel9.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Total :");
         jPanel3.add(jLabel9);
         jLabel9.setBounds(70, 60, 70, 20);
 
         totallbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        totallbl.setForeground(new java.awt.Color(0, 0, 0));
         totallbl.setText("0.0");
         jPanel3.add(totallbl);
         totallbl.setBounds(300, 60, 70, 20);
 
         discountlbl.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        discountlbl.setForeground(new java.awt.Color(0, 0, 0));
         discountlbl.setText("0.0");
         jPanel3.add(discountlbl);
         discountlbl.setBounds(300, 100, 70, 20);
 
         jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("← BACK");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -343,13 +353,30 @@ public class CartView extends javax.swing.JFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
     }//GEN-LAST:event_okButtonActionPerformed
-
+/*
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         DashboardView DaB = new DashboardView();
         DaB.show();
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+        **** THIS CODE IS NOT WORKING IN THE TEST SO ITS RECREATED BELOW****
+    */
+    public void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        DashboardView DaB = new DashboardView();
+        DaB.show();
+        setDashboardView(DaB); // Set the DashboardView instance
+        dispose();
+    }   
+    
+    private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkoutButtonActionPerformed
+
+    private void promotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promotxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_promotxtActionPerformed
     /**
      * @param args the command line arguments
      */

@@ -8,7 +8,7 @@ public class MyConnector{
     public static Connection dbConnect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","root@2003");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","Asdf1234@");
             System.out.println("Database connected");
             return conn ;
         }

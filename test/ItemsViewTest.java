@@ -76,6 +76,21 @@ public class ItemsViewTest {
     }
     
     @Test
+    public void TestCookiesAddButton(){
+        // Get the initial count of Cookies
+        int initialCount = itemsView.countleb5;
+
+        // Click the CookiesAddButton
+        itemsView.cookiesAddButtonActionPerformed(new java.awt.event.ActionEvent(itemsView, 0, "CookiesAddButton"));
+
+        // Get the updated count of Cookies after the click
+        int updatedCount = itemsView.countleb5;
+
+        // Assert that the count has increased by 1
+        assertEquals(initialCount + 1, updatedCount);
+    }
+    
+    @Test
     public void testMacronsSubButton() {
         // Get the initial count of macrons
         int initialCount = itemsView.countleb1;

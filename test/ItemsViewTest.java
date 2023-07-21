@@ -5,13 +5,18 @@ import org.junit.Before;
 import org.junit.Test;
 import view.ItemsView;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+import view.CartView;
+import view.DashboardView;
 
 public class ItemsViewTest {
     private ItemsView itemsView;
+    private CartView cartView;
 
     @Before
     public void setUp() {
         itemsView = new ItemsView("DashboardView");
+        cartView = new CartView();
         itemsView.setVisible(true);
     }
 
@@ -105,6 +110,10 @@ public class ItemsViewTest {
         assertEquals(initialCount + 1, updatedCount);
     }
     
+    
+    
+    
+    
     @Test
     public void testMacronsSubButton() {
         // Get the initial count of macrons
@@ -193,5 +202,23 @@ public class ItemsViewTest {
         
         //Assert that the count has decrease by 1
         assertEquals(initialCount -1, updatedCount);
+    }
+    
+    @Test
+    public void testBackButton(){
+        
+        //Verify that initally, no DashboardView is created
+        assertNull(cartView.getDashboardView());
+        
+        //Perform the action on the button
+        cartView.jButton2ActionPerformed(null);
+        
+        //Verify that a DashboardView is created and is visible
+        DashboardView dashboardView = cartView.getDashboardView();
+        assertNotNull(dashboardView);
+        assertTrue(dashboardView.isVisible());
+        
+        //verify that the current CartView is disposed
+        assertFalse(cartView.isVisible());
     }
 }

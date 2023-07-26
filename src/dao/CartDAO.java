@@ -50,6 +50,43 @@ public class CartDAO {
         return false;
     }
     
+        public static boolean insertBdayData(BirthdayCakeModel Bmodel) {
+            
+            int totalSum = 0;
+
+
+        Connection conn = MyConnector.dbConnect();
+
+        try {
+            Statement stmt = conn.createStatement();
+            String caketype = Bmodel.getCaketype();
+            String pounds = Bmodel.getPounds();
+            String name = Bmodel.getName();
+            String price = Bmodel.getPricebday();
+            ArrayList<String> total = Bmodel.getTotalbday();
+            for (String subTotal : total) {
+            totalSum += Integer.parseInt(subTotal);
+        }
+
+
+
+                String sqlCommand = "INSERT INTO BdayCake (CakeType, pounds, name, price, total) VALUES ('" + caketype + "','" + pounds + "','" + name + "','" + price + "', '"+ totalSum +"')";
+                stmt.executeUpdate(sqlCommand);
+          
+
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error message in insertBdayData: " + e);
+        } finally {
+            try {
+                conn.close();
+            } catch (Exception e) {
+                System.out.println("Error in dao.CartDAO.insertBdayData().finally: " + e);
+            }
+        }
+        return false;
+    }
+    
     public static boolean updateCartData(CartModel camodel) {
         // Updates the cart table.
         // Returns true if successful, false otherwise.

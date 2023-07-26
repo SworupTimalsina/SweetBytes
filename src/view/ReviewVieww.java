@@ -41,7 +41,7 @@ public class ReviewVieww extends javax.swing.JFrame {
     public void updateDB() {
         try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
         pst = conn.prepareStatement("SELECT * FROM review");
 
         rs = pst.executeQuery();
@@ -456,7 +456,7 @@ public class ReviewVieww extends javax.swing.JFrame {
            if(deleteItem==JOptionPane.YES_OPTION) {
                
              Class.forName("com.mysql.cj.jdbc.Driver");
-             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
              pst=conn.prepareStatement("delete from review where review_no=?");
              
              pst.setInt(1, review_no);
@@ -491,7 +491,7 @@ public class ReviewVieww extends javax.swing.JFrame {
              review_no=Integer.parseInt(RecordTable.getValueAt(SelectedRows,0).toString());
              
              Class.forName("com.mysql.cj.jdbc.Driver");
-             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
+             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes","root","43a4a53290");
              pst=conn.prepareStatement("update review set review=? where review_no=?");
              
              pst.setString(1,txtreview.getText());

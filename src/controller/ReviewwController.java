@@ -28,7 +28,7 @@ public class ReviewwController {
     public void connectionDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, "Error in connection"+e.getMessage());
         }
@@ -51,7 +51,7 @@ public class ReviewwController {
     public boolean addreview (ReviewwModel user) throws Exception {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
             pst = conn.prepareStatement("INSERT INTO review(Review) VALUES (?)");
 
             pst.setString(1, view.txtreview.getText());

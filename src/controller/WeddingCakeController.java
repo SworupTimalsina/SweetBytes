@@ -1,5 +1,6 @@
 package controller;
 
+import dao.CartDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -31,6 +32,17 @@ public class WeddingCakeController {
 						setDataToModel();
 						wView.displayPlainMessage("Order listed successfully", "Thank You");
 						wView.dispose();
+                                                
+                                                    WeddingCakeModel WedModel = new WeddingCakeModel();
+                                                    WedModel.setCaketype(cakeName);
+                                                    WedModel.setPricewed(Integer.toString(cakePrice));
+                                                    WedModel.setPounds(wView.getPoundsField());
+                                                    WedModel.setFirstName(wView.getname1Field());
+                                                    WedModel.setLastName(wView.getname2Field());
+                                                    WedModel.setTotalwed(wModel.getTotalwed());
+                                                    CartDAO.insertWeddingData(WedModel);
+                                                
+                                                
 						var CV = new CartView(wModel);
 						CV.setVisible(true);
 					}else{
@@ -96,12 +108,15 @@ public class WeddingCakeController {
 		switch (cakeName){
 			case "roseThemedButton":
 				item.add("Rose Theme Cake");
+                                cakeName = "Rose Themed Cake";
 				break;
 			case "classyThemedButton":
 				item.add("Classy Theme Cake");
+                                cakeName = "Classy Themed Cake";
 				break;
 			case "exoticThemedButton":
 				item.add("Exotic Theme Cake");
+                                cakeName = "Exotic Themed Cake";
 				break;
 			default:
 				item.add(cakeName);
@@ -113,6 +128,7 @@ public class WeddingCakeController {
 		ArrayList<String> total = new ArrayList<>();
 		total.add(Integer.toString(cakePrice*Integer.parseInt(wView.getPoundsField())));
 		wModel.setTotal(total);
+                wModel.setTotalwed(total);
 	}
 	
 	private void cakeButtonClicked(String button){

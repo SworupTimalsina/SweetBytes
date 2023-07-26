@@ -343,7 +343,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        ReviewView DV = new ReviewView();
+        ReviewVieww DV = new ReviewVieww();
         DV.show();
         dispose();
         

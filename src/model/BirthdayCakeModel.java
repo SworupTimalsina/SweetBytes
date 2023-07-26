@@ -26,7 +26,7 @@ public class BirthdayCakeModel extends CartModel{
         this.totalbday = null;
     }
     
-    public BirthdayCakeModel(ArrayList<String> items){
+    public BirthdayCakeModel(ArrayList<String> items, ArrayList<String> price,ArrayList<String> quantity,ArrayList<String> total,String promoCode,String cartSummary, String name, String Caketype, String pounds, String pricebday, ArrayList<String> totalbday){
         this.items=items;
         this.price=price;
         this.quantity=quantity;

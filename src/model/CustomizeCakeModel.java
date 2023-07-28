@@ -5,7 +5,13 @@ public class CustomizeCakeModel {
     /*
     * model for Customize cake.
     */
-    int size, layers;
+    int size, layers, price;
+
+
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
     String type, color, filling, message;
     
     public void setSize(int size){
@@ -44,5 +50,8 @@ public class CustomizeCakeModel {
     }
     public String getMessage(){
         return message;
+    }
+    public int getPrice() {
+        return price;
     }
 }

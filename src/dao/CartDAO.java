@@ -125,6 +125,43 @@ public class CartDAO {
         return false;
     }
     
+    
+        public static boolean insertCustomData(CustomizeCakeModel Cusmodel) {
+            
+            int totalSum = 0;
+
+
+        Connection conn = MyConnector.dbConnect();
+
+        try {
+            Statement stmt = conn.createStatement();
+                    int size = Cusmodel.getSize();
+                    int layers = Cusmodel.getLayers();
+                    String color = Cusmodel.getColor();
+                    String fill = Cusmodel.getFilling();
+                    String type = Cusmodel.getType();
+                    String message = Cusmodel.getMessage();
+                    int price = Cusmodel.getPrice();
+        
+
+
+                String sqlCommand = "INSERT INTO CustomizeCake (size, layer, Cake_Type, ice_colour, Filling, Message, price) VALUES ('" + size + "','" + layers + "','" + type + "','" + color + "','" + fill + "', '"+ message +"', '"+ price +"')";
+                stmt.executeUpdate(sqlCommand);
+          
+
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error message in insertWedData: " + e);
+        } finally {
+            try {
+                conn.close();
+            } catch (Exception e) {
+                System.out.println("Error in dao.CartDAO.insertWedData().finally: " + e);
+            }
+        }
+        return false;
+    }
+    
     public static boolean updateCartData(CartModel camodel) {
         // Updates the cart table.
         // Returns true if successful, false otherwise.

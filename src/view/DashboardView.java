@@ -329,7 +329,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemsActionPerformed
         // TODO add your handling code here:
-        ItemsView JFI = new ItemsView();
+        ItemsView JFI = new ItemsView("DashboardView");
         JFI.show();
         dispose();
     }//GEN-LAST:event_btnItemsActionPerformed
@@ -343,7 +343,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         // TODO add your handling code here:
-        ReviewView DV = new ReviewView();
+        ReviewVieww DV = new ReviewVieww();
         DV.show();
         dispose();
         

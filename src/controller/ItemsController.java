@@ -1,5 +1,6 @@
 package controller;
 
+import view.ItemsView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class ItemsController {
 					CV.setVisible(true);
 				}
 			}
-			catch (Exception e){
+			catch (Exception e){ 
 				System.out.println(e);
 			}
 			

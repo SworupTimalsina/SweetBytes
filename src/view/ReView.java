@@ -36,35 +36,6 @@ public class ReView extends javax.swing.JFrame {
         initComponents();
         updateDB();
          
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
-//             pst=conn.prepareStatement("select * from review");
-//             
-//             rs=pst.executeQuery();
-//             ResultSetMetaData stData=rs.getMetaData();
-//             
-//             q=stData.getColumnCount();
-//             
-//             DefaultTableModel RecordTable=(DefaultTableModel)jTable1.getModel();
-//             RecordTable.setRowCount(0);
-//             
-//             while(rs.next()){
-//                 
-//                 Vector columnData=new Vector();
-//                 
-//                 for (i=1; i<=q; i++) {
-//                     columnData.add(rs.getString("review_no"));
-//                     columnData.add(rs.getString("review"));
-//                     
-//                 }
-//                 System.out.println(columnData);
-//                 RecordTable.addRow(columnData);
-//             }
-//        }
-//        catch (Exception e) {
-//            JOptionPane.showMessageDialog(null,"Couldn't Show table");
-//        }
     }
 
     /**
@@ -76,34 +47,28 @@ public class ReView extends javax.swing.JFrame {
     
     public void updateDB() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb","root","Ranapurnima123$$");
-             pst=conn.prepareStatement("select * from review");
-             
-             rs=pst.executeQuery();
-             ResultSetMetaData stData=rs.getMetaData();
-             
-             q=stData.getColumnCount();
-             
-             DefaultTableModel RecordTable=(DefaultTableModel)jTable1.getModel();
-             RecordTable.setRowCount(0);
-             
-             while(rs.next()){
-                 
-                 Vector columnData=new Vector();
-                 
-                 for (i=1; i<=q; i++) {
-                     columnData.add(rs.getString("review_no"));
-                     columnData.add(rs.getString("review"));
-                     
-                 }
-                 System.out.println(columnData);
-                 RecordTable.addRow(columnData);
-             }
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+        pst = conn.prepareStatement("SELECT * FROM review");
+
+        rs = pst.executeQuery();
+        DefaultTableModel recordTable = (DefaultTableModel) jTable1.getModel();
+        recordTable.setRowCount(0);
+
+        while (rs.next()) {
+            int reviewNo = rs.getInt("review_no");
+            String reviewText = rs.getString("review");
+
+            Vector columnData = new Vector();
+            columnData.add(reviewNo);
+            columnData.add(reviewText);
+
+            System.out.println(columnData);
+            recordTable.addRow(columnData);
         }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Couldn't Show table");
-        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Couldn't Show table");
+    }
     }
     
     
@@ -372,7 +337,7 @@ public class ReView extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(116, 116, 116)
+                                .addGap(96, 96, 96)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -552,11 +517,6 @@ public class ReView extends javax.swing.JFrame {
              pst.executeUpdate();
              JOptionPane.showMessageDialog(this, "Review Added Successfully!!");
              updateDB();
-             
-//             DefaultTableModel RecordTable=(DefaultTableModel)jTable1.getModel();
-//             Vector obj=new Vector();
-//             obj.add(txtreview.getText());
-             
              
              
         }

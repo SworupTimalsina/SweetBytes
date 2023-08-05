@@ -21,7 +21,7 @@ import static view.RegistrationView.convertDateToNum;
 public class WrongDetailsLogin {
     LoginView lview = new LoginView();
     CustomerDAO dao = new CustomerDAO();
-    LoginModel mod = new LoginModel("admin","notadmin");
+    LoginModel mod = new LoginModel("allan","asd");
 
 
     
@@ -40,8 +40,8 @@ public class WrongDetailsLogin {
          
 
         LoginController controller = new LoginController(lview);
-        lview.txtusername.setText("admin");
-        lview.txtpassword.setText("notadmin");
+        lview.txtusername.setText("allan");
+        lview.txtpassword.setText("asd");
         lview.btnLogin.doClick();        
 
         Boolean expResult=false;

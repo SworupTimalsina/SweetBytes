@@ -15,13 +15,22 @@ import controller.CartController;
 
 public class CartView extends javax.swing.JFrame {
     CartModel cModel;
+    public RegistrationModel rModel;
     private HashMap<String,Integer> itemsMap = new HashMap<String,Integer>();
+    
     /**
      * Creates new form HomeAndItems
      */
+    
     public CartView() {
         initComponents();
+        
 //        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+    }
+    public CartView(RegistrationModel rModel){
+        this.rModel=rModel;
+        initComponents();
     }
     public CartView(CartModel cModel){
 	    initComponents();
@@ -34,6 +43,7 @@ public class CartView extends javax.swing.JFrame {
     public void addCartViewListener(ActionListener listenForAction){
 	    okButton.addActionListener(listenForAction);
 	    checkoutButton.addActionListener(listenForAction);
+        backButton.addActionListener(listenForAction);
     }
     
     public void loadCart (){
@@ -116,7 +126,7 @@ public class CartView extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         totallbl = new javax.swing.JLabel();
         discountlbl = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(255, 204, 204));
@@ -200,7 +210,7 @@ public class CartView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(okButton);
-        okButton.setBounds(180, 110, 75, 26);
+        okButton.setBounds(180, 110, 75, 31);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -214,6 +224,11 @@ public class CartView extends javax.swing.JFrame {
         checkoutButton.setBackground(new java.awt.Color(255, 153, 51));
         checkoutButton.setFont(new java.awt.Font("The Bold Font", 0, 12)); // NOI18N
         checkoutButton.setText("CHECKOUT");
+        checkoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkoutButtonActionPerformed(evt);
+            }
+        });
         jPanel3.add(checkoutButton);
         checkoutButton.setBounds(380, 180, 100, 30);
 
@@ -253,14 +268,14 @@ public class CartView extends javax.swing.JFrame {
         jPanel3.add(discountlbl);
         discountlbl.setBounds(300, 100, 70, 20);
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 255));
-        jButton2.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("← BACK");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setBackground(new java.awt.Color(204, 204, 255));
+        backButton.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
+        backButton.setForeground(new java.awt.Color(0, 0, 0));
+        backButton.setText("← BACK");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
@@ -290,14 +305,14 @@ public class CartView extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,12 +359,16 @@ public class CartView extends javax.swing.JFrame {
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
     }//GEN-LAST:event_okButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        DashboardView DaB = new DashboardView();
-        DaB.show();
-        dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+//        DashboardView DaB = new DashboardView();
+//        DaB.show();
+//        dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkoutButtonActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -386,11 +405,11 @@ public class CartView extends javax.swing.JFrame {
         /* Create and display the form */
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton btnProfile4;
     private javax.swing.JButton checkoutButton;
     private javax.swing.JLabel discountlbl;
     private javax.swing.JLabel gtotallbl;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

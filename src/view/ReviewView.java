@@ -379,7 +379,7 @@ public class ReviewView extends javax.swing.JFrame {
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+//                jButton2ActionPerformed(evt);
             }
         });
 

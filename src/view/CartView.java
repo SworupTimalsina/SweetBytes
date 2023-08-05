@@ -1,6 +1,5 @@
 package view;
 
-
 import java.awt.Color;
 import java.util.HashMap;
 import javax.swing.JLabel;
@@ -28,7 +27,8 @@ public class CartView extends javax.swing.JFrame {
     public CartView(CartModel cModel){
 	    initComponents();
             this.cModel=cModel;
-            this.itemsMap = cModel.getItemsMap();
+            this.cModel.fetchCartDataFromDB();
+//            this.itemsMap = cModel.getItemsMap();
             loadCart();
 	    new CartController(this);
    }

@@ -9,7 +9,7 @@ import model.*;
 
 public class DashboardView extends javax.swing.JFrame {
 
-    RegistrationModel rModel;
+    public RegistrationModel rModel;
     /**
      * Creates new form HomeAndItems
      */
@@ -336,7 +336,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
         // TODO add your handling code here:
-        CartView CV = new CartView();
+        CartView CV = new CartView(rModel);
         CV.show();
         dispose();
     }//GEN-LAST:event_btnCartActionPerformed

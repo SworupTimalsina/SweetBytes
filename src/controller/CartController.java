@@ -24,11 +24,17 @@ public class CartController {
 					cView.calculateDiscount();
 					break;
 				case "CHECKOUT":
-                                        cView.checkoutdisplay();
-					
+                    cView.checkoutdisplay();
 					break;
 				default :
-					System.err.println("Button not found in Cart");
+                    if (buttonClicked.endsWith("BACK")){
+                        System.out.println("Back button Clicked.");
+                        DashboardView DaB = new DashboardView(cView.rModel);
+                        DaB.setVisible(true);
+                        cView.dispose();
+                    }else{
+                        System.err.println("Button not found in Cart");
+                    }
 					break;
 		    }
 	    }

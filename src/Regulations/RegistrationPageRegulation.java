@@ -7,8 +7,27 @@ import java.util.regex.Pattern;
 import model.*;
 import Database.MyConnector;
 
+interface RegulationsCheck{
+    public String CheckRegistrationPageRegulation(RegistrationModel model);// For check every information
+    public String CheckRegistrationPageRegulation();
+    
+    public boolean BothPasswordsMatch(String password1, String password2);// For checking if both password and confirm passwords match.
+    public boolean BothPasswordsMatch();
+    
+    public boolean UsernameTaken(String username1);// To check if username is available or not.
+    public boolean UsernameTaken();
+    
+    public String FieldEmptyCheck(RegistrationModel model);// To check if any fields are left empty.
+    public String FieldEmptyCheck();
+    
+    public String DateSelected();// To check if date is left empty.
+    
+    public boolean isValidEmail(String email);// To check if given email is a valid email.
+    public boolean isValidEmail();    
+}
 
-public class RegistrationPageRegulation {
+
+public class RegistrationPageRegulation implements RegulationsCheck {
     /*
     * A class that validates the user given information.
     */
@@ -190,7 +209,6 @@ public class RegistrationPageRegulation {
             }
         }
     }
-    
     public String FieldEmptyCheck(){
         /*
         * Checks if the field are not left empty.

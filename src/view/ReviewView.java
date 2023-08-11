@@ -230,6 +230,11 @@ public class ReviewView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("MS PGothic", 1, 24)); // NOI18N
         jButton1.setText("← BACK");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -379,6 +384,10 @@ public class ReviewView extends javax.swing.JFrame {
         ReviewController add=new ReviewController(this);
         add.actionPerformedadd(getreview(), this);
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public ReviewModel getreview() {
     DefaultTableModel recordTable = getTableModel();

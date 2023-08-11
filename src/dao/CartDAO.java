@@ -202,6 +202,190 @@ public class CartDAO {
         return false;
     }
     
+    public static boolean searchCartData(){
+        /*
+        * Searches for the full detail sets the value to the rmodel.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        PreparedStatement preStmt;
+        ResultSet rs;
+        Connection conn=MyConnector.dbConnect();
+        
+
+        
+        String sqlCommand="SELECT name, price,quantity, total FROM cart";
+        
+        try{
+
+            preStmt=conn.prepareStatement(sqlCommand);
+            rs=preStmt.executeQuery();
+            while (rs.next()){
+                String col1 = rs.getString("name");
+                String col2 = rs.getString("price");
+                String col3 = rs.getString("quantity");
+                String col4 = rs.getString("total");
+                       
+            }
+//            else{
+//                System.out.println("At CustomerDAO.search no username in database found");
+//            }
+            
+          
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.search: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error at CartDAO.search.try: "+e);
+            }
+         
+        }
+        return false;
+    }
+    
+        public static boolean searchCustomizeCakeData(){
+        /*
+        * Searches for the full detail sets the value to the rmodel.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        PreparedStatement preStmt;
+        ResultSet rs;
+        Connection conn=MyConnector.dbConnect();
+        
+
+        
+        String sqlCommand="SELECT price FROM CustomizeCake";
+        
+        try{
+
+            preStmt=conn.prepareStatement(sqlCommand);
+            rs=preStmt.executeQuery();
+            while (rs.next()){
+                String col1 = "Custom cake";
+                String col2 = rs.getString("price");
+                String col3 = "1";
+                String col4 = rs.getString("price");
+                                       
+            }
+//            else{
+//                System.out.println("At CustomerDAO.search no username in database found");
+//            }
+
+          
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.search: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error at CartDAO.search.try: "+e);
+            }
+         
+        }
+        return false;
+    }
+        
+               public static boolean searchWeddingCakeData(){
+        /*
+        * Searches for the full detail sets the value to the rmodel.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        PreparedStatement preStmt;
+        ResultSet rs;
+        Connection conn=MyConnector.dbConnect();
+        
+
+        
+        String sqlCommand="SELECT caketype, price, pounds, total FROM WeddingCake";
+        
+        try{
+
+            preStmt=conn.prepareStatement(sqlCommand);
+            rs=preStmt.executeQuery();
+            while (rs.next()){
+                String col1 = rs.getString("caketype");
+                String col2 = rs.getString("price");
+                String col3 = rs.getString("pounds");
+                String col4 = rs.getString("total");
+                                       
+            }
+//            else{
+//                System.out.println("At CustomerDAO.search no username in database found");
+//            }
+
+          
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.search: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error at CartDAO.search.try: "+e);
+            }
+         
+        }
+        return false;
+    }
+               
+public static boolean searchBirthdayCakeData(){
+        /*
+        * Searches for the full detail sets the value to the rmodel.
+        * @return true if successfull.
+        * @return false if unsuccessfull with corressponding error message printed.
+        */
+        PreparedStatement preStmt;
+        ResultSet rs;
+        Connection conn=MyConnector.dbConnect();
+        
+
+        
+        String sqlCommand="SELECT caketype, price, pounds, total FROM BdayCake";
+        
+        try{
+
+            preStmt=conn.prepareStatement(sqlCommand);
+            rs=preStmt.executeQuery();
+            while (rs.next()){
+                String col1 = rs.getString("caketype");
+                String col2 = rs.getString("price");
+                String col3 = rs.getString("pounds");
+                String col4 = rs.getString("total");
+                                       
+            }
+//            else{
+//                System.out.println("At CustomerDAO.search no username in database found");
+//            }
+
+          
+        }
+        catch(Exception e){
+            System.out.println("Error in CartDAO.search: "+e);
+        }
+        finally{
+            try{
+                conn.close();
+            }
+            catch(Exception e){
+                System.out.println("Error at CartDAO.search.try: "+e);
+            }
+         
+        }
+        return false;
+    }
+    
    public static boolean deleteCartData(CartModel camodel) {
         // Deletes rows from the cart table according to the item names.
         // Returns true if successful, false otherwise.
@@ -234,4 +418,7 @@ public class CartDAO {
         }
         return false;
    }       
+   public static void main(String[] args){
+
+   }
 }

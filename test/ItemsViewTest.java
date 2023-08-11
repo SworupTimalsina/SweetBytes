@@ -211,7 +211,7 @@ public class ItemsViewTest {
         assertNull(cartView.getDashboardView());
         
         //Perform the action on the button
-        cartView.jButton2ActionPerformed(null);
+        cartView.backButtonActionPerformed(null);
         
         //Verify that a DashboardView is created and is visible
         DashboardView dashboardView = cartView.getDashboardView();

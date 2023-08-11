@@ -9,14 +9,13 @@ import java.sql.PreparedStatement;
 
 import model.*;
 import Database.MyConnector;
-import controller.*;
-import org.junit.Assert;
+
 
 public class CustomerDAO {
     
     public static boolean CreateRegistrationTable(){
         /*
-        * Create a new database creds
+        * Creates new tables used in the program.
         * @return true if created successfully.
         * @return false if unsuccessful with corresponding error message printed
         */
@@ -31,12 +30,10 @@ public class CustomerDAO {
                 "CREATE TABLE Cart_final(Cart_id INT PRIMARY KEY AUTO_INCREMENT, itemcart_id INT, Cake_id INT, Wed_id INT, Bday_id INT, FOREIGN KEY (itemcart_id) REFERENCES cart(itemcart_id), FOREIGN KEY (Cake_id) REFERENCES CustomizeCake(Cake_id),  FOREIGN KEY (Wed_id) REFERENCES WEddingCake(Wed_id), FOREIGN KEY (Bday_id) REFERENCES BdayCake(Bday_id));",
                  "CREATE TABLE REVIEW (REVIEW_NO INT AUTO_INCREMENT PRIMARY KEY, REVIEW VARCHAR (255));"};
         
-        
-        String sqlCommand="create table Creds(e_id int primary key auto_increment, f_name varchar(50), l_name varchar(50), email varchar(70), DOB date, u_name varchar(50), pass varchar(50), securityQ varchar(255), answer varchar(255));";
+       
         
         try{
             Statement stmt=conn.createStatement();
-//            stmt.execute(sqlCommand);
             for (String sql : sqlCommands) {
                 stmt.executeUpdate(sql);
                 System.out.println("Executed SQL: " + sql);

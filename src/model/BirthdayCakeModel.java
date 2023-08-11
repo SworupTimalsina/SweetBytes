@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class BirthdayCakeModel extends CartModel{
     
-    String name;
-    String Caketype;
-    String pounds;
-    String pricebday;
-    ArrayList<String> totalbday;
+    private String name;
+    private String Caketype;
+    private String pounds;
+    private String pricebday;
+    private ArrayList<String> totalbday;
                 
 	public BirthdayCakeModel(){
         

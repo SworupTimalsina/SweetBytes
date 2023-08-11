@@ -208,7 +208,7 @@ public class CartView extends javax.swing.JFrame {
         promotxt.setBackground(new java.awt.Color(204, 204, 204));
         promotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                promotxtActionPerformed(evt);
+//                promotxtActionPerformed(evt);
             }
         });
         jPanel2.add(promotxt);

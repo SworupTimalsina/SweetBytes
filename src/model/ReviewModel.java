@@ -8,11 +8,11 @@ package model;
  *
  * @author DELL
  */
-public class ReviewwModel {
+public class ReviewModel {
     int review_no;
     String review;
     
-    public ReviewwModel (int review_no, String review) {
+    public ReviewModel (int review_no, String review) {
         this.review_no=review_no;
         this.review=review;
         

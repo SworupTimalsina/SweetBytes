@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class WeddingCakeModel extends CartModel{
 	
-	String firstName, lastName;
-        String Caketype;
-        String pounds;
-        String pricewed;
-        ArrayList<String> totalwed;
+	private String firstName, lastName;
+    private String Caketype;
+    private String pounds;
+    private String pricewed;
+    private ArrayList<String> totalwed;
 	
 	public WeddingCakeModel(){
         
@@ -19,8 +19,8 @@ public class WeddingCakeModel extends CartModel{
         this.total=null;
         this.promoCode=null;
         this.cartSummary=null;
-	this.firstName=null;
-	this.lastName=null;
+        this.firstName=null;
+        this.lastName=null;
         this.Caketype=null;
         this.pounds=null;
         this.pricewed=null;

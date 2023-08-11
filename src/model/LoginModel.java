@@ -3,7 +3,7 @@ package model;
 
 public class LoginModel {
     
-    String username,password;
+    private String username,password;
 
     public String getUsername() {
         return username;

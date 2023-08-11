@@ -5,7 +5,7 @@ public class CustomizeCakeModel {
     /*
     * model for Customize cake.
     */
-    int size, layers, price;
+    private int size, layers, price;
 
 
 

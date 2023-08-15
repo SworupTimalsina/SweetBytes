@@ -783,7 +783,9 @@ public class ItemsView extends javax.swing.JFrame {
     
     */
     public void macronsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (countleb1 > 0) { // Check if the count is greater than 0 before decrementing
         countleb1--;
+        }
         macronsCountLabel.setText(Integer.toString(countleb1));
     }
     public void below0(java.awt.event.ActionEvent evt) {                        
@@ -794,17 +796,21 @@ public class ItemsView extends javax.swing.JFrame {
         countleb1++;
         macronsCountLabel.setText(Integer.toString(countleb1));
     }   
-    public void croissantsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    public void croissantsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (countleb2 > 0) {//check if the count is greater than 0 before decreamenting
         countleb2--;
+        }
         croissantsCountLabel.setText(Integer.toString(countleb2));
     }                                                   
 
-    public void croissantsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    public void croissantsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {
         countleb2++;
         croissantsCountLabel.setText(Integer.toString(countleb2));
     }    
-    public void breadSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    public void breadSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (countleb3 >0) {//Check it the count is greater than 0 before decrementing
         countleb3--;
+        }
         breadCountLabel.setText(Integer.toString(countleb3));
     }                                              
 
@@ -813,8 +819,10 @@ public class ItemsView extends javax.swing.JFrame {
         breadCountLabel.setText(Integer.toString(countleb3));
     }                                              
 
-    public void bunsSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    public void bunsSubButtonActionPerformed(java.awt.event.ActionEvent evt) { 
+        if (countleb4 >0) {//Check if the count is greater than 0 before decreamenting
         countleb4--;
+        }
         bunsCountLabel.setText(Integer.toString(countleb4));
     }                                             
 
@@ -822,8 +830,10 @@ public class ItemsView extends javax.swing.JFrame {
         countleb4++;
         bunsCountLabel.setText(Integer.toString(countleb4));
     } 
-    public void cookiesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    public void cookiesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (countleb5 >0) {//Check if the count if greater than 0 before decreamenting
         countleb5--;
+        }
         cookiesCountLabel.setText(Integer.toString(countleb5));
     }                                                
 
@@ -832,8 +842,10 @@ public class ItemsView extends javax.swing.JFrame {
         cookiesCountLabel.setText(Integer.toString(countleb5));
     }                                                
 
-    public void cupcakesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    public void cupcakesSubButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (countleb6 >0) {//Check if the count is greater than 0 before decreamenting
         countleb6--;
+        }
         cupcakesCountLabel.setText(Integer.toString(countleb6));
     }                                                 
 

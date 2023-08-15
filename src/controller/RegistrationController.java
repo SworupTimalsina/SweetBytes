@@ -22,8 +22,8 @@ public class RegistrationController {
                 checkCreds=new RegistrationPageRegulation(rModel);// creates a new instance of regulations
                 String checkCredsResult=checkCreds.CheckRegistrationPageRegulation();// checks validity of all the information provided in registration page.
                 if(checkCredsResult.equals("ok")){// if every information provided is valid.
-                    rView.displayPlainMessage("User Registered", "Success");
                     CustomerDAO.InsertRegistrationData(rModel);
+                    rView.displayPlainMessage("User Registered", "Success");
                 }
                 else{// displays a suitable error message pop up.
                     rView.displayErrorMessage(checkCredsResult);

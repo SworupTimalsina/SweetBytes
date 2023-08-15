@@ -503,6 +503,7 @@ public class ProfileView extends javax.swing.JFrame {
         answerField.setText(pModel.getAnswer());
     }
     public void fillCustomersData(RegistrationModel rModel){
+        
         String[] date=rModel.getDateOfBirth().split("-");
         this.rModel=rModel;
         firstNameField.setText(rModel.getFirstName());

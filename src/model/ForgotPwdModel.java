@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author DELL
- */
+
 public class ForgotPwdModel {
-    String username, squestion, answer, npassword;
+    private String username, squestion, answer, npassword;
     
     public ForgotPwdModel (String username, String squestion, String answer, String npassword) {
         

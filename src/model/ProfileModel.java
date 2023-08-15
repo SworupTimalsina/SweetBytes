@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
@@ -9,8 +5,8 @@ package model;
  * @author AduMan
  */
 public class ProfileModel extends RegistrationModel{
-    //private String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
-    //private int id;
+//    private String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
+//    private int id;
     
     
         public ProfileModel(String firstName, String lastName, String email, String dateOfBirth, String username, String password, String confirmPassword, String security, String answer){

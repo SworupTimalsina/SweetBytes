@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class ItemsModel extends CartModel{
     public ItemsModel(){
-        
         this.items=null;
         this.price=null;
         this.quantity=null;

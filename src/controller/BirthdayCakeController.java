@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import view.*;
 import model.*;
+import dao.CartDAO;
 
 
 public class BirthdayCakeController {
@@ -20,17 +21,29 @@ public class BirthdayCakeController {
 		bView.disableProceedButton();
 	}
 	class BirthdayCakeListener implements ActionListener{
-
+                       
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try{
 				String buttonClicked = bView.getButtonName(e);// returns the name of the button clicked.
 				if (buttonClicked.equals("proceedButton")){
+//                                    int pr = Integer.parseInt(bView.getPoundsField());
+//                                        String bdaytotal = Integer.toString(cakePrice*pr);
 					String check=checkCreds();
 					if (check.equals("ok")){
 						setDataToModel();
 						bView.displayPlainMessage("Order listed successfully", "Thank You");
 						bView.dispose();
+                                                
+                                                    //Insert bdaycake data into database
+                                                    BirthdayCakeModel BdayModel = new BirthdayCakeModel();
+                                                    BdayModel.setCaketype(cakeName);
+                                                    BdayModel.setPricebday(Integer.toString(cakePrice));
+                                                    BdayModel.setPounds(bView.getPoundsField());
+                                                    BdayModel.setName(bView.getNameField());
+                                                    BdayModel.setTotalbday(bModel.getTotalbday());
+                                                    CartDAO.insertBdayData(BdayModel);                                             
+                                                
 						var CV=new CartView(bModel);
 						CV.setVisible(true);
 					}else{
@@ -90,23 +103,32 @@ public class BirthdayCakeController {
 		switch (cakeName){
 			case "simpleCakeButton":
 				item.add("Simple Cake");
+                                cakeName="Simple Cake";
 				break;
 			case "fancyCakeButton":
 				item.add("Fancy Cake");
+                                cakeName="Fancy Cake";
 				break;
 			case "classicCakeButton":
 				item.add("Classic Cake");
+                                cakeName="Classic Cake";
 				break;
 			default:
 				item.add(cakeName);
 				break;
 		}
-		
+                		
 		bModel.setItems(item);
-		
+                		
 		ArrayList<String> total = new ArrayList<>();
 		total.add(Integer.toString(cakePrice*Integer.parseInt(bView.getPoundsField())));
 		bModel.setTotal(total);
+                bModel.setTotalbday(total);
+                
+
+
+               
+
 	}
 	
 	private void cakeButtonClicked(String button){

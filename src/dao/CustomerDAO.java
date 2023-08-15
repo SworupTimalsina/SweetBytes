@@ -9,23 +9,35 @@ import java.sql.PreparedStatement;
 
 import model.*;
 import Database.MyConnector;
-import controller.*;
-import org.junit.Assert;
+
 
 public class CustomerDAO {
     
     public static boolean CreateRegistrationTable(){
         /*
-        * Create a new database creds
+        * Creates new tables used in the program.
         * @return true if created successfully.
         * @return false if unsuccessful with corresponding error message printed
         */
         Connection conn = MyConnector.dbConnect();
-        String sqlCommand="create table Creds(e_id int primary key auto_increment, f_name varchar(50), l_name varchar(50), email varchar(70), DOB date, u_name varchar(50), pass varchar(50), securityQ varchar(255), answer varchar(255));";
+        
+        String[] sqlCommands = {"create table Creds(e_id int primary key auto_increment, f_name varchar(50), l_name varchar(50), email varchar(70), DOB date, u_name varchar(50), pass varchar(50), securityQ varchar(255), answer varchar(255));",
+                "CREATE TABLE items (item_id INT PRIMARY KEY, name varchar(255), price INT);",
+                "CREATE TABLE CustomizeCake (Cake_id INT PRIMARY KEY AUTO_INCREMENT, size INT, layer INT, Cake_Type varchar(20),ice_colour varchar(20), Filling varchar(20), Message varchar(30), price INT);",
+                "CREATE TABLE WeddingCake (Wed_id INT PRIMARY KEY AUTO_INCREMENT, Caketype varchar(20),Pounds INT, name1 varchar(20), name2 varchar(20), price INT);",
+                "CREATE TABLE BdayCake (Bday_id INT PRIMARY KEY AUTO_INCREMENT, Caketype varchar(20),Pounds INT, name varchar(20), price INT, total INT);",
+                "CREATE TABLE cart (itemcart_id INT PRIMARY KEY auto_increment , name varchar(255), price INT, quantity INT, Total INT);",
+                "CREATE TABLE Cart_final(Cart_id INT PRIMARY KEY AUTO_INCREMENT, itemcart_id INT, Cake_id INT, Wed_id INT, Bday_id INT, FOREIGN KEY (itemcart_id) REFERENCES cart(itemcart_id), FOREIGN KEY (Cake_id) REFERENCES CustomizeCake(Cake_id),  FOREIGN KEY (Wed_id) REFERENCES WEddingCake(Wed_id), FOREIGN KEY (Bday_id) REFERENCES BdayCake(Bday_id));",
+                 "CREATE TABLE REVIEW (REVIEW_NO INT AUTO_INCREMENT PRIMARY KEY, REVIEW VARCHAR (255));"};
+        
+       
         
         try{
             Statement stmt=conn.createStatement();
-            stmt.execute(sqlCommand);
+            for (String sql : sqlCommands) {
+                stmt.executeUpdate(sql);
+                System.out.println("Executed SQL: " + sql);
+            }
             return true;
         }
         catch(Exception e){
@@ -273,18 +285,19 @@ public class CustomerDAO {
     
     public static void main(String[] args){
         // Testing methods.
-        String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
-        
-        firstName="testFname";
-        lastName="testLname";
-        email="test@email.com";
-        dateOfBirth="2003-12-12";
-        username="godf";
-        password="test";
-        confirmPassword="test";
-        security="What is the name of the test?";
-        answer="The name is test";
-                
-        RegistrationModel rmodel = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
+//        String firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer;
+//        
+//        firstName="testFname";
+//        lastName="testLname";
+//        email="test@email.com";
+//        dateOfBirth="2003-12-12";
+//        username="godf";
+//        password="test";
+//        confirmPassword="test";
+//        security="What is the name of the test?";
+//        answer="The name is test";
+//                
+//        RegistrationModel rmodel = new RegistrationModel(firstName, lastName, email, dateOfBirth, username, password, confirmPassword, security, answer);
+        CreateRegistrationTable();
     }
 }

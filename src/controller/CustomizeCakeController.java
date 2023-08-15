@@ -1,5 +1,6 @@
 package controller;
 
+import dao.CartDAO;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -153,6 +154,18 @@ public class CustomizeCakeController {
                     CartModel cartModel = setCartListing();
 //                    cView.openCart(cartModel);
                     CartView cV = new CartView(cartModel);
+                    
+                    //Insert bdaycake data into database
+                    CustomizeCakeModel cusModel = new CustomizeCakeModel();
+                    cusModel.setSize(cModel.getSize());
+                    cusModel.setLayers(cModel.getLayers());
+                    cusModel.setColor(cModel.getColor());
+                    cusModel.setFilling(cModel.getFilling());
+                    cusModel.setType(cModel.getType());
+                    cusModel.setMessage(cModel.getMessage());
+                    cusModel.setPrice(calculatePrice());
+
+                    CartDAO.insertCustomData(cusModel);  
                    
                     cV.setVisible(true);
                     cView.dispose();

@@ -9,7 +9,7 @@ import model.*;
 
 public class DashboardView extends javax.swing.JFrame {
 
-    RegistrationModel rModel;
+    public RegistrationModel rModel;
     /**
      * Creates new form HomeAndItems
      */
@@ -64,7 +64,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnProfile.setBackground(new java.awt.Color(255, 204, 204));
         btnProfile.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(0, 0, 0));
         btnProfile.setText("PROFILE");
         btnProfile.setBorder(null);
         btnProfile.setBorderPainted(false);
@@ -78,8 +77,7 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnCart.setBackground(new java.awt.Color(255, 204, 204));
         btnCart.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnCart.setForeground(new java.awt.Color(0, 0, 0));
-        btnCart.setText("CART");
+        btnCart.setText("HISTORY");
         btnCart.setBorder(null);
         btnCart.setBorderPainted(false);
         btnCart.setContentAreaFilled(false);
@@ -91,7 +89,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnHome.setBackground(new java.awt.Color(255, 204, 204));
         btnHome.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(0, 0, 0));
         btnHome.setText("HOME");
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
@@ -105,7 +102,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnItems.setBackground(new java.awt.Color(255, 204, 204));
         btnItems.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnItems.setForeground(new java.awt.Color(0, 0, 0));
         btnItems.setText("ITEMS");
         btnItems.setBorder(null);
         btnItems.setBorderPainted(false);
@@ -118,7 +114,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnAboutUs.setBackground(new java.awt.Color(255, 204, 204));
         btnAboutUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnAboutUs.setForeground(new java.awt.Color(0, 0, 0));
         btnAboutUs.setText("ABOUT US");
         btnAboutUs.setBorder(null);
         btnAboutUs.setContentAreaFilled(false);
@@ -130,7 +125,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         btnContactUs.setBackground(new java.awt.Color(255, 204, 204));
         btnContactUs.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        btnContactUs.setForeground(new java.awt.Color(0, 0, 0));
         btnContactUs.setText("REVIEW");
         btnContactUs.setBorder(null);
         btnContactUs.setContentAreaFilled(false);
@@ -144,7 +138,6 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         lblWCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
-        lblWCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblWCakes.setText("Wedding Cakes");
         lblWCakes.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -177,7 +170,6 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel3.setLayout(null);
 
         lblBCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
-        lblBCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblBCakes.setText("Birthday cakes");
         jPanel3.add(lblBCakes);
         lblBCakes.setBounds(70, 220, 241, 43);
@@ -203,7 +195,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         lblCCakes.setBackground(new java.awt.Color(0, 0, 0));
         lblCCakes.setFont(new java.awt.Font("Imprint MT Shadow", 1, 32)); // NOI18N
-        lblCCakes.setForeground(new java.awt.Color(0, 0, 0));
         lblCCakes.setText("Customize your own cake");
         jPanel4.add(lblCCakes);
         lblCCakes.setBounds(20, 210, 430, 43);
@@ -225,7 +216,6 @@ public class DashboardView extends javax.swing.JFrame {
         jLabel3.setBounds(0, 0, 410, 570);
 
         lblSweetBytes.setFont(new java.awt.Font("Noteworthy", 1, 24)); // NOI18N
-        lblSweetBytes.setForeground(new java.awt.Color(0, 0, 0));
         lblSweetBytes.setText("Sweet Bytes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -233,11 +223,11 @@ public class DashboardView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
                         .addComponent(btnProfile)
-                        .addGap(85, 85, 85)
+                        .addGap(74, 74, 74)
                         .addComponent(btnCart)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnHome)
@@ -248,7 +238,6 @@ public class DashboardView extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(btnAboutUs))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -336,8 +325,8 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
         // TODO add your handling code here:
-        CartView CV = new CartView();
-        CV.show();
+        TransactionHistoryView THV = new TransactionHistoryView();
+        THV.show();
         dispose();
     }//GEN-LAST:event_btnCartActionPerformed
 

@@ -45,7 +45,7 @@ public class ItemsController {
 					CV.setVisible(true);
 				}
 			}
-			catch (Exception e){
+			catch (Exception e){ 
 				System.out.println(e);
 			}
 			

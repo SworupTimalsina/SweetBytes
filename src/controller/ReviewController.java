@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
  *
  * @author DELL
  */
-public class ReviewwController {
-    ReviewVieww view;
-    ReviewwModel model;
+public class ReviewController {
+    ReviewView view;
+    ReviewModel model;
     Connection conn;
     PreparedStatement pst  = null;
     
-    public ReviewwController(ReviewVieww view) {
+    public ReviewController(ReviewView view) {
         this.view=view;
         view.updateDB();
     
@@ -28,13 +28,13 @@ public class ReviewwController {
     public void connectionDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, "Error in connection"+e.getMessage());
         }
     }
     
-    public void actionPerformedadd (ReviewwModel model, ReviewVieww view) {
+    public void actionPerformedadd (ReviewModel model, ReviewView view) {
         try {
                 if(addreview(model)) {
                     view.setMessage("Review Added Sucessfully!!");
@@ -48,10 +48,10 @@ public class ReviewwController {
             }
     }
     
-    public boolean addreview (ReviewwModel user) throws Exception {
+    public boolean addreview (ReviewModel user) throws Exception {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sb", "root", "Ranapurnima123$$");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SweetBytes", "root", "43a4a53290");
             pst = conn.prepareStatement("INSERT INTO review(Review) VALUES (?)");
 
             pst.setString(1, view.txtreview.getText());
@@ -69,7 +69,7 @@ public class ReviewwController {
     
     
     
-    public void actionPerformedclear (ReviewwModel model, ReviewVieww view) {
+    public void actionPerformedclear (ReviewModel model, ReviewView view) {
         view.txtreview.setText("");
     }
 }
